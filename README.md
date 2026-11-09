@@ -1,7 +1,7 @@
 # Offers, Not Rumours: What Turns Agents in an LLM Swarm
 
 Code, configs, pre-registrations and aggregate results for the paper *Offers, Not Rumours: What Turns Agents in an LLM
-Swarm* (Iraj Moradi, Jenifer Nguyen, Lance Santiago, Mario Sepriano, Noor; Swarm Alignment Hackathon, Apart Research, November 2026). The paper itself is not
+Swarm* (Noor, Lance Santiago, Iraj Moradi, Jenifer Nguyen, Mario Sepriano; Swarm Alignment Hackathon, Apart Research, November 2026). The paper itself is not
 part of this repository. Section and appendix numbers below refer to it.
 
 **Summary.** Does a message that fools one agent also corrupt a swarm of agents? We ran two cooperative
@@ -321,6 +321,6 @@ snapshot lived in a separate project folder). The harness wraps it through monke
 ## Citation
 
 ```
-Iraj Moradi, Jenifer Nguyen, Lance Santiago, Mario Sepriano, Noor. Offers, Not Rumours: What Turns Agents in an LLM Swarm.
+Noor, Lance Santiago, Iraj Moradi, Jenifer Nguyen, Mario Sepriano (author order randomized). Offers, Not Rumours: What Turns Agents in an LLM Swarm.
 Swarm Alignment Hackathon (Apart Research), Track 2: The Science of Agent Networks, November 2026.
 ```
