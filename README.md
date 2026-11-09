@@ -321,6 +321,6 @@ snapshot lived in a separate project folder). The harness wraps it through monke
 ## Citation
 
 ```
-Noor, Lance Santiago, Iraj Moradi, Jenifer Nguyen, Mario Sepriano (author order randomized). Offers, Not Rumours: What Turns Agents in an LLM Swarm.
+Noor, Lance Santiago, Iraj Moradi, Jenifer Nguyen, Mario Sepriano (equal contribution; author order randomized). Offers, Not Rumours: What Turns Agents in an LLM Swarm.
 Swarm Alignment Hackathon (Apart Research), Track 2: The Science of Agent Networks, November 2026.
 ```
