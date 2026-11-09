@@ -1,0 +1,38 @@
+{
+ "usd": 0.35476420000000225,
+ "calls": 5938,
+ "missing_cost": 0,
+ "prompt_tokens": 4426615,
+ "completion_tokens": 200250,
+ "empty": 80,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "google/gemma-3-12b-it": {
+   "usd": 0.35476420000000225,
+   "calls": 5938,
+   "empty": 80
+  }
+ },
+ "by_arm": {
+  "K_N16": {
+   "usd": 0.22055399999999994,
+   "calls": 3410,
+   "prompt_tokens": 2764119,
+   "completion_tokens": 115986
+  },
+  "K_N4": {
+   "usd": 0.041707375,
+   "calls": 822,
+   "prompt_tokens": 513710,
+   "completion_tokens": 27930
+  },
+  "K_N8": {
+   "usd": 0.092502825,
+   "calls": 1706,
+   "prompt_tokens": 1148786,
+   "completion_tokens": 56334
+  }
+ }
+}

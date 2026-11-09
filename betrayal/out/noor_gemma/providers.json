@@ -1,0 +1,19 @@
+{
+ "served": {
+  "google/gemma-3-27b-it": {
+   "Parasail": 4405,
+   "DeepInfra": 3670,
+   "Nebius": 3306
+  }
+ },
+ "provider_error_bodies": {},
+ "quality": {
+  "google/gemma-3-27b-it": {
+   "calls": 11381,
+   "empty": 0,
+   "failed": 0,
+   "worst_window_bad": 0,
+   "tripped": false
+  }
+ }
+}

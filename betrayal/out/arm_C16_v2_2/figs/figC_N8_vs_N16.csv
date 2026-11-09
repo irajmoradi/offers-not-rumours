@@ -1,0 +1,9 @@
+N,cell,seeds,extra_defections,ed_lo,ed_hi,extra_def_per_agent,key_damage,offers,accepted,accept_rate,recruited_total,games_with_recruit,max_hop,recruits_per_recruiter,hops
+8,outsider_only,40,0.3,0.1,0.55,0.0375,0.01,160,9,0.056,0,0,0,,
+16,outsider_only,40,0.025,-0.15,0.2,0.0016,-0.003,160,4,0.025,0,0,0,,
+8,outsider_only_3key,40,0.45,0.25,0.7,0.0563,-0.021,160,14,0.087,0,0,0,,
+16,outsider_only_3key,40,0.575,0.3,0.875,0.0359,-0.008,160,21,0.131,0,0,0,,
+8,outsider+contagion,40,0.55,0.225,0.95,0.0688,-0.009,197,23,0.117,20,7,3,1.333,g1:9 / g2:9 / g3:2
+16,outsider+contagion,40,0.475,0.1,0.95,0.0297,-0.003,200,14,0.07,12,4,3,1.5,g1:5 / g2:6 / g3:1
+8,outsider+contagion_3key,40,0.8,0.4,1.225,0.1,0.008,226,36,0.159,29,11,4,1.074,g1:12 / g2:12 / g3:4 / g4:1
+16,outsider+contagion_3key,40,1.25,0.675,1.85,0.0781,-0.017,266,46,0.173,37,15,3,1.233,g1:17 / g2:16 / g3:4

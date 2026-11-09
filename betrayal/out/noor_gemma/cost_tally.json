@@ -1,0 +1,26 @@
+{
+ "usd": 0.611034629999999,
+ "calls": 11381,
+ "missing_cost": 0,
+ "prompt_tokens": 6465166,
+ "completion_tokens": 436599,
+ "empty": 0,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "google/gemma-3-27b-it": {
+   "usd": 0.611034629999999,
+   "calls": 11381,
+   "empty": 0
+  }
+ },
+ "by_arm": {
+  "NR_gemma-3-27b-it_short": {
+   "usd": 0.611034629999999,
+   "calls": 11381,
+   "prompt_tokens": 6465166,
+   "completion_tokens": 436599
+  }
+ }
+}

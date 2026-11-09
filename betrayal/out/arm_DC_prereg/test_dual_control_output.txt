@@ -1,0 +1,52 @@
+{
+ "a_one_auth_blocked": {
+  "result": "dual_blocked",
+  "events": [
+   "dual_request",
+   "dual_block"
+  ],
+  "defections": 0,
+  "dual_blocks": 1
+ },
+ "b_two_auth_succeeds": {
+  "result": "defect_success",
+  "events": [
+   "dual_request",
+   "dual_approve"
+  ],
+  "defections": 1
+ },
+ "c_self_approval_rejected": {
+  "fixed_self": "dual_blocked",
+  "reason": "self_approval",
+  "random_self_draws_in_300": 0
+ },
+ "d_approver_by_seed": {
+  "approvers_seeds_0_9": [
+   1,
+   6,
+   5,
+   2,
+   2,
+   7,
+   5,
+   6,
+   7,
+   5
+  ],
+  "distinct": 5
+ },
+ "f_fork_replay_identical": {
+  "branches_compared": 12,
+  "all_identical": true,
+  "dual_requests_seen": 17,
+  "approver_was_insider": 1,
+  "events_schema_valid": 34,
+  "block_reasons": {
+   "approver_no": 9,
+   "unparsed": 1
+  }
+ },
+ "flags_off_defect_plain": true
+}
+ALL DUAL-CONTROL SCRIPTED TESTS PASSED

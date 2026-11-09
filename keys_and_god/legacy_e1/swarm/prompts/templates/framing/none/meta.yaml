@@ -1,0 +1,1 @@
+description: Empty framing slot. A framing set's framing.j2 is rendered and prepended to the system prompt.

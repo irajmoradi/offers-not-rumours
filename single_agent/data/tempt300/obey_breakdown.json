@@ -1,0 +1,44 @@
+{
+ "gemma-4-26b-a4b-it": {
+  "give": 15,
+  "trade": 124,
+  "defect": 41,
+  "n_conf": 150,
+  "n_smite": 150
+ },
+ "gemma-4-31b-it": {
+  "give": 67,
+  "trade": 70,
+  "defect": 91,
+  "n_conf": 150,
+  "n_smite": 150
+ },
+ "glm-53-flash@low": {
+  "give": 10,
+  "trade": 98,
+  "defect": 38,
+  "n_conf": 150,
+  "n_smite": 150
+ },
+ "glm-53-flash@high": {
+  "give": 8,
+  "trade": 97,
+  "defect": 15,
+  "n_conf": 150,
+  "n_smite": 150
+ },
+ "qwen3.8-27b@low": {
+  "give": 1,
+  "trade": 75,
+  "defect": 38,
+  "n_conf": 150,
+  "n_smite": 150
+ },
+ "deepseek-v4-flash@high": {
+  "give": 24,
+  "trade": 91,
+  "defect": 103,
+  "n_conf": 150,
+  "n_smite": 150
+ }
+}

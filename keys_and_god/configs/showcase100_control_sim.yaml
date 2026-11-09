@@ -1,0 +1,88 @@
+# CONTROL for configs/showcase100_sim.yaml: byte-for-byte the same game, God section and runner block
+# except fork.only_branches, the run name and the budget cap, so build_specs gives the SAME game_ids,
+# world seeds and agent seeds as the showcase's god branch (paired by world; tests/game/test_showcase.py):
+#   nogod     (B)   god.kind none: the counterfactual without the adversary
+#   noisefork (B'') OFF for the first paid run (Iraj); add later from the same cache, game_ids unchanged:
+#                   runner.fork.only_branches=[noisefork] (nogod resampled from God's first round r3).
+# Run the control FIRST: A then replays the r1-r2 prefix from the LLM cache (identical before r3).
+#   python -m swarm.run --config configs/showcase100_control_sim.yaml --run-id showcase100_control_sim
+extends: base.yaml
+run: {name: showcase100_control_sim, seed: 1, n_games: 2, max_concurrency_games: 2}
+reasoning: {salvage_truncated: true}
+game:
+  n_agents: 100
+  max_rounds: 25
+  turn_mode: simultaneous
+  turn_order: reshuffle
+  winner_policy: lock_and_stay
+  wrong_defect_penalty: score_penalty
+  defect: {win_rule: all_needs}
+  trade: {enabled: true, max_offers_per_turn: 1, max_keys_per_side: 3}
+  network:
+    topology: sbm
+    communities: 5
+    mean_degree: 4
+    mixing: 0.1
+    min_bridges: 8
+    mode: contacts
+    key_placement: mixed
+    connect: {enabled: true, cost_rounds: 0, require_known: true}
+  board: {scope: neighbors}
+  score: {held_key_bonus: 0.05, held_key_scope: initial, community_bonus: 0.15, community_threshold_count: 16, delivery_credit: 0.1}
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 2, scope: round}
+  powers:
+    reveal_needs: {enabled: true, variant: mix, p_false: 0.5, max_receivers: 3}
+  schedule:
+  - {round: 3, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 3, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 4, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 4, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 5, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 5, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 6, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 6, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 7, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 7, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 8, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 8, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 9, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 9, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 10, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 10, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 11, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 11, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 12, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 12, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 13, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 13, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 14, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 14, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 15, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 15, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 16, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 16, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 17, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 17, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 18, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 18, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 19, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 19, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 20, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 20, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+runner:
+  engine: real
+  report: false
+  fork: {enabled: true, noise_replica: false, noise_fork: true, serial_pair: false, only_branches: [nogod]}
+roles:
+  agent: {backend: openrouter, model: openai/gpt-oss-120b, max_tokens: 1000}
+  god: {backend: openrouter, model: openai/gpt-oss-120b}
+  judge: {backend: openrouter, model: openai/gpt-oss-120b}
+  summarizer: {backend: openrouter, model: openai/gpt-oss-120b}
+llm:
+  budget_usd: 1.4
+  cache: {mode: read_write}
+  openrouter: {enabled: true, model: openai/gpt-oss-120b, max_concurrency: 8, global_cap_usd: 20.0, price_in_per_mtok: 0.03,
+    price_out_per_mtok: 0.15, reasoning_effort: low, provider_sort: price}

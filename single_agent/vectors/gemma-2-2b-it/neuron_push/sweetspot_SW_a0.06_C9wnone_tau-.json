@@ -1,0 +1,64 @@
+{
+ "name": "SW_a0.06_C9wnone_tau-",
+ "model": "google/gemma-2-2b-it",
+ "hook": "MLP down_proj input (added to neuron activation)",
+ "neurons": [
+  {
+   "layer": 14,
+   "neuron": 3889,
+   "delta_a": 0.3347624199811052
+  },
+  {
+   "layer": 15,
+   "neuron": 3084,
+   "delta_a": 0.4833535146751596
+  },
+  {
+   "layer": 13,
+   "neuron": 8100,
+   "delta_a": 0.4144446983626169
+  },
+  {
+   "layer": 13,
+   "neuron": 2066,
+   "delta_a": 0.3966240725937141
+  },
+  {
+   "layer": 13,
+   "neuron": 6942,
+   "delta_a": 0.34936046632036116
+  },
+  {
+   "layer": 12,
+   "neuron": 6070,
+   "delta_a": 0.363443306997473
+  },
+  {
+   "layer": 14,
+   "neuron": 5964,
+   "delta_a": 0.3371316057484124
+  },
+  {
+   "layer": 16,
+   "neuron": 2650,
+   "delta_a": 0.5109279977903924
+  },
+  {
+   "layer": 14,
+   "neuron": 9178,
+   "delta_a": 0.32911001361526093
+  },
+  {
+   "layer": 12,
+   "neuron": 1611,
+   "delta_a": 0.3457505145811281
+  }
+ ],
+ "gate": null,
+ "tau": 0.0,
+ "positions": "all tokens",
+ "gate_def": "cos = cosine(residual entering layer L, CAA trust direction v_L); C4/tau: x cos if cos>tau else 0",
+ "c7_def": "delta_eff = sign(d)*((1+|d|)^cos(pi*t/(2T)) - 1), T=400 generated tokens; prefill uses d",
+ "alpha_def": "fraction of the neuron's reachable max write through post_feedforward_layernorm",
+ "source": "out/gemma/neuron_steer/fraction_calib.json + select.json top10_attr"
+}

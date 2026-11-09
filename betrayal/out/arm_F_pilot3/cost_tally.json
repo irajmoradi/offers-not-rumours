@@ -1,0 +1,69 @@
+{
+ "usd": 0.0012715999999999993,
+ "calls": 47,
+ "missing_cost": 0,
+ "prompt_tokens": 10558,
+ "completion_tokens": 1079,
+ "empty": 0,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "adaption:gemma-4-26b-a4b-it": {
+   "usd": 0.008016239500000001,
+   "calls": 132,
+   "empty": 0
+  },
+  "adaption:qwen3.8-27b": {
+   "usd": 0.009106591,
+   "calls": 116,
+   "empty": 0
+  },
+  "adaption:gemma-4-31b-it": {
+   "usd": 0.00880139,
+   "calls": 111,
+   "empty": 0
+  },
+  "adaption:deepseek-v4-flash": {
+   "usd": 0.003718162287999999,
+   "calls": 120,
+   "empty": 0
+  },
+  "qwen/qwen-2.5-7b-instruct": {
+   "usd": 0.0012715999999999993,
+   "calls": 47,
+   "empty": 0
+  }
+ },
+ "by_arm": {
+  "F": {
+   "usd": 0.029642382787999997,
+   "calls": 479,
+   "prompt_tokens": 347210,
+   "completion_tokens": 20774
+  },
+  "F_d_evil": {
+   "usd": 0.0006148999999999999,
+   "calls": 6,
+   "prompt_tokens": 4869,
+   "completion_tokens": 640
+  },
+  "F_judge": {
+   "usd": 0.0006567000000000001,
+   "calls": 41,
+   "prompt_tokens": 5689,
+   "completion_tokens": 439
+  }
+ },
+ "adaption_429": 10,
+ "adaption_429_per_min": {
+  "13:57": 4,
+  "13:58": 1,
+  "13:59": 1,
+  "14:01": 2,
+  "14:02": 1,
+  "14:04": 1
+ },
+ "adaption_calls": 479,
+ "adaption_usd": 0.029642382787999997
+}

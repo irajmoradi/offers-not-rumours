@@ -1,0 +1,43 @@
+{
+ "usd": 0.0,
+ "calls": 0,
+ "missing_cost": 0,
+ "prompt_tokens": 0,
+ "completion_tokens": 0,
+ "empty": 0,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "adaption:gemma-4-26b-a4b-it": {
+   "usd": 0.012230888000000007,
+   "calls": 227,
+   "empty": 0
+  },
+  "adaption:deepseek-v4-flash": {
+   "usd": 0.0067645250960000035,
+   "calls": 229,
+   "empty": 0
+  },
+  "adaption:qwen3.8-27b": {
+   "usd": 0.016644810999999995,
+   "calls": 229,
+   "empty": 0
+  },
+  "adaption:gemma-4-31b-it": {
+   "usd": 0.01412955,
+   "calls": 209,
+   "empty": 0
+  }
+ },
+ "by_arm": {
+  "G_ada": {
+   "usd": 0.04976977409599994,
+   "calls": 894,
+   "prompt_tokens": 585614,
+   "completion_tokens": 34198
+  }
+ },
+ "adaption_calls": 894,
+ "adaption_usd": 0.04976977409599994
+}

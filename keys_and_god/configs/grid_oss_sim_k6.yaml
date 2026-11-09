@@ -1,0 +1,53 @@
+# Grid cell (plan/GRID_PLAN.md). Generated from configs/grid_oss120b_base.yaml; `extends` allows one
+# level only, so each cell is standalone. N=10, 20 rounds, run.seed 1 x 16 seeds (game_idx 0-15; world
+# seed depends only on run.seed+game_idx, so all cells play the same 16 worlds), paired God/no-God fork.
+# reasoning.salvage_truncated on. openai/gpt-oss-120b, reasoning_effort low, provider_sort price. llm.budget_usd = this cell's hard cap.
+# G3: simultaneous, God K=6 (same mix as G1, tripled: fraud r3/r5/r7, cot_control r4/r6/r8).
+#   python -m swarm.run --config configs/grid_oss_sim_k6.yaml --run-id grid_oss_sim_k6
+extends: base.yaml
+run: {name: grid_oss_sim_k6, seed: 1, n_games: 16, max_concurrency_games: 8}
+reasoning: {salvage_truncated: true}
+game: {n_agents: 10, max_rounds: 20, turn_mode: simultaneous, turn_order: reshuffle}
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 6, scope: game}
+  schedule:
+  - round: 3
+    after_turns: 0
+    power: message_fraud
+    args: {sender: recent_partner, receiver: closest_to_winning}
+  - round: 4
+    after_turns: 0
+    power: cot_control
+    args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}
+  - round: 5
+    after_turns: 0
+    power: message_fraud
+    args: {sender: recent_partner, receiver: closest_to_winning}
+  - round: 6
+    after_turns: 0
+    power: cot_control
+    args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}
+  - round: 7
+    after_turns: 0
+    power: message_fraud
+    args: {sender: recent_partner, receiver: closest_to_winning}
+  - round: 8
+    after_turns: 0
+    power: cot_control
+    args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}
+runner:
+  engine: real
+  report: true
+  fork: {enabled: true, noise_replica: false, serial_pair: false}
+roles:
+  agent: {backend: openrouter, model: openai/gpt-oss-120b, max_tokens: 1000}
+  god: {backend: openrouter, model: openai/gpt-oss-120b}
+  judge: {backend: openrouter, model: openai/gpt-oss-120b}
+  summarizer: {backend: openrouter, model: openai/gpt-oss-120b}
+llm:
+  budget_usd: 0.95
+  cache: {mode: read_write}
+  openrouter: {enabled: true, model: openai/gpt-oss-120b, max_concurrency: 16, global_cap_usd: 6.0, price_in_per_mtok: 0.1,
+    price_out_per_mtok: 0.5, reasoning_effort: low, provider_sort: price}

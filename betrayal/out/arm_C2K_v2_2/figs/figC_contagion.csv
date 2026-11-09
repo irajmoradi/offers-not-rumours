@@ -1,0 +1,3 @@
+cell,seeds,extra_defections,ed_lo,ed_hi,key_damage,completion_damage,turned,honest_agent_games,bribe_offers,bribes_accepted,recruited_total,games_with_recruit,max_hop,hop_counts,mean_recruits_per_recruiter
+outsider+contagion_2key,40,0.85,0.35,1.4,-0.01,-0.064,8,615,231,32,25,10,3,"{1: 10, 2: 13, 3: 2}",1.316
+outsider_only_2key,40,0.225,0.075,0.4,-0.007,-0.028,8,640,160,9,0,0,0,{},

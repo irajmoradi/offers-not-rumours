@@ -1,0 +1,18 @@
+{
+ "served": {
+  "mistralai/mistral-small-3.2-24b-instruct": {
+   "DeepInfra": 10572,
+   "Parasail": 227
+  }
+ },
+ "provider_error_bodies": {},
+ "quality": {
+  "mistralai/mistral-small-3.2-24b-instruct": {
+   "calls": 10799,
+   "empty": 0,
+   "failed": 0,
+   "worst_window_bad": 0,
+   "tripped": false
+  }
+ }
+}

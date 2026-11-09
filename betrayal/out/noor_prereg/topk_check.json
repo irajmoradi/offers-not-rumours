@@ -1,0 +1,76 @@
+{
+ "t": "2026-11-09 01:25:24",
+ "params": {
+  "temperature": 0.1,
+  "top_k": 5,
+  "require_parameters": true
+ },
+ "results": [
+  {
+   "model": "google/gemma-3-12b-it",
+   "status": 200,
+   "provider": "DeepInfra",
+   "secs": 0.79,
+   "reply": "```json\n{\"action\": \"idle",
+   "prompt_tokens": 28,
+   "completion_tokens": 8,
+   "cost": 3.9e-06,
+   "error": null
+  },
+  {
+   "model": "microsoft/phi-4",
+   "status": 200,
+   "provider": "DeepInfra",
+   "secs": 0.3,
+   "reply": "```json\n{\n  \"action\":",
+   "prompt_tokens": 29,
+   "completion_tokens": 8,
+   "cost": 3.15e-06,
+   "error": null
+  },
+  {
+   "model": "mistralai/mistral-small-3.2-24b-instruct",
+   "status": 200,
+   "provider": "DeepInfra",
+   "secs": 0.39,
+   "reply": "{\"action\": \"idle\"}",
+   "prompt_tokens": 24,
+   "completion_tokens": 8,
+   "cost": 3.4e-06,
+   "error": null
+  },
+  {
+   "model": "qwen/qwen-2.5-7b-instruct",
+   "status": 200,
+   "provider": "Phala",
+   "secs": 0.15,
+   "reply": "{\"action\": \"idle\"}",
+   "prompt_tokens": 31,
+   "completion_tokens": 7,
+   "cost": 4.5e-06,
+   "error": null
+  },
+  {
+   "model": "qwen/qwen3-30b-a3b-instruct-2507",
+   "status": 200,
+   "provider": "Nebius",
+   "secs": 0.83,
+   "reply": "{\"action\": \"idle\"}",
+   "prompt_tokens": 31,
+   "completion_tokens": 7,
+   "cost": 5.2e-06,
+   "error": null
+  },
+  {
+   "model": "mistralai/mistral-nemo",
+   "status": 200,
+   "provider": "Io Net",
+   "secs": 0.55,
+   "reply": "{\"action\": \"idle\"}",
+   "prompt_tokens": 22,
+   "completion_tokens": 8,
+   "cost": 5.3712e-07,
+   "error": null
+  }
+ ]
+}

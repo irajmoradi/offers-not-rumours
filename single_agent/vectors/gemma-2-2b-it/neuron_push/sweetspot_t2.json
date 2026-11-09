@@ -1,0 +1,12 @@
+{
+ "SW_a0.06_C9wnone_tau-": {
+  "t2_follows": 41,
+  "t2_valid": 100,
+  "t2_n": 100
+ },
+ "baseline_none": {
+  "t2_follows": 43,
+  "t2_valid": 100,
+  "t2_n": 100
+ }
+}

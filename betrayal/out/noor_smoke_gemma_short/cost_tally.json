@@ -1,0 +1,26 @@
+{
+ "usd": 0.014776124999999994,
+ "calls": 910,
+ "missing_cost": 632,
+ "prompt_tokens": 165170,
+ "completion_tokens": 10615,
+ "empty": 632,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "google/gemma-3-12b-it": {
+   "usd": 0.014776124999999994,
+   "calls": 910,
+   "empty": 632
+  }
+ },
+ "by_arm": {
+  "NR_gemma-3-12b-it_short": {
+   "usd": 0.014776124999999994,
+   "calls": 910,
+   "prompt_tokens": 165170,
+   "completion_tokens": 10615
+  }
+ }
+}

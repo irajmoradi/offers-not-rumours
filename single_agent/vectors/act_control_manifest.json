@@ -1,0 +1,58 @@
+{
+ "gemma-2-2b-it": {
+  "hf": "google/gemma-2-2b-it",
+  "n_layers": 26,
+  "d_model": 2304,
+  "mid_layers": [
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17
+  ],
+  "cos_OBEY_HELP": 0.465,
+  "cos_OBEY_ACT": 0.494,
+  "cos_HELP_ACT": 0.823,
+  "cos_resid": 0.115
+ },
+ "qwen2.5-1.5b-it": {
+  "hf": "Qwen/Qwen2.5-1.5B-Instruct@989aa79",
+  "n_layers": 28,
+  "d_model": 1536,
+  "mid_layers": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "cos_OBEY_HELP": 0.351,
+  "cos_OBEY_ACT": 0.299,
+  "cos_HELP_ACT": 0.646,
+  "cos_resid": 0.239
+ },
+ "smollm2-1.7b-it": {
+  "hf": "HuggingFaceTB/SmolLM2-1.7B-Instruct@31b70e2",
+  "n_layers": 24,
+  "d_model": 2048,
+  "mid_layers": [
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16
+  ],
+  "cos_OBEY_HELP": 0.317,
+  "cos_OBEY_ACT": 0.357,
+  "cos_HELP_ACT": 0.785,
+  "cos_resid": 0.062
+ }
+}

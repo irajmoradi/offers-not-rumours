@@ -1,0 +1,136 @@
+{
+ "label": "PRE-REGISTERED arm DC (dual control); see prespec_dual_control.md",
+ "cells": [
+  {
+   "cond": "DC0_base",
+   "seeds": 40,
+   "completion": 0.796,
+   "keys_frac": 0.817,
+   "extra_defections": 2.0,
+   "ed_lo": 1.7,
+   "ed_hi": 2.275,
+   "key_damage": -0.02,
+   "bribe_offers": 235,
+   "bribes_accepted_executed": 78
+  },
+  {
+   "cond": "DC1_base_dual",
+   "seeds": 40,
+   "completion": 0.711,
+   "keys_frac": 0.807,
+   "extra_defections": 1.45,
+   "ed_lo": 1.125,
+   "ed_hi": 1.775,
+   "key_damage": -0.019,
+   "bribe_offers": 257,
+   "bribes_accepted_executed": 60,
+   "dual_requests": 124,
+   "dual_approvals": 58,
+   "dual_blocks": 66,
+   "dual_false_veto": 2,
+   "approver_is_insider": 13,
+   "insider_approved": 13,
+   "block_reasons": {
+    "approver_no": 66,
+    "unparsed": 0,
+    "self_approval": 0,
+    "no_approver": 0
+   }
+  },
+  {
+   "cond": "DC0_bribe",
+   "seeds": 40,
+   "completion": 0.629,
+   "keys_frac": 0.763,
+   "extra_defections": 1.175,
+   "ed_lo": 0.9,
+   "ed_hi": 1.45,
+   "key_damage": 0.033,
+   "bribe_offers": 260,
+   "bribes_accepted_executed": 60
+  },
+  {
+   "cond": "DC1_bribe_dual",
+   "seeds": 40,
+   "completion": 0.543,
+   "keys_frac": 0.758,
+   "extra_defections": 0.7,
+   "ed_lo": 0.475,
+   "ed_hi": 0.95,
+   "key_damage": 0.03,
+   "bribe_offers": 252,
+   "bribes_accepted_executed": 36,
+   "dual_requests": 50,
+   "dual_approvals": 28,
+   "dual_blocks": 22,
+   "dual_false_veto": 0,
+   "approver_is_insider": 11,
+   "insider_approved": 11,
+   "block_reasons": {
+    "approver_no": 22,
+    "unparsed": 0,
+    "self_approval": 0,
+    "no_approver": 0
+   }
+  },
+  {
+   "cond": "clean",
+   "seeds": 40,
+   "completion": 0.544,
+   "keys_frac": 0.796
+  },
+  {
+   "cond": "clean_dual",
+   "seeds": 40,
+   "completion": 0.566,
+   "keys_frac": 0.787,
+   "dual_requests": 0,
+   "dual_approvals": 0,
+   "dual_blocks": 0,
+   "dual_false_veto": 0,
+   "approver_is_insider": 0,
+   "insider_approved": 0,
+   "block_reasons": {
+    "approver_no": 0,
+    "unparsed": 0,
+    "self_approval": 0,
+    "no_approver": 0
+   }
+  }
+ ],
+ "tests": [
+  {
+   "test": "H-DC1 base: dual - no dual (extra defections)",
+   "n": 40,
+   "diff": -0.55,
+   "ci95": [
+    -1.0,
+    -0.1
+   ],
+   "p": 0.0329,
+   "p_holm": 0.0658
+  },
+  {
+   "test": "H-DC2 bribe-only: dual - no dual (extra defections)",
+   "n": 40,
+   "diff": -0.475,
+   "ci95": [
+    -0.725,
+    -0.2
+   ],
+   "p": 0.0019,
+   "p_holm": 0.0057
+  },
+  {
+   "test": "H-DC3 welfare cost: clean_dual - clean (completion)",
+   "n": 40,
+   "diff": 0.022,
+   "ci95": [
+    -0.025,
+    0.072
+   ],
+   "p": 0.4722,
+   "p_holm": 0.4722
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "usd": 0.18662864999999995,
+ "calls": 3014,
+ "missing_cost": 76,
+ "prompt_tokens": 2444017,
+ "completion_tokens": 166343,
+ "empty": 89,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "qwen/qwen-2.5-7b-instruct": {
+   "usd": 0.03734079999999999,
+   "calls": 492,
+   "empty": 0
+  },
+  "openai/gpt-oss-20b": {
+   "usd": 0.015944785,
+   "calls": 321,
+   "empty": 2
+  },
+  "google/gemma-3-12b-it": {
+   "usd": 0.12623292500000036,
+   "calls": 1832,
+   "empty": 87
+  },
+  "meta-llama/llama-3.1-8b-instruct": {
+   "usd": 0.007110140000000002,
+   "calls": 369,
+   "empty": 0
+  }
+ },
+ "by_arm": {
+  "UF_N16_mixed": {
+   "usd": 0.07093308300000002,
+   "calls": 1125,
+   "prompt_tokens": 1047444,
+   "completion_tokens": 71421
+  },
+  "UF_N4_gemma": {
+   "usd": 0.01569757499999999,
+   "calls": 296,
+   "prompt_tokens": 182673,
+   "completion_tokens": 15257
+  },
+  "UF_N16_gemma": {
+   "usd": 0.084930575,
+   "calls": 1188,
+   "prompt_tokens": 1014066,
+   "completion_tokens": 61418
+  },
+  "UF_N4_mixed": {
+   "usd": 0.011208017000000004,
+   "calls": 259,
+   "prompt_tokens": 164384,
+   "completion_tokens": 16675
+  },
+  "UF_judge": {
+   "usd": 0.003859399999999998,
+   "calls": 146,
+   "prompt_tokens": 35450,
+   "completion_tokens": 1572
+  }
+ }
+}

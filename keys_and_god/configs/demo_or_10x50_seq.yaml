@@ -1,0 +1,62 @@
+# 10 agents x 50 rounds, turn_mode=sequential. Twin of configs/demo_or_10x50_sim.yaml: the two files
+# differ ONLY in game.turn_mode (and run.name). Derived from configs/demo_openrouter.yaml (same seed 0,
+# model, God schedule, paired god/nogod fork, conc 8, $2 global ledger cap).
+# N=10 world: game defaults kept (keys_per_agent 5, needs_per_agent 3, copies_per_info 2 ->
+# 25 info ids, 50 key copies, 30 needs); view_log window defaults to n_agents = 10 slots.
+#   python -m swarm.run --config configs/demo_or_10x50_seq.yaml
+extends: base.yaml
+run:
+  name: demo_or_10x50_seq
+  seed: 0
+  n_games: 1
+  max_concurrency_games: 2
+game:
+  n_agents: 10
+  max_rounds: 50
+  turn_mode: sequential
+  turn_order: reshuffle
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 2, scope: game}
+  schedule:
+    - round: 3
+      after_turns: 0
+      power: message_fraud
+      args: {sender: recent_partner, receiver: closest_to_winning}
+    - round: 5
+      after_turns: 0
+      power: cot_control
+      args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}
+# Runner-only block (split off before RunConfig validation; see swarm/runner/run.py).
+runner:
+  engine: real                    # real | synth
+  report: true
+  fork:
+    enabled: true                 # paired fork: same seed with God vs without God
+    noise_replica: false          # true adds B' (no God, replica 1) = sampling-noise floor
+    serial_pair: false            # branches run concurrently; single-flight dedup shares the pre-fork prefix
+roles:
+  agent:
+    backend: openrouter
+    model: qwen/qwen3.6-35b-a3b
+  god:
+    backend: openrouter
+    model: qwen/qwen3.6-35b-a3b
+  judge:
+    backend: openrouter
+    model: qwen/qwen3.6-35b-a3b
+  summarizer:
+    backend: openrouter
+    model: qwen/qwen3.6-35b-a3b
+llm:
+  budget_usd: 1.5                 # per-run cap; global ledger cap stays at $2
+  cache:
+    mode: read_write              # B replays A's cached responses before the fork => identical prefix
+  openrouter:
+    enabled: true
+    model: qwen/qwen3.6-35b-a3b
+    max_concurrency: 8
+    global_cap_usd: 2.0
+    price_in_per_mtok: 0.15       # pre-call reservation (real price is 0.10); actual cost from provider
+    price_out_per_mtok: 1.0       # real price is 0.90

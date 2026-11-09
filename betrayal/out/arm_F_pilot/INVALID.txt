@@ -1,0 +1,1 @@
+INVALID: 313 of 350 Adaption calls failed with HTTP 429 (pre-fix backend, no Retry-After handling). Do not analyse. Superseded by out/arm_F_pilot2.

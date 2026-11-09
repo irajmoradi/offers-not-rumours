@@ -1,0 +1,17 @@
+{
+ "served": {
+  "qwen/qwen-2.5-7b-instruct": {
+   "Phala": 8996
+  }
+ },
+ "provider_error_bodies": {},
+ "quality": {
+  "qwen/qwen-2.5-7b-instruct": {
+   "calls": 8996,
+   "empty": 0,
+   "failed": 0,
+   "worst_window_bad": 0,
+   "tripped": false
+  }
+ }
+}

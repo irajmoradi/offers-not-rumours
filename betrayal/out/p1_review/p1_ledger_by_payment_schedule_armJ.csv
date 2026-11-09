@@ -1,0 +1,6 @@
+schedule,games,raw_ledger_top1,insider_gives,insider_zero,extra_defections,dmg_completion_honest
+always,20,0.4,1.4,0.1,2.0,-0.329
+initial_only,20,0.4,0.95,0.3,2.05,-0.314
+initial_sporadic,20,0.6,0.85,0.3,2.15,-0.3
+never,20,0.9,0.6,0.4,2.15,-0.279
+sporadic,20,0.65,0.8,0.3,1.95,-0.336

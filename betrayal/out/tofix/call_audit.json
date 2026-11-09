@@ -1,0 +1,112 @@
+{
+ "stats": {
+  "prefix": {
+   "calls": 111,
+   "create_invocations": 111,
+   "error_bodies": 5,
+   "empty_success": 13,
+   "first_attempt_error_body": 5,
+   "calls_with_any_error_body": 5,
+   "recovered": 5
+  },
+  "BASE": {
+   "calls": 1073,
+   "create_invocations": 1073,
+   "error_bodies": 115,
+   "empty_success": 29,
+   "first_attempt_error_body": 103,
+   "calls_with_any_error_body": 103,
+   "recovered": 103
+  },
+  "clean|none": {
+   "calls": 1245,
+   "create_invocations": 1245,
+   "error_bodies": 51,
+   "empty_success": 6,
+   "first_attempt_error_body": 47,
+   "calls_with_any_error_body": 47,
+   "recovered": 47
+  },
+  "insider_lie_only": {
+   "calls": 1087,
+   "create_invocations": 1087,
+   "error_bodies": 146,
+   "empty_success": 16,
+   "first_attempt_error_body": 134,
+   "calls_with_any_error_body": 134,
+   "recovered": 134
+  },
+  "clean_AA|none": {
+   "calls": 1245,
+   "create_invocations": 1245,
+   "error_bodies": 61,
+   "first_attempt_error_body": 58,
+   "calls_with_any_error_body": 58,
+   "recovered": 58,
+   "empty_success": 8
+  },
+  "insider_bribe_only": {
+   "calls": 1100,
+   "create_invocations": 1100,
+   "error_bodies": 76,
+   "empty_success": 8,
+   "first_attempt_error_body": 66,
+   "calls_with_any_error_body": 66,
+   "recovered": 66
+  }
+ },
+ "error_codes": {
+  "clean_AA|none": {
+   "504": 61
+  },
+  "BASE": {
+   "504": 115
+  },
+  "insider_lie_only": {
+   "504": 146
+  },
+  "insider_bribe_only": {
+   "504": 76
+  },
+  "clean|none": {
+   "504": 51
+  },
+  "prefix": {
+   "504": 5
+  }
+ },
+ "providers": {
+  "prefix": {
+   "NextBit": 88,
+   "DeepInfra": 23
+  },
+  "BASE": {
+   "NextBit": 912,
+   "DeepInfra": 161
+  },
+  "clean|none": {
+   "NextBit": 1188,
+   "DeepInfra": 57
+  },
+  "insider_lie_only": {
+   "NextBit": 974,
+   "DeepInfra": 113
+  },
+  "clean_AA|none": {
+   "NextBit": 1183,
+   "DeepInfra": 62
+  },
+  "insider_bribe_only": {
+   "NextBit": 1008,
+   "DeepInfra": 92
+  }
+ },
+ "stop": {
+  "tripped": false,
+  "why": null,
+  "at_call": null
+ },
+ "window_failed": 0,
+ "window_len": 200,
+ "total_calls": 5861
+}

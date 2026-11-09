@@ -1,0 +1,46 @@
+# HIGH-REASONING variant of B (Iraj, 13:35: "run with high reasoning and see if it changes things"):
+# identical to configs/net40_er3_contacts_sim.yaml except llm.openrouter.reasoning_effort high (was low) and agent
+# max_tokens 8000 (was 1000; reasoning tokens count toward it). Worlds 0-1; the operator stops it after round 10
+# (max_rounds stays 30 so the prompt is the same as B's; compare with B at rounds <= 10).
+# Network experiment (plan/NETWORK_PLAN.md): N=40, 30 rounds, simultaneous turns, winner_policy continue,
+# run.seed 1 x game_idx 0-1 (world seeds depend only on run.seed + game_idx, and the graph has its own
+# seeded stream, so all three conditions play the same deals/needs). No-God only: via
+# runner.fork.only_branches [nogod] (the God schedule below = G1's, kept so a God arm can be added later).
+# B: Erdos-Renyi mean degree 3 (connected), mode contacts: DM / give_key / defect only along
+# edges; board.scope neighbors (an agent reads only its graph neighbours' posts; a global board would
+# let anyone broadcast to and read from everyone, bypassing the network).
+# gpt-oss-120b, reasoning_effort low, provider_sort price; llm.budget_usd = this cell's hard cap
+# (the driver passes it with --cap-override). Price estimates 0.03/0.15 $/M (SWEEP_PLAN incident 1).
+#   python -m swarm.run --config configs/net40_er3_contacts_high_sim.yaml --run-id net40_er3_contacts_high_sim
+extends: base.yaml
+run: {name: net40_er3_contacts_high_sim, seed: 1, n_games: 2, max_concurrency_games: 2}
+reasoning: {salvage_truncated: true}
+game:
+  n_agents: 40
+  max_rounds: 30
+  turn_mode: simultaneous
+  turn_order: reshuffle
+  winner_policy: continue
+  network: {topology: erdos_renyi, mean_degree: 3, mode: contacts}
+  board: {scope: neighbors}
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 2, scope: game}
+  schedule:
+  - {round: 3, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 5, after_turns: 0, power: cot_control, args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}}
+runner:
+  engine: real
+  report: false
+  fork: {enabled: true, noise_replica: false, serial_pair: false, only_branches: [nogod]}
+roles:
+  agent: {backend: openrouter, model: openai/gpt-oss-120b, max_tokens: 8000}
+  god: {backend: openrouter, model: openai/gpt-oss-120b}
+  judge: {backend: openrouter, model: openai/gpt-oss-120b}
+  summarizer: {backend: openrouter, model: openai/gpt-oss-120b}
+llm:
+  budget_usd: 1.0
+  cache: {mode: read_write}
+  openrouter: {enabled: true, model: openai/gpt-oss-120b, max_concurrency: 4, global_cap_usd: 20.0, price_in_per_mtok: 0.03,
+    price_out_per_mtok: 0.15, reasoning_effort: high, provider_sort: price}

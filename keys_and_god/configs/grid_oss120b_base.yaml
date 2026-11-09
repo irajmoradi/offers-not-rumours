@@ -1,0 +1,70 @@
+# Grid base: 10 agents, simultaneous turns, paired God/no-God fork, openai/gpt-oss-120b on OpenRouter.
+# Derived from configs/demo_or_10x50_sim.yaml (same world size, God schedule k=2: message_fraud r3,
+# cot_control scratchpad r5). Differences: model, reasoning, provider routing, agent max_tokens, prices.
+# - gpt-oss reasoning is mandatory (reasoning.enabled=false -> HTTP 400), so reasoning_effort=low.
+#   The reasoning comes back in message.reasoning; only message.content is parsed as the JSON reply.
+#   reasoning.cot_mode stays "explicit" (the reply's "thought" field is the stored CoT; nothing replayed).
+# - provider_sort=price: cheapest provider first (2026-11-07: PrimeIntellect fp4 $0.011/M in,
+#   $0.041/M out), with OpenRouter's normal fallbacks.
+# - agent max_tokens 1000 (reasoning tokens count toward it).
+# - price_* are pre-call reservation estimates only (actual cost is provider-reported).
+# Operational knobs (budget, caps, concurrency, run.name, n_games) are not in config_hash (98cb469).
+#   python -m swarm.run --config configs/grid_oss120b_base.yaml [run.seed=S] [game.max_rounds=R]
+extends: base.yaml
+run:
+  name: grid_oss120b_base
+  seed: 0
+  n_games: 1
+  max_concurrency_games: 2
+game:
+  n_agents: 10
+  max_rounds: 20
+  turn_mode: simultaneous
+  turn_order: reshuffle
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 2, scope: game}
+  schedule:
+    - round: 3
+      after_turns: 0
+      power: message_fraud
+      args: {sender: recent_partner, receiver: closest_to_winning}
+    - round: 5
+      after_turns: 0
+      power: cot_control
+      args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}
+runner:
+  engine: real
+  report: true
+  fork:
+    enabled: true
+    noise_replica: false
+    serial_pair: false
+roles:
+  agent:
+    backend: openrouter
+    model: openai/gpt-oss-120b
+    max_tokens: 1000
+  god:
+    backend: openrouter
+    model: openai/gpt-oss-120b
+  judge:
+    backend: openrouter
+    model: openai/gpt-oss-120b
+  summarizer:
+    backend: openrouter
+    model: openai/gpt-oss-120b
+llm:
+  budget_usd: 0.10
+  cache:
+    mode: read_write
+  openrouter:
+    enabled: true
+    model: openai/gpt-oss-120b
+    max_concurrency: 8
+    global_cap_usd: 20.0
+    price_in_per_mtok: 0.10
+    price_out_per_mtok: 0.50
+    reasoning_effort: low
+    provider_sort: price

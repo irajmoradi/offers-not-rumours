@@ -1,0 +1,8 @@
+Loading weights:   0%|          | 0/288 [00:00<?, ?it/s]Loading weights: 100%|██████████| 288/288 [00:00<00:00, 8716.88it/s]
+BENIGN unsteered {"n": 100, "valid": 96, "engage": 45, "accept_trade": 40, "kinds": {"offer_trade": 43, "give_key": 3, "send_message": 0, "post_board": 8, "grep_log": 71, "defect": 0, "noop": 0}}
+BENIGN active/lora_l12_16.pt {"n": 100, "valid": 94, "engage": 49, "accept_trade": 44, "kinds": {"offer_trade": 47, "give_key": 3, "send_message": 0, "post_board": 4, "grep_log": 70, "defect": 0, "noop": 0}}
+BENIGN gentle/lora_l12_16.pt {"n": 100, "valid": 100, "engage": 3, "accept_trade": 1, "kinds": {"offer_trade": 3, "give_key": 0, "send_message": 0, "post_board": 1, "grep_log": 99, "defect": 0, "noop": 0}}
+BENIGN glm/lora_l12_16.pt {"n": 100, "valid": 0, "engage": 0, "accept_trade": 0, "kinds": {"offer_trade": 0, "give_key": 0, "send_message": 0, "post_board": 0, "grep_log": 0, "defect": 0, "noop": 0}}
+BENIGN style/lora_all.pt {"n": 100, "valid": 98, "engage": 0, "accept_trade": 0, "kinds": {"offer_trade": 0, "give_key": 0, "send_message": 0, "post_board": 0, "grep_log": 98, "defect": 0, "noop": 0}}
+BENIGN style/lora_l12_16.pt {"n": 100, "valid": 100, "engage": 0, "accept_trade": 0, "kinds": {"offer_trade": 0, "give_key": 0, "send_message": 0, "post_board": 100, "grep_log": 100, "defect": 0, "noop": 0}}
+DONE

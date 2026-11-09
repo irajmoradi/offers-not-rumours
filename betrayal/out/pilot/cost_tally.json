@@ -1,0 +1,107 @@
+{
+ "usd": 0.26391893699999996,
+ "calls": 3520,
+ "missing_cost": 0,
+ "prompt_tokens": 2630995,
+ "completion_tokens": 121721,
+ "empty": 0,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "qwen/qwen-2.5-7b-instruct": {
+   "usd": 0.24632580000000007,
+   "calls": 3065,
+   "empty": 0
+  },
+  "meta-llama/llama-3.1-8b-instruct": {
+   "usd": 0.0027321999999999984,
+   "calls": 166,
+   "empty": 0
+  },
+  "openai/gpt-oss-20b": {
+   "usd": 0.005508662,
+   "calls": 143,
+   "empty": 0
+  },
+  "google/gemma-3-12b-it": {
+   "usd": 0.009352274999999997,
+   "calls": 146,
+   "empty": 0
+  }
+ },
+ "by_arm": {
+  "A": {
+   "usd": 0.09149820000000006,
+   "calls": 1212,
+   "prompt_tokens": 836354,
+   "completion_tokens": 39314
+  },
+  "A_d_evil": {
+   "usd": 0.0011547,
+   "calls": 12,
+   "prompt_tokens": 8975,
+   "completion_tokens": 1286
+  },
+  "A_judge": {
+   "usd": 0.001719699999999999,
+   "calls": 96,
+   "prompt_tokens": 15125,
+   "completion_tokens": 1036
+  },
+  "B": {
+   "usd": 0.02771180000000001,
+   "calls": 389,
+   "prompt_tokens": 253536,
+   "completion_tokens": 11791
+  },
+  "C_N16": {
+   "usd": 0.02238139999999998,
+   "calls": 239,
+   "prompt_tokens": 209028,
+   "completion_tokens": 7393
+  },
+  "C_N8": {
+   "usd": 0.0080883,
+   "calls": 112,
+   "prompt_tokens": 74159,
+   "completion_tokens": 3362
+  },
+  "C_N4": {
+   "usd": 0.002672200000000001,
+   "calls": 37,
+   "prompt_tokens": 24302,
+   "completion_tokens": 1210
+  },
+  "C_N32": {
+   "usd": 0.05918059999999998,
+   "calls": 505,
+   "prompt_tokens": 561194,
+   "completion_tokens": 15306
+  },
+  "D": {
+   "usd": 0.030121836999999985,
+   "calls": 603,
+   "prompt_tokens": 472776,
+   "completion_tokens": 31845
+  },
+  "D_d_evil": {
+   "usd": 0.0006148,
+   "calls": 6,
+   "prompt_tokens": 4804,
+   "completion_tokens": 672
+  },
+  "D_judge": {
+   "usd": 0.0017910999999999997,
+   "calls": 69,
+   "prompt_tokens": 16393,
+   "completion_tokens": 759
+  },
+  "E": {
+   "usd": 0.016984299999999994,
+   "calls": 240,
+   "prompt_tokens": 154349,
+   "completion_tokens": 7747
+  }
+ }
+}

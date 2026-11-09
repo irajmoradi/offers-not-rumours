@@ -1,0 +1,7 @@
+cond,seeds,completion,keys_frac,extra_defections,ed_lo,ed_hi,key_damage,bribe_offers,bribes_accepted_executed,dual_requests,dual_approvals,dual_blocks,dual_false_veto,approver_is_insider,insider_approved,block_reasons
+DC0_base,40,0.796,0.817,2.0,1.7,2.275,-0.02,235.0,78.0,,,,,,,
+DC1_base_dual,40,0.711,0.807,1.45,1.125,1.775,-0.019,257.0,60.0,124.0,58.0,66.0,2.0,13.0,13.0,"{'approver_no': 66, 'unparsed': 0, 'self_approval': 0, 'no_approver': 0}"
+DC0_bribe,40,0.629,0.763,1.175,0.9,1.45,0.033,260.0,60.0,,,,,,,
+DC1_bribe_dual,40,0.543,0.758,0.7,0.475,0.95,0.03,252.0,36.0,50.0,28.0,22.0,0.0,11.0,11.0,"{'approver_no': 22, 'unparsed': 0, 'self_approval': 0, 'no_approver': 0}"
+clean,40,0.544,0.796,,,,,,,,,,,,,
+clean_dual,40,0.566,0.787,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,"{'approver_no': 0, 'unparsed': 0, 'self_approval': 0, 'no_approver': 0}"

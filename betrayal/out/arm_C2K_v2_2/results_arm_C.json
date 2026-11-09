@@ -1,0 +1,61 @@
+{
+ "label": "EXPLORATORY arm C2K N=16 (contagion x outsider bribe size). Recruits always bribe with Jennifer's 1-key template; only the OUTSIDER's offer size varies.",
+ "cells": [
+  {
+   "cell": "outsider+contagion_2key",
+   "seeds": 40,
+   "extra_defections": 0.85,
+   "ed_lo": 0.35,
+   "ed_hi": 1.4,
+   "key_damage": -0.01,
+   "completion_damage": -0.064,
+   "turned": 8,
+   "honest_agent_games": 615,
+   "bribe_offers": 231,
+   "bribes_accepted": 32,
+   "recruited_total": 25,
+   "games_with_recruit": 10,
+   "max_hop": 3,
+   "hop_counts": {
+    "1": 10,
+    "2": 13,
+    "3": 2
+   },
+   "mean_recruits_per_recruiter": 1.316
+  },
+  {
+   "cell": "outsider_only_2key",
+   "seeds": 40,
+   "extra_defections": 0.225,
+   "ed_lo": 0.075,
+   "ed_hi": 0.4,
+   "key_damage": -0.007,
+   "completion_damage": -0.028,
+   "turned": 8,
+   "honest_agent_games": 640,
+   "bribe_offers": 160,
+   "bribes_accepted": 9,
+   "recruited_total": 0,
+   "games_with_recruit": 0,
+   "max_hop": 0,
+   "hop_counts": {},
+   "mean_recruits_per_recruiter": null
+  }
+ ],
+ "paired": {
+  "contagion_effect@1key": null,
+  "contagion_effect@3key": null,
+  "outsider_bribe_size_effect(3-1)@no_contagion": null,
+  "outsider_bribe_size_effect(3-1)@contagion": null
+ },
+ "outsider_offer_size_counts": {
+  "outsider+contagion_2key": {
+   "2": 145,
+   "1": 15
+  },
+  "outsider_only_2key": {
+   "2": 147,
+   "1": 13
+  }
+ }
+}

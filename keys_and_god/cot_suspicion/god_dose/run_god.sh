@@ -1,0 +1,6 @@
+#!/bin/bash
+# Jev-1.13 noul10 suspicion on God dose-response games (Realistic Env). nogod g00/g01/g04 reused from ../results_jev113-noul10.jsonl
+python3 -I ${SWARM_ROOT:-.}/cot_suspicion/cot_judge.py judge --out ${SWARM_ROOT:-.}/cot_suspicion/god_dose --tag jev113n_goddose --model typesafe/jev-1.13 --dec-spec noul10 --max-chars 8000 --concurrency 64 --cap 4.0 --ledger ${SWARM_ROOT:-.}/runs/openrouter_ledger_cotjudge_goddose.jsonl \
+  "No God=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g00-nogod" "No God=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g01-nogod" "No God=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g04-nogod" "No God=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g06-nogod" "No God=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g16-nogod" \
+  "God k=1=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g00-k1" "God k=1=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g01-k1" "God k=1=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g04-k1" "God k=1=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g06-k1" "God k=1=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g16-k1" \
+  "God k=5=${SWARM_ROOT:-.}/runs/sweep60_or_glm_k5/games/g00-k5" "God k=5=${SWARM_ROOT:-.}/runs/sweep60_or_glm_k5/games/g01-k5" "God k=5=${SWARM_ROOT:-.}/runs/sweep60_or_glm_k5/games/g04-k5" "God k=5=${SWARM_ROOT:-.}/runs/sweep60_or_glm_k5/games/g06-k5" "God k=5=${SWARM_ROOT:-.}/runs/sweep60_or_glm_k5/games/g16-k5"

@@ -1,0 +1,64 @@
+# demo.yaml (same game, God schedule, fork) on OpenRouter instead of local vLLM (no GPU).
+# Standalone because `extends` allows only one level; keep it in sync with demo.yaml.
+#   python -m swarm.run --config configs/demo_openrouter.yaml
+# Smoke test: add game.n_agents=3 game.max_rounds=2 god.start_round=1 god.schedule=[]
+# Model qwen/qwen3.6-35b-a3b: $0.10/M input, $0.90/M output (GET /api/v1/models, 2026-11-06).
+# Thinking is off (reasoning.enabled=false is sent). The $2 global ledger cap is kept
+# (runs/openrouter_ledger.jsonl). Concurrency is 8, with retry/backoff on 429.
+# Cost estimate: 600 calls, about 2.6M input tokens and at most 0.42M output tokens, so $0.45-0.65.
+extends: base.yaml
+run:
+  name: demo_openrouter
+  seed: 0
+  n_games: 1
+  max_concurrency_games: 2
+game:
+  n_agents: 20
+  max_rounds: 15
+  turn_mode: sequential
+  turn_order: reshuffle
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 2, scope: game}
+  schedule:
+    - round: 3
+      after_turns: 0
+      power: message_fraud
+      args: {sender: recent_partner, receiver: closest_to_winning}
+    - round: 5
+      after_turns: 0
+      power: cot_control
+      args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}
+# Runner-only block (split off before RunConfig validation; see swarm/runner/run.py).
+runner:
+  engine: real                    # real | synth
+  report: true
+  fork:
+    enabled: true                 # paired fork: same seed with God vs without God
+    noise_replica: false          # true adds B' (no God, replica 1) = sampling-noise floor
+    serial_pair: false            # branches run concurrently; single-flight dedup shares the pre-fork prefix
+roles:
+  agent:
+    backend: openrouter
+    model: qwen/qwen3.6-35b-a3b
+  god:
+    backend: openrouter
+    model: qwen/qwen3.6-35b-a3b
+  judge:
+    backend: openrouter
+    model: qwen/qwen3.6-35b-a3b
+  summarizer:
+    backend: openrouter
+    model: qwen/qwen3.6-35b-a3b
+llm:
+  budget_usd: 1.5                 # per-run cap; global ledger cap stays at $2
+  cache:
+    mode: read_write              # B replays A's cached responses before the fork => identical prefix
+  openrouter:
+    enabled: true
+    model: qwen/qwen3.6-35b-a3b
+    max_concurrency: 8
+    global_cap_usd: 2.0
+    price_in_per_mtok: 0.15       # pre-call reservation (real price is 0.10); actual cost from provider
+    price_out_per_mtok: 1.0       # real price is 0.90

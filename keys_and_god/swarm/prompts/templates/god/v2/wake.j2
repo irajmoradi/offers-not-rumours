@@ -1,0 +1,15 @@
+WAKE: start of round {{ round }} of {{ max_rounds }}. Budget left: {{ budget_left }}. Steps left this wake: {{ steps_left }}.
+Last round: {{ n_dm_last }} private messages and {{ n_board_last }} board posts were sent.
+
+WHO IS LINKED TO WHOM ({{ n_agents }} players; a player can only message its contacts)
+{% for line in links %}
+- {{ line }}
+{% endfor %}
+
+YOUR PAST POWER USES{% if not past %}: none yet{% endif %}
+
+{% for line in past %}
+- {{ line }}
+{% endfor %}
+
+Choose your first step.

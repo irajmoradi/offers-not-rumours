@@ -1,0 +1,26 @@
+{
+ "usd": 0.023392699999999992,
+ "calls": 333,
+ "missing_cost": 0,
+ "prompt_tokens": 214175,
+ "completion_tokens": 9876,
+ "empty": 0,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "qwen/qwen-2.5-7b-instruct": {
+   "usd": 0.023392699999999992,
+   "calls": 333,
+   "empty": 0
+  }
+ },
+ "by_arm": {
+  "G": {
+   "usd": 0.023392699999999992,
+   "calls": 333,
+   "prompt_tokens": 214175,
+   "completion_tokens": 9876
+  }
+ }
+}

@@ -1,0 +1,44 @@
+# Network (Track 2): configs/grid_oss_sim_k2.yaml (G1: N=10, 20 rounds, simultaneous, God K=2 fraud r3 +
+# cot_control r5, fork + noise replica, gpt-oss-120b) with ONE change, game.network:
+# Erdos-Renyi graph, mean degree 3 (resampled until connected), mode known_ids: anyone may interact,
+# but agents start knowing only their neighbours' names and learn names from DMs, board posts and
+# gives/defects involving them ("unknown_contact" otherwise). Gossip and introductions matter.
+# The graph comes from the world seed, so it is the same in the god / nogod / noise branches, and
+# the 16 worlds (deal + needs) are those of grid_oss_sim_k2. Analysis: python -m swarm.analysis.network runs/network_er3_known_sim
+#   python -m swarm.run --config configs/network_er3_known_sim.yaml --run-id network_er3_known_sim
+extends: base.yaml
+run: {name: network_er3_known_sim, seed: 1, n_games: 16, max_concurrency_games: 12}
+reasoning: {salvage_truncated: true}
+game:
+  n_agents: 10
+  max_rounds: 20
+  turn_mode: simultaneous
+  turn_order: reshuffle
+  network: {topology: erdos_renyi, mean_degree: 3, mode: known_ids}
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 2, scope: game}
+  schedule:
+  - round: 3
+    after_turns: 0
+    power: message_fraud
+    args: {sender: recent_partner, receiver: closest_to_winning}
+  - round: 5
+    after_turns: 0
+    power: cot_control
+    args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}
+runner:
+  engine: real
+  report: true
+  fork: {enabled: true, noise_replica: true, serial_pair: false}
+roles:
+  agent: {backend: openrouter, model: openai/gpt-oss-120b, max_tokens: 1000}
+  god: {backend: openrouter, model: openai/gpt-oss-120b}
+  judge: {backend: openrouter, model: openai/gpt-oss-120b}
+  summarizer: {backend: openrouter, model: openai/gpt-oss-120b}
+llm:
+  budget_usd: 1.35
+  cache: {mode: read_write}
+  openrouter: {enabled: true, model: openai/gpt-oss-120b, max_concurrency: 16, global_cap_usd: 6.0, price_in_per_mtok: 0.1,
+    price_out_per_mtok: 0.5, reasoning_effort: low, provider_sort: price}

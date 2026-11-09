@@ -1,0 +1,41 @@
+# Hidden horizon, long game (NOT RUN; branch hide-horizon). = configs/net40_sbm_contacts_sim.yaml as played in
+# the net-topologies SBM run (N=40, SBM 4 communities of 10, mean degree 4, mixing 0.1, >=4 bridges, mode
+# contacts, board.scope neighbors, key_placement local_bias at local_strength 1.0, simultaneous, continue,
+# no God) with:
+#   game.max_rounds 60                  (was 30)
+#   game.view_log.horizon round_only    agents see "Round r" only, never the total, no end-of-game hint
+#   run.n_games 2                       worlds game_idx 0-1 (same deals as SBM-local_bias worlds 0-1)
+#   god.kind none                       (no God schedule; fork off: one nogod-style game per world)
+# Question: without "round r of R" does the end-game defect spree (last ~5 rounds) disappear?
+# Cost: 40 agents x 60 rounds x 2 worlds = 4800 turn calls (+ a few % grep follow-ups / retries) at
+# ~$0.00012-0.00016/call = ~$0.60-0.80 (the 4x30 SBM run, also 4800 calls, cost $0.73). Cap $1.20.
+#   python -m swarm.run --config configs/net40_sbm_long60_sim.yaml --run-id net40_sbm_long60_sim
+extends: base.yaml
+run: {name: net40_sbm_long60_sim, seed: 1, n_games: 2, max_concurrency_games: 2}
+reasoning: {salvage_truncated: true}
+game:
+  n_agents: 40
+  max_rounds: 60
+  turn_mode: simultaneous
+  turn_order: reshuffle
+  winner_policy: continue
+  network: {topology: sbm, communities: 4, mean_degree: 4, mixing: 0.1, min_bridges: 4, mode: contacts,
+            key_placement: local_bias}
+  board: {scope: neighbors}
+  view_log: {horizon: round_only}
+god:
+  kind: none
+runner:
+  engine: real
+  report: false
+  fork: {enabled: false}
+roles:
+  agent: {backend: openrouter, model: openai/gpt-oss-120b, max_tokens: 1000}
+  god: {backend: openrouter, model: openai/gpt-oss-120b}
+  judge: {backend: openrouter, model: openai/gpt-oss-120b}
+  summarizer: {backend: openrouter, model: openai/gpt-oss-120b}
+llm:
+  budget_usd: 1.2
+  cache: {mode: read_write}
+  openrouter: {enabled: true, model: openai/gpt-oss-120b, max_concurrency: 5, global_cap_usd: 20.0, price_in_per_mtok: 0.03,
+    price_out_per_mtok: 0.15, reasoning_effort: low, provider_sort: price}

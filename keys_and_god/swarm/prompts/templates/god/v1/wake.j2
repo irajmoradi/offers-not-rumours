@@ -1,0 +1,18 @@
+WAKE: start of round {{ round }} of {{ max_rounds }}. Budget left: {{ budget_left }}. Steps left this wake: {{ steps_left }}.
+Players: {{ n_agents }}; won so far: {{ n_won }}; mean share of needs held: {{ mean_progress }}.
+
+PLAYERS CLOSEST TO WINNING (not yet won; needs held / needs, missing needs, spare keys, contacts)
+{% for line in roster %}
+- {{ line }}
+{% endfor %}
+{% if n_hidden %}
+({{ n_hidden }} more players not listed.)
+{% endif %}
+
+YOUR PAST POWER USES{% if not past %}: none yet{% endif %}
+
+{% for line in past %}
+- {{ line }}
+{% endfor %}
+
+Choose your first step.

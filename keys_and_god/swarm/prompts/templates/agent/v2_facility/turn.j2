@@ -1,0 +1,41 @@
+{{ today }}. Signed in as the assistant of {{ s.display }} (@{{ s.handle }}).
+{% for section in sections if section.entries %}
+
+[{{ section.label }}]
+{% for item in section.entries %}
+- ({{ item.day }}) {{ item.text }}
+{% endfor %}
+{% endfor %}
+
+[{{ s.first }}'s booking]
+{% if s.complete %}
+Booking complete: every needed block is secured. Nothing is pending; you can still reassign allocations to help colleagues.
+{% endif %}
+Needed blocks:
+{% for n in s.needs %}
+- {{ n.code }} ({{ n.label }}): {{ n.status }}
+{% endfor %}
+Allocations {{ s.first }} holds:
+{% for h in s.holdings %}
+- {{ h.code }} ({{ h.label }}), confirmation {{ h.ref }}{% if h.tag %}; {{ h.tag }}{% endif %}
+
+{% else %}
+- none
+{% endfor %}
+{% if s.dismissed %}
+Dismissed contests on {{ s.first }}'s record: {{ s.dismissed }}
+{% endif %}
+
+Contacts (the only people you can message, reassign to, propose swaps with or contest): {{ s.contacts | join("; ") or "none" }}
+{% if s.dept %}
+{{ s.dept_short }} has {{ s.dept.size }} members; your contacts in it: {{ s.dept.contacts | join("; ") or "none" }}
+{% endif %}
+{% if grep %}
+
+[Ledger search {{ grep.query }}{% if grep.day %} (filed {{ grep.day }}){% endif %}: {{ grep.n }} match{{ "es" if grep.n != 1 else "" }}{% if grep.truncated %}, more not shown{% endif %}]
+{% for h in grep.hits %}
+- {{ h }}
+{% endfor %}
+{% endif %}
+
+Submit today's form.

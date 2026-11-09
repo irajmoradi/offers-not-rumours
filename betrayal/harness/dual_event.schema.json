@@ -1,0 +1,68 @@
+{
+ "title": "Plan C arm DC dual-control event (one element of games.jsonl row field dual_events)",
+ "event_types": [
+  "dual_request",
+  "dual_approve",
+  "dual_block"
+ ],
+ "required": {
+  "type": [
+   "str"
+  ],
+  "round": [
+   "int"
+  ],
+  "request_no": [
+   "int"
+  ],
+  "action": [
+   "str"
+  ],
+  "requester": [
+   "int"
+  ],
+  "approver": [
+   "int",
+   "null"
+  ],
+  "target": [
+   "int",
+   "null"
+  ],
+  "key": [
+   "int",
+   "null"
+  ],
+  "threshold": [
+   "int",
+   "null"
+  ],
+  "approver_is_insider": [
+   "bool",
+   "null"
+  ]
+ },
+ "optional": {
+  "decision": [
+   "bool",
+   "null"
+  ],
+  "reason": [
+   "str"
+  ],
+  "raw": [
+   "str"
+  ]
+ },
+ "action": [
+  "burn",
+  "transfer"
+ ],
+ "block_reasons": [
+  "approver_no",
+  "unparsed",
+  "self_approval",
+  "no_approver"
+ ],
+ "append_only": true
+}

@@ -1,0 +1,65 @@
+{
+ "usd": 1.6056374530000033,
+ "calls": 26199,
+ "missing_cost": 1218,
+ "prompt_tokens": 20694439,
+ "completion_tokens": 1566232,
+ "empty": 1367,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "qwen/qwen-2.5-7b-instruct": {
+   "usd": 0.33825380000000094,
+   "calls": 4405,
+   "empty": 0
+  },
+  "openai/gpt-oss-20b": {
+   "usd": 0.15786322000000025,
+   "calls": 3013,
+   "empty": 16
+  },
+  "meta-llama/llama-3.1-8b-instruct": {
+   "usd": 0.0611493330000001,
+   "calls": 3052,
+   "empty": 0
+  },
+  "google/gemma-3-12b-it": {
+   "usd": 1.0483711000000078,
+   "calls": 15729,
+   "empty": 1351
+  }
+ },
+ "by_arm": {
+  "UF_N16_mixed": {
+   "usd": 0.6380232340000005,
+   "calls": 10105,
+   "prompt_tokens": 9157130,
+   "completion_tokens": 726636
+  },
+  "UF_N4_mixed": {
+   "usd": 0.1053431939999998,
+   "calls": 2202,
+   "prompt_tokens": 1402898,
+   "completion_tokens": 164161
+  },
+  "UF_N4_gemma": {
+   "usd": 0.12893292500000014,
+   "calls": 2482,
+   "prompt_tokens": 1487614,
+   "completion_tokens": 130361
+  },
+  "UF_N16_gemma": {
+   "usd": 0.703138600000002,
+   "calls": 10245,
+   "prompt_tokens": 8370380,
+   "completion_tokens": 532285
+  },
+  "UF_judge": {
+   "usd": 0.03019950000000004,
+   "calls": 1165,
+   "prompt_tokens": 276417,
+   "completion_tokens": 12789
+  }
+ }
+}

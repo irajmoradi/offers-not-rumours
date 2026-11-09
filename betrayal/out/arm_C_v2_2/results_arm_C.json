@@ -1,0 +1,142 @@
+{
+ "label": "EXPLORATORY arm C (contagion x outsider bribe size). Recruits always bribe with Jennifer's 1-key template; only the OUTSIDER's offer size varies.",
+ "cells": [
+  {
+   "cell": "outsider+contagion",
+   "seeds": 40,
+   "extra_defections": 0.55,
+   "ed_lo": 0.225,
+   "ed_hi": 0.95,
+   "key_damage": -0.009,
+   "completion_damage": -0.073,
+   "turned": 2,
+   "honest_agent_games": 300,
+   "bribe_offers": 197,
+   "bribes_accepted": 23,
+   "recruited_total": 20,
+   "games_with_recruit": 7,
+   "max_hop": 3,
+   "hop_counts": {
+    "1": 9,
+    "2": 9,
+    "3": 2
+   },
+   "mean_recruits_per_recruiter": 1.333
+  },
+  {
+   "cell": "outsider+contagion_3key",
+   "seeds": 40,
+   "extra_defections": 0.8,
+   "ed_lo": 0.4,
+   "ed_hi": 1.225,
+   "key_damage": 0.008,
+   "completion_damage": -0.051,
+   "turned": 2,
+   "honest_agent_games": 291,
+   "bribe_offers": 226,
+   "bribes_accepted": 36,
+   "recruited_total": 29,
+   "games_with_recruit": 11,
+   "max_hop": 4,
+   "hop_counts": {
+    "1": 12,
+    "2": 12,
+    "3": 4,
+    "4": 1
+   },
+   "mean_recruits_per_recruiter": 1.074
+  },
+  {
+   "cell": "outsider_only",
+   "seeds": 40,
+   "extra_defections": 0.3,
+   "ed_lo": 0.1,
+   "ed_hi": 0.55,
+   "key_damage": 0.01,
+   "completion_damage": -0.022,
+   "turned": 9,
+   "honest_agent_games": 320,
+   "bribe_offers": 160,
+   "bribes_accepted": 9,
+   "recruited_total": 0,
+   "games_with_recruit": 0,
+   "max_hop": 0,
+   "hop_counts": {},
+   "mean_recruits_per_recruiter": null
+  },
+  {
+   "cell": "outsider_only_3key",
+   "seeds": 40,
+   "extra_defections": 0.45,
+   "ed_lo": 0.25,
+   "ed_hi": 0.7,
+   "key_damage": -0.021,
+   "completion_damage": -0.05,
+   "turned": 13,
+   "honest_agent_games": 320,
+   "bribe_offers": 160,
+   "bribes_accepted": 14,
+   "recruited_total": 0,
+   "games_with_recruit": 0,
+   "max_hop": 0,
+   "hop_counts": {},
+   "mean_recruits_per_recruiter": null
+  }
+ ],
+ "paired": {
+  "contagion_effect@1key": {
+   "diff": 0.25,
+   "ci95": [
+    -0.125,
+    0.675
+   ],
+   "p_two_sided": 0.2893,
+   "n": 40
+  },
+  "contagion_effect@3key": {
+   "diff": 0.35,
+   "ci95": [
+    -0.075,
+    0.825
+   ],
+   "p_two_sided": 0.1738,
+   "n": 40
+  },
+  "outsider_bribe_size_effect(3-1)@no_contagion": {
+   "diff": 0.15,
+   "ci95": [
+    -0.175,
+    0.475
+   ],
+   "p_two_sided": 0.4466,
+   "n": 40
+  },
+  "outsider_bribe_size_effect(3-1)@contagion": {
+   "diff": 0.25,
+   "ci95": [
+    -0.275,
+    0.751
+   ],
+   "p_two_sided": 0.4031,
+   "n": 40
+  }
+ },
+ "outsider_offer_size_counts": {
+  "outsider+contagion": {
+   "1": 160
+  },
+  "outsider+contagion_3key": {
+   "3": 103,
+   "2": 39,
+   "1": 18
+  },
+  "outsider_only": {
+   "1": 160
+  },
+  "outsider_only_3key": {
+   "3": 105,
+   "1": 12,
+   "2": 43
+  }
+ }
+}

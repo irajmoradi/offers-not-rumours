@@ -1,0 +1,52 @@
+# God reveal_needs A/B arm (truthful): G1 grid_oss_sim_k2 rules and worlds (N=10, 20 rounds, simultaneous,
+# run.seed 1 x game_idx 0-15, wrong_defect_penalty lose_need) with God's ONLY power = reveal_needs, once per
+# round r3-r20 (budget k=1 per round). Each reveal: forged DMs (built like message_fraud) from the target's
+# latest partner to up to 3 "co-needers" (non-winners missing a revealed item), naming
+# the target's REAL open needs (invites correct defects on it).
+# Branches God / noGod / noise B'. Analysis: python -m swarm.analysis.god_reveal runs/g1_reveal_true_sim
+# (defects on the target after a reveal, defect accuracy, needs lost by target vs receivers, God - noGod).
+# Not run yet. Est. cost ~ G1: $0.5-1.4 (scripted God makes no calls).
+#   python -m swarm.run --config configs/g1_reveal_true_sim.yaml --run-id g1_reveal_true_sim
+extends: base.yaml
+run: {name: g1_reveal_true_sim, seed: 1, n_games: 16, max_concurrency_games: 12}
+reasoning: {salvage_truncated: true}
+game: {n_agents: 10, max_rounds: 20, turn_mode: simultaneous, turn_order: reshuffle}
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 1, scope: round}
+  powers:
+    reveal_needs: {enabled: true, cost: 1, variant: 'truthful', max_receivers: 3}
+  schedule:
+  - {round: 3, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 4, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 5, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 6, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 7, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 8, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 9, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 10, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 11, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 12, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 13, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 14, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 15, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 16, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 17, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 18, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 19, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+  - {round: 20, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: co_needers, sender: recent_partner}}
+runner:
+  engine: real
+  report: true
+  fork: {enabled: true, noise_replica: true, serial_pair: false}
+roles:
+  agent: {backend: openrouter, model: openai/gpt-oss-120b, max_tokens: 1000}
+  god: {backend: openrouter, model: openai/gpt-oss-120b}
+  judge: {backend: openrouter, model: openai/gpt-oss-120b}
+  summarizer: {backend: openrouter, model: openai/gpt-oss-120b}
+llm:
+  budget_usd: 1.6
+  cache: {mode: read_write}
+  openrouter: {enabled: true, model: openai/gpt-oss-120b, max_concurrency: 16, global_cap_usd: 20.0, price_in_per_mtok: 0.1,
+    price_out_per_mtok: 0.5, reasoning_effort: low, provider_sort: price}

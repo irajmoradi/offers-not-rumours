@@ -1,0 +1,4 @@
+identity orig f3a70ed6 fast+all-modules(flags off) f3a70ed6
+re-score T identical: True  re-score C16 identical: True
+py_compile ok
+TEST (e) PASSED

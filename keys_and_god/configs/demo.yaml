@@ -1,0 +1,43 @@
+# Minimal end-to-end demo: 20 agents, sequential turns, 15 rounds, local vLLM (Qwen3-8B),
+# ScriptedGod with exactly 2 powers (1 message fraud + 1 scratchpad overwrite), paired fork.
+#   python -m swarm.run --config configs/demo.yaml                     # real engine on vLLM
+#   python -m swarm.run --config configs/demo.yaml --engine synth      # dry run, no LLM
+# Outputs runs/<run_id>/{manifest.json, games/g00-god, games/g00-nogod, report.html}.
+extends: base.yaml
+run:
+  name: demo
+  seed: 0
+  n_games: 1
+  max_concurrency_games: 2        # both fork branches run at once (serial_pair=false)
+game:
+  n_agents: 20
+  max_rounds: 15
+  turn_mode: sequential
+  turn_order: reshuffle
+roles:
+  agent:
+    backend: vllm
+llm:
+  cache:
+    mode: read_write              # B replays A's cached responses before the fork => identical prefix
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 2, scope: game}
+  schedule:
+    - round: 3
+      after_turns: 0
+      power: message_fraud
+      args: {sender: recent_partner, receiver: closest_to_winning}
+    - round: 5
+      after_turns: 0
+      power: cot_control
+      args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}
+# Runner-only block (split off before RunConfig validation; see swarm/runner/run.py).
+runner:
+  engine: real                    # real | synth
+  report: true
+  fork:
+    enabled: true                 # paired fork: same seed with God vs without God
+    noise_replica: false          # true adds B' (no God, replica 1) = sampling-noise floor
+    serial_pair: false            # branches run concurrently; single-flight dedup shares the pre-fork prefix

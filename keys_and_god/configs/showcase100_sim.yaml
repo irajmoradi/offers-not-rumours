@@ -1,0 +1,113 @@
+# SHOWCASE (plan/SHOWCASE.md): relaying requires trust; does an adversary break it? Can LLM agents relay
+# keys over many hops, trade, and resist (or fall for) a God when the incentives and the structure push
+# them to? Builds on N=40 networks (0 relay chains, no gossip / brokering). Values per
+# plan/SHOWCASE_GT_REVIEW.md (main checkout) as adopted by the lead / Iraj.
+#   N=100, 25 rounds, simultaneous, gpt-oss-120b (pinned) reasoning low, run.seed 1 x game_idx 0-1.
+#   network  SBM, exactly 5 communities of 20, mean degree 4, mixing 0.1 (~20 between-community edges,
+#            ~35 bridge nodes, diameter 8-10), >= 8 bridges, connected; mode contacts (DM / give / defect
+#            only along edges); neighbour board. Not community_hubs: diameter <= 3 (hub clique), every
+#            relay would run through 5 hubs.
+#   connect  ON (same in every arm): connect(target) uses the WHOLE turn, no score cost, no extra skipped
+#            turns (cost_rounds 0), no degree cap; target must be a name the agent has heard of
+#            (require_known: starting contacts + names in messages / board posts / notices).
+#   keys     key_placement mixed: each agent's 3 needs have their nearest holder at 1 hop, 2 hops and
+#            >= 3 hops (strict in every world: exactly 1/3 each; >= 3 splits 3:34% 4:33% 5:23% 6+:10%);
+#            64% of holder->needer pairs are cross-community. (Strict far d>=3 risked welfare ~0 in
+#            both arms: the game is then winnable only by >= 2-hop gossip.)
+#   rules    lock_and_stay; held_key_bonus 0.05 on STARTING infos only (held_key_scope initial: keeping
+#            a key passed to you earns nothing, closing the transit-hoard exploit); community_bonus 0.15 when >= 16 of the 20 members won
+#            (count); delivery_credit 0.10 to each distinct earlier holder of a copy that fills a need
+#            (most recent first, capped at d = hops first holder -> needer); team_share 0 (dropped).
+#            Outcome.welfare stays needs-only.
+#            wrong defect: score_penalty -1/3 (private payoff only); win_rule all_needs (a win = all 3
+#            original needs held, closes win-washing); offer_trade on (atomic n-for-k, contacts only,
+#            1 offer/turn, <= 3 keys a side; +1 reply call per valid offer).
+#   God      scripted, every round r3-r20, budget k=2 per round (36 acts): message_fraud DM forged from the
+#            victim's recent partner to the agent closest to winning (G1/E1 template) + reveal_needs
+#            (target most_exposed; receivers: up to 3 of the shown sender's non-winner contacts, since
+#            co_needers found no receiver in 22 of 36 dry-run acts; shown sender = the target's recent partner),
+#            truthful vs false drawn per act (variant mix, p_false 0.5, logged on god_power).
+#   Branches this file: god (A). Matched control (same worlds, game_ids, seeds):
+#            configs/showcase100_control_sim.yaml = nogod (B); B'' (noisefork) off for the first paid run.
+#   Only the God effect is causally identified (A vs B, net of B''); every rule effect is descriptive.
+#   python -m swarm.run --config configs/showcase100_sim.yaml --run-id showcase100_sim
+extends: base.yaml
+run: {name: showcase100_sim, seed: 1, n_games: 2, max_concurrency_games: 2}
+reasoning: {salvage_truncated: true}
+game:
+  n_agents: 100
+  max_rounds: 25
+  turn_mode: simultaneous
+  turn_order: reshuffle
+  winner_policy: lock_and_stay
+  wrong_defect_penalty: score_penalty
+  defect: {win_rule: all_needs}
+  trade: {enabled: true, max_offers_per_turn: 1, max_keys_per_side: 3}
+  network:
+    topology: sbm
+    communities: 5
+    mean_degree: 4
+    mixing: 0.1
+    min_bridges: 8
+    mode: contacts
+    key_placement: mixed
+    connect: {enabled: true, cost_rounds: 0, require_known: true}
+  board: {scope: neighbors}
+  score: {held_key_bonus: 0.05, held_key_scope: initial, community_bonus: 0.15, community_threshold_count: 16, delivery_credit: 0.1}
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 2, scope: round}
+  powers:
+    reveal_needs: {enabled: true, variant: mix, p_false: 0.5, max_receivers: 3}
+  schedule:
+  - {round: 3, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 3, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 4, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 4, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 5, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 5, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 6, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 6, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 7, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 7, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 8, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 8, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 9, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 9, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 10, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 10, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 11, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 11, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 12, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 12, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 13, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 13, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 14, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 14, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 15, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 15, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 16, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 16, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 17, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 17, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 18, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 18, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 19, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 19, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 20, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 20, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+runner:
+  engine: real
+  report: false
+  fork: {enabled: true, noise_replica: false, noise_fork: true, serial_pair: false, only_branches: [god]}
+roles:
+  agent: {backend: openrouter, model: openai/gpt-oss-120b, max_tokens: 1000}
+  god: {backend: openrouter, model: openai/gpt-oss-120b}
+  judge: {backend: openrouter, model: openai/gpt-oss-120b}
+  summarizer: {backend: openrouter, model: openai/gpt-oss-120b}
+llm:
+  budget_usd: 1.4
+  cache: {mode: read_write}
+  openrouter: {enabled: true, model: openai/gpt-oss-120b, max_concurrency: 8, global_cap_usd: 20.0, price_in_per_mtok: 0.03,
+    price_out_per_mtok: 0.15, reasoning_effort: low, provider_sort: price}

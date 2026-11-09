@@ -1,0 +1,26 @@
+{
+ "usd": 0.010676424999999998,
+ "calls": 278,
+ "missing_cost": 62,
+ "prompt_tokens": 135553,
+ "completion_tokens": 8000,
+ "empty": 64,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "google/gemma-3-12b-it": {
+   "usd": 0.010676424999999998,
+   "calls": 278,
+   "empty": 64
+  }
+ },
+ "by_arm": {
+  "JF5_gemma": {
+   "usd": 0.010676424999999998,
+   "calls": 278,
+   "prompt_tokens": 135553,
+   "completion_tokens": 8000
+  }
+ }
+}

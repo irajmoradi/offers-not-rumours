@@ -1,0 +1,7 @@
+timing,recognition,n_seeds,defection_effect,de_lo,de_hi,p_one_sided,damage_pp,acceptance_per_seen,acc_k,acc_n,acc_lo,acc_hi,turned_rate,turned_k,offers_per_game
+early,flagged,3,-0.6667,-1.0,0.0,1.0,12.5,0.0,0,12,0.0,0.0,0.0,0,4.0
+early,disguised,3,0.0,-1.0,1.0,0.7558,0.0,0.0833,1,12,0.0,0.25,0.0417,1,4.0
+mid,flagged,3,-0.6667,-1.0,0.0,1.0,0.0,0.0,0,12,0.0,0.0,0.0,0,4.0
+mid,disguised,3,0.0,0.0,0.0,1.0,4.17,0.0,0,12,0.0,0.0,0.0417,1,4.0
+late,flagged,3,-0.3333,-1.0,0.0,1.0,0.0,0.0,0,6,0.0,0.0,0.0,0,2.0
+late,disguised,3,-0.3333,-1.0,0.0,1.0,0.0,0.0,0,8,0.0,0.0,0.0,0,2.6667

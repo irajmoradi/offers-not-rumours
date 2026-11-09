@@ -1,0 +1,105 @@
+{
+ "usd": 5.662870674000015,
+ "calls": 83407,
+ "failed": 0,
+ "empty": 35,
+ "rate_limited_429": 0,
+ "prompt_tokens": 60699178,
+ "completion_tokens": 3142974,
+ "by_arm": {
+  "B": {
+   "usd": 0.6110530000000011,
+   "calls": 8243,
+   "prompt_tokens": 5609846,
+   "completion_tokens": 250342
+  },
+  "C_N32": {
+   "usd": 0.5743389999999993,
+   "calls": 4878,
+   "prompt_tokens": 5444582,
+   "completion_tokens": 149404
+  },
+  "C_N16": {
+   "usd": 0.21170830000000046,
+   "calls": 2338,
+   "prompt_tokens": 1972091,
+   "completion_tokens": 72496
+  },
+  "C_N8": {
+   "usd": 0.0754673000000001,
+   "calls": 1026,
+   "prompt_tokens": 693207,
+   "completion_tokens": 30733
+  },
+  "C_N4": {
+   "usd": 0.027911,
+   "calls": 401,
+   "prompt_tokens": 254018,
+   "completion_tokens": 12546
+  },
+  "A": {
+   "usd": 2.547636600000006,
+   "calls": 32178,
+   "prompt_tokens": 23327120,
+   "completion_tokens": 1074623
+  },
+  "A_d_evil": {
+   "usd": 0.0363744,
+   "calls": 377,
+   "prompt_tokens": 283454,
+   "completion_tokens": 40145
+  },
+  "A_judge": {
+   "usd": 0.0656522999999999,
+   "calls": 2793,
+   "prompt_tokens": 595413,
+   "completion_tokens": 30555
+  },
+  "D": {
+   "usd": 1.2363318740000002,
+   "calls": 23404,
+   "prompt_tokens": 18387456,
+   "completion_tokens": 1269669
+  },
+  "D_d_evil": {
+   "usd": 0.0264271,
+   "calls": 259,
+   "prompt_tokens": 210099,
+   "completion_tokens": 27086
+  },
+  "D_judge": {
+   "usd": 0.07310750000000008,
+   "calls": 2716,
+   "prompt_tokens": 671323,
+   "completion_tokens": 29876
+  },
+  "E": {
+   "usd": 0.17686230000000042,
+   "calls": 2398,
+   "prompt_tokens": 1613767,
+   "completion_tokens": 77428
+  }
+ },
+ "by_model": {
+  "qwen/qwen-2.5-7b-instruct": {
+   "usd": 5.107153000000036,
+   "calls": 66041,
+   "empty": 0
+  },
+  "openai/gpt-oss-20b": {
+   "usd": 0.23688302599999955,
+   "calls": 5588,
+   "empty": 8
+  },
+  "meta-llama/llama-3.1-8b-instruct": {
+   "usd": 0.11586092300000009,
+   "calls": 5987,
+   "empty": 0
+  },
+  "google/gemma-3-12b-it": {
+   "usd": 0.3822681250000004,
+   "calls": 5791,
+   "empty": 27
+  }
+ }
+}

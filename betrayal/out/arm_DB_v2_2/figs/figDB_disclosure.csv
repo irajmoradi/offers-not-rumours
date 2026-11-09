@@ -1,0 +1,4 @@
+cond,seeds,extra_defections,ed_lo,ed_hi,key_damage,completion_damage,bribe_offers,bribes_accepted,accept_rate,reports,verified_reports,false_reports,false_reports_per_game,near_miss_reports,verified_about_is_briber,bribes_delivered,bribes_reported_within_1,share_reported_within_1,accepted_and_reported,bounties,forfeits,report_top1_insider,games_with_reports,games
+DB0_base,20,2.15,1.75,2.55,-0.045,-0.293,124.0,39.0,0.315,,,,,,,,,,,,,,,
+DB1_disclosure,20,2.05,1.65,2.45,-0.002,-0.243,104.0,37.0,0.356,1.0,0.0,1.0,0.05,0.0,,98.0,0.0,0.0,0.0,0.0,77.0,,0.0,20.0
+clean_disclosure,20,,,,,,,,,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,0.0,0.0,0.0,,0.0,20.0

@@ -1,0 +1,94 @@
+[
+ {
+  "arm": "no training (unsteered)",
+  "n": 300,
+  "follows": 80,
+  "follows_ci": [
+   0.21980519258939787,
+   0.31942840807621214
+  ],
+  "valid": 295,
+  "valid_ci": [
+   0.9615840563782944,
+   0.9928606279572277
+  ],
+  "legal": 295,
+  "PASS": false,
+  "mean_chars": 392.7033333333333,
+  "p_glm_like": 0.12951893588270924,
+  "json_fence": 1.0,
+  "train_seconds": null,
+  "peak_vram_gb": null,
+  "trainable_params": null,
+  "pairs": null
+ },
+ {
+  "arm": "DPO style-matched (Gemma vs Gemma), LoRA L12-16 (neuron-guided)",
+  "n": 300,
+  "follows": 0,
+  "follows_ci": [
+   0,
+   0.012643429997735661
+  ],
+  "valid": 300,
+  "valid_ci": [
+   0.9873565700022643,
+   0.9999999999999999
+  ],
+  "legal": 300,
+  "PASS": true,
+  "mean_chars": 529.66,
+  "p_glm_like": 0.4253658304222448,
+  "json_fence": 1.0,
+  "train_seconds": 647,
+  "peak_vram_gb": 6.63,
+  "trainable_params": 1996800,
+  "pairs": 1144
+ },
+ {
+  "arm": "DPO style-matched (Gemma vs Gemma), LoRA all layers",
+  "n": 300,
+  "follows": 0,
+  "follows_ci": [
+   0,
+   0.012643429997735661
+  ],
+  "valid": 296,
+  "valid_ci": [
+   0.9662239391535502,
+   0.9948031223153205
+  ],
+  "legal": 296,
+  "PASS": true,
+  "mean_chars": 465.2033333333333,
+  "p_glm_like": 0.1913729607854848,
+  "json_fence": 1.0,
+  "train_seconds": 799,
+  "peak_vram_gb": 6.83,
+  "trainable_params": 10383360,
+  "pairs": 1144
+ },
+ {
+  "arm": "DPO GLM-chosen v1, LoRA L12-16 (neuron-guided)",
+  "n": 300,
+  "follows": 0,
+  "follows_ci": [
+   0,
+   0.012643429997735661
+  ],
+  "valid": 0,
+  "valid_ci": [
+   0,
+   0.012643429997735661
+  ],
+  "legal": 0,
+  "PASS": false,
+  "mean_chars": 1271.26,
+  "p_glm_like": 0.7292787926809798,
+  "json_fence": 0.0,
+  "train_seconds": 874,
+  "peak_vram_gb": 6.74,
+  "trainable_params": 1996800,
+  "pairs": 1403
+ }
+]

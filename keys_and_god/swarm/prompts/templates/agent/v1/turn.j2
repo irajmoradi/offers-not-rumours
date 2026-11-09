@@ -1,0 +1,35 @@
+{% set hide = horizon_hidden is defined and horizon_hidden %}
+{% set labels = {"pinned": "Key facts", "summary": "Summary of earlier rounds", "retrieved": "Recalled", "window": "Earlier", "current": "New since your previous turn" if hide else "New since your last turn"} %}
+You are {{ view.agent }}. Round {{ view.round }}{% if not hide %} of {{ view.pinned.max_rounds }}{% endif %}.
+{% for section in view.sections if section.items %}
+
+[{{ labels[section.name] }}]
+{% for item in section.items %}
+- (r{{ item.round }}) {{ item.text }}
+{% endfor %}
+{% endfor %}
+
+[Your state]
+Needs still open (info ids): {{ view.pinned.needs_open | join(", ") or "none" }}
+Needs burned (info ids): {{ view.pinned.needs_burned | join(", ") or "none" }}
+{% if view.pinned.needs_lost %}
+Needs lost (info ids): {{ view.pinned.needs_lost | join(", ") }}
+{% endif %}
+Your keys: {% for k in view.pinned.holdings %}{info_id: {{ k.info_id }}, key: {{ k.key }}}{% if not loop.last %}, {% endif %}{% else %}none{% endfor %}
+
+Score: {{ "%.2f" | format(view.pinned.score) }}{% if view.pinned.won %} (you have won; you may keep helping others){% endif %}{% if key_bonus is defined and key_bonus and bonus_keys is defined %}; held-key bonus if the game ended now: +{{ "%.2f" | format(key_bonus * bonus_keys) }} ({{ bonus_keys }} of your starting keys){% elif key_bonus is defined and key_bonus %}; held-key bonus if the game ended now: +{{ "%.2f" | format(key_bonus * (view.pinned.holdings | length)) }} ({{ view.pinned.holdings | length }} keys){% endif %}
+
+{% if network is defined and network == "contacts" %}Your contacts (the only players you can message or trade with): {% elif network is defined and network == "known_ids" %}Players you know: {% else %}Players: {% endif %}{{ view.pinned.peers | join(", ") }}
+{% if community is defined and community %}Your community has {{ community.size }} players; your contacts in it: {{ community.contacts | join(", ") or "none" }}
+{% endif %}{% if view.pinned.links is defined and view.pinned.links is not none %}Your direct links: {{ view.pinned.links | join(", ") or "none" }}
+{% endif %}{% if view.grep %}
+
+[Log search "{{ view.grep.pattern }}": {{ view.grep.hits | length }} hits{% if view.grep.truncated %}, truncated{% endif %}]
+{% for h in view.grep.hits %}
+- (r{{ h.round }}) {{ h.kind }}: {{ h.actor or "an agent" }}{% if h.target %} -> {{ h.target }}{% endif %}{% if h.info_id is not none %} info {{ h.info_id }}{% endif %}{% if h.text %} "{{ h.text }}"{% endif %}{% if h.ok is false %} (failed){% endif %}
+
+{% endfor %}
+Now choose your actions (do not search again this turn).
+{% endif %}
+
+Your turn. Respond with the JSON object.

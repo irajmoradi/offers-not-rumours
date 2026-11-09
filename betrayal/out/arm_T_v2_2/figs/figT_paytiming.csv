@@ -1,0 +1,5 @@
+cell,seeds,extra_defections,ed_lo,ed_hi,key_damage,bribe_offers,bribes_accepted,payments_delivered,payments_due_undelivered,pay_failed,ledger_top1_final
+never_pays,40,2.175,1.875,2.5,-0.026,248,83,0,0,0,0.8
+pays_now,40,2.2,1.875,2.525,-0.024,243,89,31,41,41,0.4
+pays_later3,40,2.225,1.95,2.5,-0.027,250,82,17,57,23,0.625
+pays_at_end,40,2.225,1.875,2.6,-0.05,237,83,30,38,29,0.475

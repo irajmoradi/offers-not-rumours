@@ -1,0 +1,3 @@
+# Betrayal-study harness (betrayal/harness) + Jenifer's game package (betrayal/pkg/swarm_llm).
+# Python 3.13 (paper runs: 3.13.12, a plain venv). Exact freeze of that venv: betrayal.lock.txt
+-r betrayal.lock.txt

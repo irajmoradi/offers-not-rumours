@@ -1,0 +1,19 @@
+variant,label,instrument,auroc,ci_lo,ci_hi,eval_positives
+H1_within_mixed_leakfree,"PRIMARY: mixed swarm own split, leak-free",I1_revealed_pref,0.567,0.44918095745723147,0.6436623995217745,28
+H1_within_mixed_leakfree,"PRIMARY: mixed swarm own split, leak-free",I2_structural,0.583,0.49223545833623034,0.6872233649139748,28
+H1_within_mixed_leakfree,"PRIMARY: mixed swarm own split, leak-free",I4_lie_battery,0.74,0.6495092383367718,0.7998761369761128,28
+H1_within_mixed_leakfree,"PRIMARY: mixed swarm own split, leak-free",I3_self_report,0.417,0.3467071886092109,0.4893877198061743,28
+H1_within_mixed_leakfree,"PRIMARY: mixed swarm own split, leak-free",I5_judge_received,0.681,0.6380189267967149,0.7270310870117408,28
+H1_within_mixed_leakfree,"PRIMARY: mixed swarm own split, leak-free",combined,0.729,0.6077669320416483,0.8181015607692366,28
+H1_ood_mixed_swarm_leakfree,OOD: main-grid fits (leak-free) on mixed held-out,I1_revealed_pref,0.661,0.5569254744496384,0.7519351520035987,28
+H1_ood_mixed_swarm_leakfree,OOD: main-grid fits (leak-free) on mixed held-out,I2_structural,0.509,0.39923626253698724,0.6371052019459594,28
+H1_ood_mixed_swarm_leakfree,OOD: main-grid fits (leak-free) on mixed held-out,I4_lie_battery,0.262,0.21925622562829505,0.321632748272537,28
+H1_ood_mixed_swarm_leakfree,OOD: main-grid fits (leak-free) on mixed held-out,I3_self_report,0.417,0.3445272828726461,0.4867810668832334,28
+H1_ood_mixed_swarm_leakfree,OOD: main-grid fits (leak-free) on mixed held-out,I5_judge_received,0.681,0.6381305659959297,0.7242465778026123,28
+H1_ood_mixed_swarm_leakfree,OOD: main-grid fits (leak-free) on mixed held-out,combined,0.519,0.43200773568266815,0.6173275674255811,28
+H1_within_mixed,"LEAKY: as specified, own split",I1_revealed_pref,0.832,0.7355923106867379,0.915676265960261,28
+H1_within_mixed,"LEAKY: as specified, own split",I2_structural,0.583,0.49830877225150066,0.6876868869436794,28
+H1_within_mixed,"LEAKY: as specified, own split",I4_lie_battery,0.74,0.6489954463830776,0.800622307614452,28
+H1_within_mixed,"LEAKY: as specified, own split",I3_self_report,0.417,0.3448492687018733,0.486644887450303,28
+H1_within_mixed,"LEAKY: as specified, own split",I5_judge_received,0.681,0.6380766731643924,0.7234299554874865,28
+H1_within_mixed,"LEAKY: as specified, own split",combined,0.831,0.755094579490496,0.8950434505163011,28

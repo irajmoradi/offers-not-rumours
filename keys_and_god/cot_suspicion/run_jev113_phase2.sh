@@ -1,0 +1,6 @@
+#!/bin/bash
+# After the noul10 run: (1) resume choice11 (0-10 choice labels; MAIN), (2) corrected test-awareness (ta2) on all items. Run in parallel.
+GAMES=("Game Env=${SWARM_ROOT:-.}/runs/sweep60_or_oldframe/games/g00-nogod" "Game Env=${SWARM_ROOT:-.}/runs/sweep60_or_oldframe/games/g01-nogod" "Game Env=${SWARM_ROOT:-.}/runs/sweep60_or_oldframe/games/g04-nogod" "Realistic Env=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g00-nogod" "Realistic Env=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g01-nogod" "Realistic Env=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g04-nogod")
+python3 -I ${SWARM_ROOT:-.}/cot_suspicion/cot_judge.py judge --out ${SWARM_ROOT:-.}/cot_suspicion --results results_jev113-choice11.jsonl --tag jev113c_nogod --model typesafe/jev-1.13 --dec-spec choice11 --max-chars 3000 --concurrency 48 --cap 6.5 "${GAMES[@]}" > ${SWARM_ROOT:-.}/cot_suspicion/judge_run_jev113-choice11_resume.log 2>&1 &
+python3 -I ${SWARM_ROOT:-.}/cot_suspicion/cot_judge.py judge --out ${SWARM_ROOT:-.}/cot_suspicion --results results_jev113-ta2.jsonl --tag jev113ta2_nogod --model typesafe/jev-1.13 --dec-spec ta2 --max-chars 8000 --concurrency 48 --cap 6.5 "${GAMES[@]}" > ${SWARM_ROOT:-.}/cot_suspicion/judge_run_jev113-ta2.log 2>&1 &
+wait

@@ -1,0 +1,17 @@
+{
+ "served": {
+  "microsoft/phi-4": {
+   "DeepInfra": 11268
+  }
+ },
+ "provider_error_bodies": {},
+ "quality": {
+  "microsoft/phi-4": {
+   "calls": 11268,
+   "empty": 0,
+   "failed": 0,
+   "worst_window_bad": 0,
+   "tripped": false
+  }
+ }
+}

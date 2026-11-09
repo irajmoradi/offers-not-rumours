@@ -1,0 +1,246 @@
+{
+ "label": "EXPLORATORY arm UF, 2^(7-3) resolution IV",
+ "defining_relation": "I=ABCE=ABFG=ACDG=ADEF=BCDF=BDEG=CEFG",
+ "alias_chains": [
+  "AB=CE=FG",
+  "AC=BE=DG",
+  "AD=CG=EF",
+  "AE=BC=DF",
+  "AF=BG=DE",
+  "AG=BF=CD",
+  "BD=CF=EG"
+ ],
+ "effects": [
+  {
+   "term": "A_position",
+   "label": "position: outsider(+) vs insider(-)",
+   "kind": "main",
+   "response": "defection_effect",
+   "effect": -0.025,
+   "lo": -0.338,
+   "hi": 0.287,
+   "p": 0.9327,
+   "seeds": 10
+  },
+  {
+   "term": "A_position",
+   "label": "position: outsider(+) vs insider(-)",
+   "kind": "main",
+   "response": "key_effect",
+   "effect": -0.06,
+   "lo": -0.093,
+   "hi": -0.025,
+   "p": 0.0165,
+   "seeds": 10
+  },
+  {
+   "term": "B_method",
+   "label": "method: bribe(+) vs forge(-)",
+   "kind": "main",
+   "response": "defection_effect",
+   "effect": 0.325,
+   "lo": 0.1,
+   "hi": 0.525,
+   "p": 0.0242,
+   "seeds": 10
+  },
+  {
+   "term": "B_method",
+   "label": "method: bribe(+) vs forge(-)",
+   "kind": "main",
+   "response": "key_effect",
+   "effect": 0.01,
+   "lo": -0.018,
+   "hi": 0.042,
+   "p": 0.5245,
+   "seeds": 10
+  },
+  {
+   "term": "C_timing",
+   "label": "timing: late(+) vs early(-)",
+   "kind": "main",
+   "response": "defection_effect",
+   "effect": 0.1,
+   "lo": -0.175,
+   "hi": 0.362,
+   "p": 0.5592,
+   "seeds": 10
+  },
+  {
+   "term": "C_timing",
+   "label": "timing: late(+) vs early(-)",
+   "kind": "main",
+   "response": "key_effect",
+   "effect": -0.029,
+   "lo": -0.063,
+   "hi": 0.001,
+   "p": 0.1259,
+   "seeds": 10
+  },
+  {
+   "term": "D_N",
+   "label": "N: 16(+) vs 4(-)",
+   "kind": "main",
+   "response": "defection_effect",
+   "effect": -0.05,
+   "lo": -0.312,
+   "hi": 0.188,
+   "p": 0.7856,
+   "seeds": 10
+  },
+  {
+   "term": "D_N",
+   "label": "N: 16(+) vs 4(-)",
+   "kind": "main",
+   "response": "key_effect",
+   "effect": -0.043,
+   "lo": -0.061,
+   "hi": -0.029,
+   "p": 0.0017,
+   "seeds": 10
+  },
+  {
+   "term": "E_defense",
+   "label": "defense: all-7(+) vs none(-)",
+   "kind": "main",
+   "response": "defection_effect",
+   "effect": 0.1,
+   "lo": -0.138,
+   "hi": 0.35,
+   "p": 0.5425,
+   "seeds": 10
+  },
+  {
+   "term": "E_defense",
+   "label": "defense: all-7(+) vs none(-)",
+   "kind": "main",
+   "response": "key_effect",
+   "effect": 0.022,
+   "lo": -0.001,
+   "hi": 0.046,
+   "p": 0.1244,
+   "seeds": 10
+  },
+  {
+   "term": "F_models",
+   "label": "models: mixed(+) vs Gemma-3(-)",
+   "kind": "main",
+   "response": "defection_effect",
+   "effect": -0.225,
+   "lo": -0.525,
+   "hi": 0.05,
+   "p": 0.2002,
+   "seeds": 10
+  },
+  {
+   "term": "F_models",
+   "label": "models: mixed(+) vs Gemma-3(-)",
+   "kind": "main",
+   "response": "key_effect",
+   "effect": 0.016,
+   "lo": -0.005,
+   "hi": 0.035,
+   "p": 0.1646,
+   "seeds": 10
+  },
+  {
+   "term": "G_records",
+   "label": "records: open-shows(+) vs closed(-)",
+   "kind": "main",
+   "response": "defection_effect",
+   "effect": -0.075,
+   "lo": -0.175,
+   "hi": 0.037,
+   "p": 0.304,
+   "seeds": 10
+  },
+  {
+   "term": "G_records",
+   "label": "records: open-shows(+) vs closed(-)",
+   "kind": "main",
+   "response": "key_effect",
+   "effect": -0.009,
+   "lo": -0.037,
+   "hi": 0.017,
+   "p": 0.5578,
+   "seeds": 10
+  },
+  {
+   "term": "AB=CE=FG",
+   "label": "2fi alias chain",
+   "kind": "2fi",
+   "response": "defection_effect",
+   "effect": 0.0,
+   "lo": -0.125,
+   "hi": 0.125,
+   "p": 1.0,
+   "seeds": 10
+  },
+  {
+   "term": "AC=BE=DG",
+   "label": "2fi alias chain",
+   "kind": "2fi",
+   "response": "defection_effect",
+   "effect": -0.025,
+   "lo": -0.25,
+   "hi": 0.275,
+   "p": 0.9321,
+   "seeds": 10
+  },
+  {
+   "term": "AD=CG=EF",
+   "label": "2fi alias chain",
+   "kind": "2fi",
+   "response": "defection_effect",
+   "effect": 0.275,
+   "lo": -0.025,
+   "hi": 0.588,
+   "p": 0.143,
+   "seeds": 10
+  },
+  {
+   "term": "AE=BC=DF",
+   "label": "2fi alias chain",
+   "kind": "2fi",
+   "response": "defection_effect",
+   "effect": -0.075,
+   "lo": -0.338,
+   "hi": 0.175,
+   "p": 0.6487,
+   "seeds": 10
+  },
+  {
+   "term": "AF=BG=DE",
+   "label": "2fi alias chain",
+   "kind": "2fi",
+   "response": "defection_effect",
+   "effect": 0.0,
+   "lo": -0.312,
+   "hi": 0.312,
+   "p": 1.0,
+   "seeds": 10
+  },
+  {
+   "term": "AG=BF=CD",
+   "label": "2fi alias chain",
+   "kind": "2fi",
+   "response": "defection_effect",
+   "effect": 0.2,
+   "lo": 0.013,
+   "hi": 0.375,
+   "p": 0.1026,
+   "seeds": 10
+  },
+  {
+   "term": "BD=CF=EG",
+   "label": "2fi alias chain",
+   "kind": "2fi",
+   "response": "defection_effect",
+   "effect": 0.225,
+   "lo": 0.013,
+   "hi": 0.438,
+   "p": 0.0983,
+   "seeds": 10
+  }
+ ]
+}

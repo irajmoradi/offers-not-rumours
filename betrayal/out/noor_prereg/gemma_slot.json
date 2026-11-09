@@ -1,0 +1,27 @@
+{
+ "t": "2026-11-09 02:03:34",
+ "probe": {
+  "google/gemma-3-12b-it": {
+   "ok": 7,
+   "of": 16,
+   "providers": [
+    "DeepInfra",
+    "None"
+   ],
+   "errors": [
+    "{'message': 'Provider timed out after 5177ms', 'code': 504, 'metadata': {'error_type': 'timeout'}}"
+   ]
+  },
+  "google/gemma-3-27b-it": {
+   "ok": 16,
+   "of": 16,
+   "providers": [
+    "DeepInfra",
+    "Nebius",
+    "Parasail"
+   ],
+   "errors": []
+  }
+ },
+ "chosen": "google/gemma-3-27b-it"
+}

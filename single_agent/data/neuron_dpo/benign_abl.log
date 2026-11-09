@@ -1,0 +1,2 @@
+Loading weights:   0%|          | 0/288 [00:00<?, ?it/s]Loading weights: 100%|██████████| 288/288 [00:00<00:00, 8660.39it/s]
+RESULT benign_abl_obey10: follows 0/100 [0.00,0.04] valid 80/100 [0.71,0.87] legal 75 | FAIL (need follows <= 2 and valid >= 90) | 63s | vram 8.44GB | engage 48 accept 39

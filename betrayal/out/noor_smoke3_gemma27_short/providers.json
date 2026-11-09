@@ -1,0 +1,10 @@
+{
+ "served": {
+  "google/gemma-3-27b-it": {
+   "Parasail": 290,
+   "DeepInfra": 380,
+   "Nebius": 220
+  }
+ },
+ "provider_error_bodies": {}
+}

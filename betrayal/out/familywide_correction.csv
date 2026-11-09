@@ -1,0 +1,119 @@
+family,prereg,arm,test,model,effect,p_raw,m_family,holm_family,bh_family,survives_holm,survives_bh,holm_all,bh_all,src,note
+EXPLORATORY,n,U,defense=ALL vs BASE,Gemma-3-12B,-2.19,5e-05,110,0.0055,0.000458,y,y,0.0059,0.000492,arm_U_v2_2/results_arm_U.json cells,p=0 from 20k MC -> floor
+EXPLORATORY,n,U,defense=reputation+corroboration+quarantine vs BASE,Gemma-3-12B,-1.17,5e-05,110,0.0055,0.000458,y,y,0.0059,0.000492,arm_U_v2_2/results_arm_U.json cells,p=0 from 20k MC -> floor
+EXPLORATORY,n,U,defense=resilience vs BASE,Gemma-3-12B,-2.22,5e-05,110,0.0055,0.000458,y,y,0.0059,0.000492,arm_U_v2_2/results_arm_U.json cells,p=0 from 20k MC -> floor
+EXPLORATORY,n,U,method=insider_bribe_only vs BASE,Gemma-3-12B,-1.19,5e-05,110,0.0055,0.000458,y,y,0.0059,0.000492,arm_U_v2_2/results_arm_U.json cells,p=0 from 20k MC -> floor
+EXPLORATORY,n,U,method=insider_lie_only vs BASE,Gemma-3-12B,-2.08,5e-05,110,0.0055,0.000458,y,y,0.0059,0.000492,arm_U_v2_2/results_arm_U.json cells,p=0 from 20k MC -> floor
+EXPLORATORY,n,U,mix=heterogeneous vs BASE,Gemma-3-12B / mixed,-1.78,5e-05,110,0.0055,0.000458,y,y,0.0059,0.000492,arm_U_v2_2/results_arm_U.json cells,p=0 from 20k MC -> floor
+EXPLORATORY,n,U,pos=outsider vs BASE,Gemma-3-12B,-2.03,5e-05,110,0.0055,0.000458,y,y,0.0059,0.000492,arm_U_v2_2/results_arm_U.json cells,p=0 from 20k MC -> floor
+EXPLORATORY,n,U,posXmethod=both_forged vs BASE,Gemma-3-12B,-1.92,5e-05,110,0.0055,0.000458,y,y,0.0059,0.000492,arm_U_v2_2/results_arm_U.json cells,p=0 from 20k MC -> floor
+EXPLORATORY,n,U,posXmethod=outsider_forged vs BASE,Gemma-3-12B,-2.22,5e-05,110,0.0055,0.000458,y,y,0.0059,0.000492,arm_U_v2_2/results_arm_U.json cells,p=0 from 20k MC -> floor
+EXPLORATORY,n,U,start=last vs BASE,Gemma-3-12B,-1.42,5e-05,110,0.0055,0.000458,y,y,0.0059,0.000492,arm_U_v2_2/results_arm_U.json cells,p=0 from 20k MC -> floor
+EXPLORATORY,n,U,head-to-head insider_bribe_only_vs_lie_only,Gemma-3-12B,0.889,5e-05,110,0.0055,0.000458,y,y,0.0059,0.000492,arm_U_v2_2/headtohead.json,
+EXPLORATORY,n,U,head-to-head both_bribe_vs_forged,Gemma-3-12B,2.81,5e-05,110,0.0055,0.000458,y,y,0.0059,0.000492,arm_U_v2_2/headtohead.json,
+EXPLORATORY,n,G,pooled outsider bribe > 0,Qwen-2.5-7B,0.0792,0.000122,110,0.012,0.00103,y,y,0.0128,0.00103,arm_G_v2_2/results_arm_G.json pooled_outsider_bribe, exact two-sided 2^-13 (P1 text); stored one-sided p 0.00025
+EXPLORATORY,n,T,T_pays_now_vs_never_final,Gemma-3-12B,-0.4,0.0004,110,0.0388,0.00314,y,y,0.0416,0.00315,arm_T_v2_2/results_arm_T.json paired_vs_never_pays,
+EXPLORATORY,n,dose_N16,slope outsider-only,Gemma-3-12B,0.275,0.0008,110,0.0768,0.00587,n,y,0.0824,0.0059,dose_N16_v2_2/results_dose_N16.json trend_tests,
+EXPLORATORY,n,C16,outsider_bribe_size_effect(3-1)@no_contagion,Gemma-3-12B,0.55,0.001,110,0.095,0.00688,n,y,0.102,0.00694,arm_C16_v2_2/results_arm_C.json paired/outsider_bribe_size_effect(3-1)@no_contagion,
+EXPLORATORY,n,dose_N16,Page L outsider-only,Gemma-3-12B,504,0.0011,110,0.103,0.00712,n,y,0.111,0.00721,dose_N16_v2_2/results_dose_N16.json trend_tests,
+EXPLORATORY,n,U,defense=corroboration vs BASE,Gemma-3-12B,-0.889,0.0014,110,0.13,0.00856,n,y,0.14,0.00869,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,UF,main D_N on key_effect,Gemma-3-12B (factor F: mixed),-0.043,0.0017,110,0.156,0.00984,n,y,0.168,0.01,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,U,pos=both vs BASE,Gemma-3-12B,0.889,0.0022,110,0.2,0.0121,n,y,0.213,0.0118,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,T,T_pays_at_end_vs_never_final,Gemma-3-12B,-0.325,0.004,110,0.36,0.021,n,y,0.384,0.0205,arm_T_v2_2/results_arm_T.json paired_vs_never_pays,
+EXPLORATORY,n,C16,outsider_bribe_size_effect(3-1)@contagion,Gemma-3-12B,0.775,0.0156,110,1,0.0756,n,n,1,0.0717,arm_C16_v2_2/results_arm_C.json paired/outsider_bribe_size_effect(3-1)@contagion,
+EXPLORATORY,n,dose_N16,slope contagion,Gemma-3-12B,0.388,0.0158,110,1,0.0756,n,n,1,0.0717,dose_N16_v2_2/results_dose_N16.json trend_tests,
+EXPLORATORY,n,UF,main A_position on key_effect,Gemma-3-12B (factor F: mixed),-0.06,0.0165,110,1,0.0756,n,n,1,0.0721,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,UF,main B_method on defection_effect,Gemma-3-12B (factor F: mixed),0.325,0.0242,110,1,0.106,n,n,1,0.102,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,U,pos=insider_then_outsider vs BASE,Gemma-3-12B,0.556,0.0259,110,1,0.11,n,n,1,0.105,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,C16,contagion_effect@3key,Gemma-3-12B,0.675,0.0272,110,1,0.111,n,n,1,0.107,arm_C16_v2_2/results_arm_C.json paired/contagion_effect@3key,
+EXPLORATORY,n,T,T_pays_now_vs_never_mid,Gemma-3-12B,-0.177,0.0293,110,1,0.115,n,n,1,0.112,arm_T_v2_2/results_arm_T.json paired_vs_never_pays,
+EXPLORATORY,n,G,outsider bribe early|flagged > 0,Qwen-2.5-7B,0.175,0.0325,110,1,0.122,n,n,1,0.116,arm_G_v2_2/results_arm_G.json conditions/early|flagged, two-sided = 2 x one-sided; stored one-sided p 0.0162
+EXPLORATORY,n,U,head-to-head outsider_bribe_vs_forged,Gemma-3-12B,0.194,0.0333,110,1,0.122,n,n,1,0.116,arm_U_v2_2/headtohead.json,
+EXPLORATORY,n,U,defense=monitor vs BASE,Gemma-3-12B,-0.472,0.0458,110,1,0.159,n,n,1,0.152,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,C16,contagion_effect@1key,Gemma-3-12B,0.45,0.0464,110,1,0.159,n,n,1,0.152,arm_C16_v2_2/results_arm_C.json paired/contagion_effect@1key,
+EXPLORATORY,n,F,H2a_d_evil_raises_defection,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",-0.125,0.0618,110,1,0.182,n,n,1,0.176,arm_F_v2_2/results.json secondary_holm/H2a_d_evil_raises_defection, APPROX two-sided (wrong direction); stored one-sided p 0.969
+EXPLORATORY,n,G,outsider bribe mid|flagged > 0,Qwen-2.5-7B,0.125,0.0618,110,1,0.182,n,n,1,0.176,arm_G_v2_2/results_arm_G.json conditions/mid|flagged, two-sided = 2 x one-sided; stored one-sided p 0.0309
+EXPLORATORY,n,SE,SE-scarcity vs SE-rumour,Gemma-3-12B,0.35,0.0623,110,1,0.182,n,n,1,0.176,arm_SE_v2_2/results_arm_SE.json paired,
+EXPLORATORY,n,SE,SE-social vs SE-recip,Gemma-3-12B,-0.25,0.0623,110,1,0.182,n,n,1,0.176,arm_SE_v2_2/results_arm_SE.json paired,
+EXPLORATORY,n,SE,SE-recip vs SE-rumour,Gemma-3-12B,0.25,0.0627,110,1,0.182,n,n,1,0.176,arm_SE_v2_2/results_arm_SE.json paired,
+EXPLORATORY,n,G,contrast_disguised_minus_flagged,Qwen-2.5-7B,-0.0917,0.0628,110,1,0.182,n,n,1,0.176,arm_G_v2_2/results_arm_G.json contrast_disguised_minus_flagged,
+EXPLORATORY,n,T,T_pays_later3_vs_never_final,Gemma-3-12B,-0.175,0.0664,110,1,0.187,n,n,1,0.182,arm_T_v2_2/results_arm_T.json paired_vs_never_pays,
+EXPLORATORY,n,U,start=late vs BASE,Gemma-3-12B,-0.472,0.0778,110,1,0.214,n,n,1,0.209,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,U,N=16 vs BASE,Gemma-3-12B,0.556,0.0912,110,1,0.245,n,n,1,0.239,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,UF,2fi BD=CF=EG on defection_effect,Gemma-3-12B (factor F: mixed),0.225,0.0983,110,1,0.257,n,n,1,0.252,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,UF,2fi AG=BF=CD on defection_effect,Gemma-3-12B (factor F: mixed),0.2,0.103,110,1,0.262,n,n,1,0.258,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,dose_N16,Page L contagion,Gemma-3-12B,492,0.117,110,1,0.292,n,n,1,0.287,dose_N16_v2_2/results_dose_N16.json trend_tests,
+EXPLORATORY,n,UF,main E_defense on key_effect,Gemma-3-12B (factor F: mixed),0.022,0.124,110,1,0.301,n,n,1,0.297,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,UF,main C_timing on key_effect,Gemma-3-12B (factor F: mixed),-0.029,0.126,110,1,0.301,n,n,1,0.297,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,UF,2fi AD=CG=EF on defection_effect,Gemma-3-12B (factor F: mixed),0.275,0.143,110,1,0.335,n,n,1,0.331,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,U,defense=reputation vs BASE,Gemma-3-12B,-0.389,0.156,110,1,0.352,n,n,1,0.349,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,DB,DB1-DB0 key_damage,Gemma-3-12B,0.043,0.157,110,1,0.352,n,n,1,0.349,arm_DB_v2_2/results_arm_DB.json paired,
+EXPLORATORY,n,UF,main F_models on key_effect,Gemma-3-12B (factor F: mixed),0.016,0.165,110,1,0.362,n,n,1,0.36,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,C,contagion_effect@3key,Gemma-3-12B,0.35,0.174,110,1,0.375,n,n,1,0.373,arm_C_v2_2/results_arm_C.json paired/contagion_effect@3key,
+EXPLORATORY,n,G,contrast_early_minus_late,Qwen-2.5-7B,0.0625,0.188,110,1,0.392,n,n,1,0.392,arm_G_v2_2/results_arm_G.json contrast_early_minus_late,
+EXPLORATORY,n,J,"ledger raw rule: never-pays vs always-pays (Fisher, ties split evenly: 0.74 vs 0.50)",Gemma-3-12B,-0.24,0.191,110,1,0.392,n,n,1,0.392,"analysis/recompute_armJ_ledger.py (replaces the addendum's single-tie-break 0.90 vs 0.40, p = 0.001)",hand-entered
+EXPLORATORY,n,F,H3_rcq_cuts_insider_damage,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",,0.193,110,1,0.392,n,n,1,0.392,arm_F_v2_2/results.json secondary_holm/H3_rcq_cuts_insider_damage, APPROX two-sided (wrong direction); stored one-sided p 0.903
+EXPLORATORY,n,U,N=4 vs BASE,Gemma-3-12B,-0.306,0.196,110,1,0.392,n,n,1,0.392,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,UF,main F_models on defection_effect,Gemma-3-12B (factor F: mixed),-0.225,0.2,110,1,0.393,n,n,1,0.394,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,SE,SE-liking vs SE-recip,Gemma-3-12B,-0.2,0.219,110,1,0.423,n,n,1,0.424,arm_SE_v2_2/results_arm_SE.json paired,
+EXPLORATORY,n,G,outsider bribe mid|disguised > 0,Qwen-2.5-7B,0.075,0.242,110,1,0.424,n,n,1,0.429,arm_G_v2_2/results_arm_G.json conditions/mid|disguised, two-sided = 2 x one-sided; stored one-sided p 0.121
+EXPLORATORY,n,G,outsider bribe late|flagged > 0,Qwen-2.5-7B,0.075,0.245,110,1,0.424,n,n,1,0.429,arm_G_v2_2/results_arm_G.json conditions/late|flagged, two-sided = 2 x one-sided; stored one-sided p 0.122
+EXPLORATORY,n,U,recordsOpenXpay=sporadic vs BASE,Gemma-3-12B,0.25,0.245,110,1,0.424,n,n,1,0.429,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,G_ada,outsider bribe early|flagged > 0,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",-0.667,0.25,110,1,0.424,n,n,1,0.429,arm_G_ada_v2_2/results_arm_G.json conditions/early|flagged, APPROX two-sided (wrong direction); stored one-sided p 1
+EXPLORATORY,n,G_ada,outsider bribe mid|flagged > 0,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",-0.667,0.25,110,1,0.424,n,n,1,0.429,arm_G_ada_v2_2/results_arm_G.json conditions/mid|flagged, APPROX two-sided (wrong direction); stored one-sided p 1
+EXPLORATORY,n,G_ada,outsider bribe late|flagged > 0,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",-0.333,0.25,110,1,0.424,n,n,1,0.429,arm_G_ada_v2_2/results_arm_G.json conditions/late|flagged, APPROX two-sided (wrong direction); stored one-sided p 1
+EXPLORATORY,n,G_ada,outsider bribe late|disguised > 0,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",-0.333,0.25,110,1,0.424,n,n,1,0.429,arm_G_ada_v2_2/results_arm_G.json conditions/late|disguised, APPROX two-sided (wrong direction); stored one-sided p 1
+EXPLORATORY,n,G_ada,pooled outsider bribe > 0,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",-0.333,0.251,110,1,0.424,n,n,1,0.429,arm_G_ada_v2_2/results_arm_G.json pooled_outsider_bribe, APPROX two-sided (wrong direction); stored one-sided p 0.875
+EXPLORATORY,n,U,pay=initial_only vs BASE,Gemma-3-12B,0.25,0.268,110,1,0.446,n,n,1,0.451,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,C,contagion_effect@1key,Gemma-3-12B,0.25,0.289,110,1,0.473,n,n,1,0.479,arm_C_v2_2/results_arm_C.json paired/contagion_effect@1key,
+EXPLORATORY,n,U,defense=provenance vs BASE,Gemma-3-12B,0.278,0.292,110,1,0.473,n,n,1,0.479,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,U,records=open_shows vs BASE,Gemma-3-12B,0.222,0.3,110,1,0.478,n,n,1,0.484,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,UF,main G_records on defection_effect,Gemma-3-12B (factor F: mixed),-0.075,0.304,110,1,0.478,n,n,1,0.485,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,C,outsider_bribe_size_effect(3-1)@contagion,Gemma-3-12B,0.25,0.403,110,1,0.625,n,n,1,0.634,arm_C_v2_2/results_arm_C.json paired/outsider_bribe_size_effect(3-1)@contagion,
+EXPLORATORY,n,C,outsider_bribe_size_effect(3-1)@no_contagion,Gemma-3-12B,0.15,0.447,110,1,0.682,n,n,1,0.693,arm_C_v2_2/results_arm_C.json paired/outsider_bribe_size_effect(3-1)@no_contagion,
+EXPLORATORY,n,G_ada,contrast_disguised_minus_flagged,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",0.444,0.495,110,1,0.746,n,n,1,0.749,arm_G_ada_v2_2/results_arm_G.json contrast_disguised_minus_flagged,
+EXPLORATORY,n,UF,main B_method on key_effect,Gemma-3-12B (factor F: mixed),0.01,0.524,110,1,0.78,n,n,1,0.783,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,UF,main E_defense on defection_effect,Gemma-3-12B (factor F: mixed),0.1,0.542,110,1,0.796,n,n,1,0.8,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,UF,main G_records on key_effect,Gemma-3-12B (factor F: mixed),-0.009,0.558,110,1,0.799,n,n,1,0.805,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,UF,main C_timing on defection_effect,Gemma-3-12B (factor F: mixed),0.1,0.559,110,1,0.799,n,n,1,0.805,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,T,T_pays_later3_vs_never_mid,Gemma-3-12B,0.03,0.588,110,1,0.829,n,n,1,0.835,arm_T_v2_2/results_arm_T.json paired_vs_never_pays,
+EXPLORATORY,n,U,recordsOpenXpay=initial_only vs BASE,Gemma-3-12B,0.139,0.608,110,1,0.836,n,n,1,0.844,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,U,records=open_hides vs BASE,Gemma-3-12B,-0.139,0.608,110,1,0.836,n,n,1,0.844,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,UF,2fi AE=BC=DF on defection_effect,Gemma-3-12B (factor F: mixed),-0.075,0.649,110,1,0.881,n,n,1,0.89,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,T,T_pays_at_end_vs_never_mid,Gemma-3-12B,0.03,0.684,110,1,0.911,n,n,1,0.922,arm_T_v2_2/results_arm_T.json paired_vs_never_pays,
+EXPLORATORY,n,U,defense=verify vs BASE,Gemma-3-12B,-0.111,0.688,110,1,0.911,n,n,1,0.922,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,U,pay=always vs BASE,Gemma-3-12B,-0.111,0.71,110,1,0.93,n,n,1,0.941,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,SE,SE-scarcity vs SE-recip,Gemma-3-12B,0.1,0.766,110,1,0.985,n,n,1,1,arm_SE_v2_2/results_arm_SE.json paired,
+EXPLORATORY,n,UF,main D_N on defection_effect,Gemma-3-12B (factor F: mixed),-0.05,0.786,110,1,0.985,n,n,1,1,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,U,pay=sporadic vs BASE,Gemma-3-12B,-0.0833,0.788,110,1,0.985,n,n,1,1,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,U,pay=initial_sporadic vs BASE,Gemma-3-12B,-0.0833,0.789,110,1,0.985,n,n,1,1,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,U,defense=provenance+verify vs BASE,Gemma-3-12B,-0.0833,0.797,110,1,0.985,n,n,1,1,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,F,H2b_insider_raises_defection,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",0.0833,0.808,110,1,0.988,n,n,1,1,arm_F_v2_2/results.json secondary_holm/H2b_insider_raises_defection, two-sided = 2 x one-sided; stored one-sided p 0.404
+EXPLORATORY,n,U,defense=quarantine vs BASE,Gemma-3-12B,-0.0833,0.827,110,1,1,n,n,1,1,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,DB,DB1-DB0 extra_defections,Gemma-3-12B,-0.1,0.856,110,1,1,n,n,1,1,arm_DB_v2_2/results_arm_DB.json paired,
+EXPLORATORY,n,U,pos=outsider_then_insider vs BASE,Gemma-3-12B,0.0556,0.858,110,1,1,n,n,1,1,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,DB,DB1-DB0 bribes_accepted,Gemma-3-12B,-0.1,0.883,110,1,1,n,n,1,1,arm_DB_v2_2/results_arm_DB.json paired,
+EXPLORATORY,n,U,recordsOpenXpay=initial_sporadic vs BASE,Gemma-3-12B,-0.0556,0.906,110,1,1,n,n,1,1,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,UF,2fi AC=BE=DG on defection_effect,Gemma-3-12B (factor F: mixed),-0.025,0.932,110,1,1,n,n,1,1,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,UF,main A_position on defection_effect,Gemma-3-12B (factor F: mixed),-0.025,0.933,110,1,1,n,n,1,1,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,G,outsider bribe early|disguised > 0,Qwen-2.5-7B,0.025,0.986,110,1,1,n,n,1,1,arm_G_v2_2/results_arm_G.json conditions/early|disguised, two-sided = 2 x one-sided; stored one-sided p 0.493
+EXPLORATORY,n,F,H1_primary: combined - best,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",,1,110,1,1,n,n,1,1,arm_F_v2_2/results.json H1_primary,one-sided
+EXPLORATORY,n,F,H1_leakfree: combined - best,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",,1,110,1,1,n,n,1,1,arm_F_v2_2/results.json H1_leakfree,one-sided
+EXPLORATORY,n,G,outsider bribe late|disguised > 0,Qwen-2.5-7B,0,1,110,1,1,n,n,1,1,arm_G_v2_2/results_arm_G.json conditions/late|disguised, effect 0 -> two-sided 1; stored one-sided p 1
+EXPLORATORY,n,G_ada,outsider bribe early|disguised > 0,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",0,1,110,1,1,n,n,1,1,arm_G_ada_v2_2/results_arm_G.json conditions/early|disguised, effect 0 -> two-sided 1; stored one-sided p 0.756
+EXPLORATORY,n,G_ada,outsider bribe mid|disguised > 0,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",0,1,110,1,1,n,n,1,1,arm_G_ada_v2_2/results_arm_G.json conditions/mid|disguised, effect 0 -> two-sided 1; stored one-sided p 1
+EXPLORATORY,n,G_ada,contrast_early_minus_late,"arm-F mix (gemma-4-31b/26b, qwen3.8-27b, deepseek-v4-flash)",0,1,110,1,1,n,n,1,1,arm_G_ada_v2_2/results_arm_G.json contrast_early_minus_late,
+EXPLORATORY,n,U,recordsOpenXpay=always vs BASE,Gemma-3-12B,0.0278,1,110,1,1,n,n,1,1,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,U,start=mid vs BASE,Gemma-3-12B,0.0278,1,110,1,1,n,n,1,1,arm_U_v2_2/results_arm_U.json cells,
+EXPLORATORY,n,UF,2fi AB=CE=FG on defection_effect,Gemma-3-12B (factor F: mixed),0,1,110,1,1,n,n,1,1,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,UF,2fi AF=BG=DE on defection_effect,Gemma-3-12B (factor F: mixed),0,1,110,1,1,n,n,1,1,arm_UF_v2_2/results_arm_UF.json effects,
+EXPLORATORY,n,SE,SE-social vs SE-rumour,Gemma-3-12B,0,1,110,1,1,n,n,1,1,arm_SE_v2_2/results_arm_SE.json paired,
+EXPLORATORY,n,SE,SE-liking vs SE-rumour,Gemma-3-12B,0.05,1,110,1,1,n,n,1,1,arm_SE_v2_2/results_arm_SE.json paired,
+PREREG_DC,y,DC,H-DC2 bribe-only: dual - no dual (extra defections),Gemma-3-12B,-0.475,0.0019,3,0.0057,0.0057,y,y,0.186,0.0107,arm_DC_v2_2/results_arm_DC.json tests,
+PREREG_DC,y,DC,H-DC1 base: dual - no dual (extra defections),Gemma-3-12B,-0.55,0.0329,3,0.0658,0.0493,n,y,1,0.116,arm_DC_v2_2/results_arm_DC.json tests,
+PREREG_DC,y,DC,H-DC3 welfare cost: clean_dual - clean (completion),Gemma-3-12B,0.022,0.472,3,0.472,0.472,n,n,1,0.724,arm_DC_v2_2/results_arm_DC.json tests,
+PREREG_v21_primary,y,v2.1,H1 leak-free: combined - best single detector,Qwen-2.5-7B,-0.096,1,1,1,1,n,n,1,1,final_v2_1/results.json H1_leakfree,one-sided
+PREREG_v21_secondary,y,v2.1,H2b_insider_raises_defection,Qwen-2.5-7B,0.133,0.0001,4,0.0004,0.0004,y,y,0.0106,0.000908,final_v2_1/results.json secondary_holm/H2b_insider_raises_defection,one-sided
+PREREG_v21_secondary,y,v2.1,H4_certainty_beats_severity,Qwen-2.5-7B,,0.0156,4,0.0469,0.0312,y,y,1,0.0717,final_v2_1/results.json secondary_holm/H4_certainty_beats_severity,one-sided
+PREREG_v21_secondary,y,v2.1,H3_rcq_cuts_insider_damage,Qwen-2.5-7B,,0.819,4,1,1,n,n,1,1,final_v2_1/results.json secondary_holm/H3_rcq_cuts_insider_damage,one-sided
+PREREG_v21_secondary,y,v2.1,H2a_d_evil_raises_defection,Qwen-2.5-7B,0,1,4,1,1,n,n,1,1,final_v2_1/results.json secondary_holm/H2a_d_evil_raises_defection,one-sided

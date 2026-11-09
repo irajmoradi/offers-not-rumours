@@ -1,0 +1,4 @@
+# Figure scripts that `import viz` use the viz house-style library (commit used for the paper figures):
+viz @ git+https://github.com/safety-research/viz@9cda155aabf95125c996bda51eacb259c659c78d
+# Plain-matplotlib figure scripts (keys_and_god/figs/fig_forgery_dose.py, fig1_headline.py, tiein_final_clean.py) need only:
+matplotlib==3.10.7

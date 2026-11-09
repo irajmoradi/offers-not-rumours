@@ -1,0 +1,47 @@
+{
+ "usd": 0.0,
+ "calls": 0,
+ "missing_cost": 0,
+ "prompt_tokens": 0,
+ "completion_tokens": 0,
+ "empty": 0,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "adaption:gemma-4-26b-a4b-it": {
+   "usd": 0.0010653390000000002,
+   "calls": 21,
+   "empty": 0
+  },
+  "adaption:gemma-4-31b-it": {
+   "usd": 0.0025345400000000005,
+   "calls": 36,
+   "empty": 0
+  },
+  "adaption:deepseek-v4-flash": {
+   "usd": 0.0010971161359999999,
+   "calls": 34,
+   "empty": 0
+  },
+  "adaption:qwen3.8-27b": {
+   "usd": 0.0019525229999999998,
+   "calls": 26,
+   "empty": 0
+  }
+ },
+ "by_arm": {
+  "H_N4_ada": {
+   "usd": 0.006649518136,
+   "calls": 117,
+   "prompt_tokens": 75616,
+   "completion_tokens": 4641
+  }
+ },
+ "adaption_calls": 117,
+ "adaption_usd": 0.006649518136,
+ "adaption_429": 1,
+ "adaption_429_per_min": {
+  "16:32": 1
+ }
+}

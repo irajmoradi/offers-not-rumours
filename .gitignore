@@ -1,0 +1,37 @@
+# secrets: never commit keys or env files
+.env
+.env.*
+!.env.example
+*.key
+*_key
+*_key.txt
+*apikey*
+openrouterkey.txt
+# run outputs and caches (re-created by the commands in README.md)
+/keys_and_god/runs/
+/keys_and_god/cache/
+/keys_and_god/legacy_e1/runs/
+/keys_and_god/legacy_e1/cache/
+/betrayal/runs/v2run/
+/betrayal/runs/*_log*.txt
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+*.egg-info/
+# raw logs and large data are not part of the release
+*.jsonl
+!single_agent/data/noor_steer/sweep.jsonl
+!single_agent/data/noor_steer/tempt300.jsonl
+*.jsonl.gz
+*.npy
+*.npz
+!single_agent/vectors/**/*.npz
+*.pt
+*.safetensors
+# figure outputs written by the scripts next to themselves
+betrayal/out/viz_figs/*.png
+betrayal/out/viz_figs/*.pdf
+keys_and_god/figs/*.png
+keys_and_god/figs/*.pdf

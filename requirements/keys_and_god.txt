@@ -1,0 +1,17 @@
+# Keys & God engine + CoT judge + Keys & God analysis. Python 3.12 (paper runs: 3.12.16, conda env "swarm").
+# Direct dependencies, pinned to the versions in the env the paper used. Full freeze: keys_and_god.lock.txt
+pydantic==2.12.4
+PyYAML==6.0.3
+Jinja2==3.1.6
+httpx==0.28.1
+openai==2.7.2
+numpy==2.3.5
+networkx==3.5
+pandas==2.3.3
+matplotlib==3.10.7
+scipy==1.16.3
+psutil==7.1.3
+# tests / lint
+pytest==9.0.2
+hypothesis==6.170.15
+ruff==0.17.4

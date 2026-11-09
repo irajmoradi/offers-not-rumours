@@ -1,0 +1,2 @@
+description: LLM God prompt set (WP4, god.kind=llm). system.j2 = role, the players' rules (verbatim from the agent set), powers, tools and the one-JSON-action format; wake.j2 = the per-wake briefing (round, budget, roster, God's own past uses). God-only: nothing here is ever rendered to a player.
+output: json

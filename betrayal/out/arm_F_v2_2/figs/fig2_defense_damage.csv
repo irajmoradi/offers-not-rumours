@@ -1,0 +1,7 @@
+attacker,defense,attack_effect_mean,ci_lo,ci_hi,n,net_damage_mean,defense_cost_no_attacker
+d_evil,none,-0.0312,-0.1094,0.0312,8,-0.0312,
+d_evil,provenance,0.0,0.0,0.0,8,-0.0469,-0.0469
+d_evil,reputation+corroboration+quarantine,0.0469,0.0,0.1094,8,0.0156,-0.0312
+insider,none,0.0,-0.0714,0.0714,8,0.0,
+insider,provenance,0.0536,0.0179,0.1071,8,0.0179,-0.0469
+insider,reputation+corroboration+quarantine,0.0536,-0.0179,0.1429,8,0.0357,-0.0312

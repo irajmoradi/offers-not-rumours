@@ -1,0 +1,39 @@
+# Grid cell (plan/GRID_PLAN.md). Generated from configs/grid_oss120b_base.yaml; `extends` allows one
+# level only, so each cell is standalone. N=10, 20 rounds, run.seed 1 x 8 seeds (game_idx 0-7; world
+# seed depends only on run.seed+game_idx, so all cells play the same worlds as G1/G3 (their first 8)), paired God/no-God fork.
+# reasoning.salvage_truncated on (as G1/G3). openai/gpt-oss-120b, reasoning_effort low, provider_sort price. llm.budget_usd = this cell's hard cap.
+# G2: SEQUENTIAL twin of G1 (only game.turn_mode differs; no B'). Runs in parallel with G1/G3:
+#   OpenRouter concurrency 4 (G1/G3 use 16), all 16 branches at once, hard cap $0.55. 10 seeds at
+#   concurrency 8 aborted on cost projection ($0.66 > $0.55; fallback providers at ~2.9x price under load).
+#   python -m swarm.run --config configs/grid_oss_seq_k2.yaml --run-id grid_oss_seq_k2
+extends: base.yaml
+run: {name: grid_oss_seq_k2, seed: 1, n_games: 8, max_concurrency_games: 16}
+reasoning: {salvage_truncated: true}
+game: {n_agents: 10, max_rounds: 20, turn_mode: sequential, turn_order: reshuffle}
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 2, scope: game}
+  schedule:
+  - round: 3
+    after_turns: 0
+    power: message_fraud
+    args: {sender: recent_partner, receiver: closest_to_winning}
+  - round: 5
+    after_turns: 0
+    power: cot_control
+    args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}
+runner:
+  engine: real
+  report: true
+  fork: {enabled: true, noise_replica: false, serial_pair: false}
+roles:
+  agent: {backend: openrouter, model: openai/gpt-oss-120b, max_tokens: 1000}
+  god: {backend: openrouter, model: openai/gpt-oss-120b}
+  judge: {backend: openrouter, model: openai/gpt-oss-120b}
+  summarizer: {backend: openrouter, model: openai/gpt-oss-120b}
+llm:
+  budget_usd: 0.55
+  cache: {mode: read_write}
+  openrouter: {enabled: true, model: openai/gpt-oss-120b, max_concurrency: 4, global_cap_usd: 6.0, price_in_per_mtok: 0.1,
+    price_out_per_mtok: 0.5, reasoning_effort: low, provider_sort: price}

@@ -1,0 +1,40 @@
+# Defect fix A/B arm (plan/TRADE_DESIGN.md §1 lists the related v2 switches; GAME_THEORY_AUDIT §8 items 4-5):
+# G1 grid_oss_sim_k2 (N=10, 20 rounds, simultaneous, run.seed 1 x game_idx 0-15 = G1's 16 worlds, same
+# God schedule: fraud r3 + cot_control r5, God / noGod / noise B') with
+#   wrong_defect_penalty score_penalty   a wrong defect costs 1/3 score (one need), removes NO need
+#   defect.win_rule all_needs            a win needs every ORIGINAL need held (burns / lost needs never
+#                                        create a win; win == needs score 1.0)
+# Compare against runs/grid_oss_sim_k2 (G1). Not run yet. Est. cost ~ G1: $0.5-1.4.
+#   python -m swarm.run --config configs/g1_defectfix_sim.yaml --run-id g1_defectfix_sim
+extends: base.yaml
+run: {name: g1_defectfix_sim, seed: 1, n_games: 16, max_concurrency_games: 12}
+reasoning: {salvage_truncated: true}
+game: {n_agents: 10, max_rounds: 20, turn_mode: simultaneous, turn_order: reshuffle,
+  wrong_defect_penalty: score_penalty, defect: {win_rule: all_needs}}
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 2, scope: game}
+  schedule:
+  - round: 3
+    after_turns: 0
+    power: message_fraud
+    args: {sender: recent_partner, receiver: closest_to_winning}
+  - round: 5
+    after_turns: 0
+    power: cot_control
+    args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}
+runner:
+  engine: real
+  report: true
+  fork: {enabled: true, noise_replica: true, serial_pair: false}
+roles:
+  agent: {backend: openrouter, model: openai/gpt-oss-120b, max_tokens: 1000}
+  god: {backend: openrouter, model: openai/gpt-oss-120b}
+  judge: {backend: openrouter, model: openai/gpt-oss-120b}
+  summarizer: {backend: openrouter, model: openai/gpt-oss-120b}
+llm:
+  budget_usd: 1.6
+  cache: {mode: read_write}
+  openrouter: {enabled: true, model: openai/gpt-oss-120b, max_concurrency: 16, global_cap_usd: 20.0, price_in_per_mtok: 0.1,
+    price_out_per_mtok: 0.5, reasoning_effort: low, provider_sort: price}

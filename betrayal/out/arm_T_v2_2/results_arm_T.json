@@ -1,0 +1,372 @@
+{
+ "label": "EXPLORATORY arm T (pay timing)",
+ "cells": [
+  {
+   "cell": "never_pays",
+   "seeds": 40,
+   "extra_defections": 2.175,
+   "ed_lo": 1.875,
+   "ed_hi": 2.5,
+   "key_damage": -0.026,
+   "bribe_offers": 248,
+   "bribes_accepted": 83,
+   "payments_delivered": 0,
+   "payments_due_undelivered": 0,
+   "pay_failed": 0,
+   "ledger_top1_final": 0.8
+  },
+  {
+   "cell": "pays_now",
+   "seeds": 40,
+   "extra_defections": 2.2,
+   "ed_lo": 1.875,
+   "ed_hi": 2.525,
+   "key_damage": -0.024,
+   "bribe_offers": 243,
+   "bribes_accepted": 89,
+   "payments_delivered": 31,
+   "payments_due_undelivered": 41,
+   "pay_failed": 41,
+   "ledger_top1_final": 0.4
+  },
+  {
+   "cell": "pays_later3",
+   "seeds": 40,
+   "extra_defections": 2.225,
+   "ed_lo": 1.95,
+   "ed_hi": 2.5,
+   "key_damage": -0.027,
+   "bribe_offers": 250,
+   "bribes_accepted": 82,
+   "payments_delivered": 17,
+   "payments_due_undelivered": 57,
+   "pay_failed": 23,
+   "ledger_top1_final": 0.625
+  },
+  {
+   "cell": "pays_at_end",
+   "seeds": 40,
+   "extra_defections": 2.225,
+   "ed_lo": 1.875,
+   "ed_hi": 2.6,
+   "key_damage": -0.05,
+   "bribe_offers": 237,
+   "bribes_accepted": 83,
+   "payments_delivered": 30,
+   "payments_due_undelivered": 38,
+   "pay_failed": 29,
+   "ledger_top1_final": 0.475
+  }
+ ],
+ "detection_over_rounds": [
+  {
+   "cell": "never_pays",
+   "round": 2,
+   "games": 40,
+   "ledger_top1": 0.2
+  },
+  {
+   "cell": "never_pays",
+   "round": 3,
+   "games": 40,
+   "ledger_top1": 0.275
+  },
+  {
+   "cell": "never_pays",
+   "round": 4,
+   "games": 40,
+   "ledger_top1": 0.4
+  },
+  {
+   "cell": "never_pays",
+   "round": 5,
+   "games": 40,
+   "ledger_top1": 0.5
+  },
+  {
+   "cell": "never_pays",
+   "round": 6,
+   "games": 40,
+   "ledger_top1": 0.675
+  },
+  {
+   "cell": "never_pays",
+   "round": 7,
+   "games": 40,
+   "ledger_top1": 0.7
+  },
+  {
+   "cell": "never_pays",
+   "round": 8,
+   "games": 40,
+   "ledger_top1": 0.675
+  },
+  {
+   "cell": "never_pays",
+   "round": 9,
+   "games": 40,
+   "ledger_top1": 0.7
+  },
+  {
+   "cell": "never_pays",
+   "round": 10,
+   "games": 39,
+   "ledger_top1": 0.718
+  },
+  {
+   "cell": "never_pays",
+   "round": 11,
+   "games": 39,
+   "ledger_top1": 0.795
+  },
+  {
+   "cell": "never_pays",
+   "round": 12,
+   "games": 38,
+   "ledger_top1": 0.763
+  },
+  {
+   "cell": "pays_now",
+   "round": 2,
+   "games": 40,
+   "ledger_top1": 0.375
+  },
+  {
+   "cell": "pays_now",
+   "round": 3,
+   "games": 40,
+   "ledger_top1": 0.275
+  },
+  {
+   "cell": "pays_now",
+   "round": 4,
+   "games": 40,
+   "ledger_top1": 0.525
+  },
+  {
+   "cell": "pays_now",
+   "round": 5,
+   "games": 40,
+   "ledger_top1": 0.525
+  },
+  {
+   "cell": "pays_now",
+   "round": 6,
+   "games": 40,
+   "ledger_top1": 0.575
+  },
+  {
+   "cell": "pays_now",
+   "round": 7,
+   "games": 40,
+   "ledger_top1": 0.5
+  },
+  {
+   "cell": "pays_now",
+   "round": 8,
+   "games": 40,
+   "ledger_top1": 0.5
+  },
+  {
+   "cell": "pays_now",
+   "round": 9,
+   "games": 40,
+   "ledger_top1": 0.525
+  },
+  {
+   "cell": "pays_now",
+   "round": 10,
+   "games": 39,
+   "ledger_top1": 0.487
+  },
+  {
+   "cell": "pays_now",
+   "round": 11,
+   "games": 39,
+   "ledger_top1": 0.462
+  },
+  {
+   "cell": "pays_now",
+   "round": 12,
+   "games": 37,
+   "ledger_top1": 0.405
+  },
+  {
+   "cell": "pays_later3",
+   "round": 2,
+   "games": 40,
+   "ledger_top1": 0.2
+  },
+  {
+   "cell": "pays_later3",
+   "round": 3,
+   "games": 40,
+   "ledger_top1": 0.45
+  },
+  {
+   "cell": "pays_later3",
+   "round": 4,
+   "games": 40,
+   "ledger_top1": 0.575
+  },
+  {
+   "cell": "pays_later3",
+   "round": 5,
+   "games": 40,
+   "ledger_top1": 0.55
+  },
+  {
+   "cell": "pays_later3",
+   "round": 6,
+   "games": 40,
+   "ledger_top1": 0.65
+  },
+  {
+   "cell": "pays_later3",
+   "round": 7,
+   "games": 40,
+   "ledger_top1": 0.725
+  },
+  {
+   "cell": "pays_later3",
+   "round": 8,
+   "games": 40,
+   "ledger_top1": 0.8
+  },
+  {
+   "cell": "pays_later3",
+   "round": 9,
+   "games": 40,
+   "ledger_top1": 0.725
+  },
+  {
+   "cell": "pays_later3",
+   "round": 10,
+   "games": 40,
+   "ledger_top1": 0.725
+  },
+  {
+   "cell": "pays_later3",
+   "round": 11,
+   "games": 40,
+   "ledger_top1": 0.7
+  },
+  {
+   "cell": "pays_later3",
+   "round": 12,
+   "games": 39,
+   "ledger_top1": 0.59
+  },
+  {
+   "cell": "pays_at_end",
+   "round": 2,
+   "games": 40,
+   "ledger_top1": 0.325
+  },
+  {
+   "cell": "pays_at_end",
+   "round": 3,
+   "games": 40,
+   "ledger_top1": 0.325
+  },
+  {
+   "cell": "pays_at_end",
+   "round": 4,
+   "games": 40,
+   "ledger_top1": 0.475
+  },
+  {
+   "cell": "pays_at_end",
+   "round": 5,
+   "games": 40,
+   "ledger_top1": 0.55
+  },
+  {
+   "cell": "pays_at_end",
+   "round": 6,
+   "games": 40,
+   "ledger_top1": 0.65
+  },
+  {
+   "cell": "pays_at_end",
+   "round": 7,
+   "games": 40,
+   "ledger_top1": 0.75
+  },
+  {
+   "cell": "pays_at_end",
+   "round": 8,
+   "games": 40,
+   "ledger_top1": 0.75
+  },
+  {
+   "cell": "pays_at_end",
+   "round": 9,
+   "games": 40,
+   "ledger_top1": 0.7
+  },
+  {
+   "cell": "pays_at_end",
+   "round": 10,
+   "games": 40,
+   "ledger_top1": 0.775
+  },
+  {
+   "cell": "pays_at_end",
+   "round": 11,
+   "games": 36,
+   "ledger_top1": 0.639
+  },
+  {
+   "cell": "pays_at_end",
+   "round": 12,
+   "games": 35,
+   "ledger_top1": 0.4
+  }
+ ],
+ "paired_vs_never_pays": [
+  {
+   "test": "T_pays_now_vs_never_final",
+   "n": 40,
+   "diff": -0.4,
+   "p": 0.0004,
+   "p_holm": 0.0024
+  },
+  {
+   "test": "T_pays_at_end_vs_never_final",
+   "n": 40,
+   "diff": -0.325,
+   "p": 0.004,
+   "p_holm": 0.02
+  },
+  {
+   "test": "T_pays_now_vs_never_mid",
+   "n": 40,
+   "diff": -0.177,
+   "p": 0.0293,
+   "p_holm": 0.1172
+  },
+  {
+   "test": "T_pays_later3_vs_never_final",
+   "n": 40,
+   "diff": -0.175,
+   "p": 0.0664,
+   "p_holm": 0.1992
+  },
+  {
+   "test": "T_pays_later3_vs_never_mid",
+   "n": 40,
+   "diff": 0.03,
+   "p": 0.5875,
+   "p_holm": 1
+  },
+  {
+   "test": "T_pays_at_end_vs_never_mid",
+   "n": 40,
+   "diff": 0.03,
+   "p": 0.6841,
+   "p_holm": 1
+  }
+ ],
+ "note_tests": "Paired by seed vs never_pays; sign-flip (seeded Monte Carlo, 200k, n>22); Holm over these 6 tests; exploratory."
+}

@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swarm"
+version = "0.1.0"
+description = "Keys & God: an LLM swarm trading game with an adversarial God"
+requires-python = ">=3.12"
+dependencies = [
+  "pydantic>=2.6",
+  "pyyaml>=6",
+  "jinja2>=3.1",
+  "httpx>=0.27",
+  "openai>=1.40",
+  "numpy",
+  "networkx",
+  "pandas",
+  "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "hypothesis>=6", "ruff>=0.5"]
+
+[tool.setuptools.packages.find]
+include = ["swarm*"]
+
+[tool.setuptools.package-data]
+swarm = ["prompts/templates/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "gpu: needs local vLLM at localhost:8000 (auto-skipped otherwise)",
+  "openrouter: needs OPENROUTER_API_KEY and llm.openrouter.enabled (auto-skipped otherwise)",
+  "slow: long hypothesis runs",
+]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]

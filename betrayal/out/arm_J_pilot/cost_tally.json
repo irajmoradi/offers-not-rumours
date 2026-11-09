@@ -1,0 +1,26 @@
+{
+ "usd": 0.058917000000000004,
+ "calls": 821,
+ "missing_cost": 0,
+ "prompt_tokens": 541150,
+ "completion_tokens": 24010,
+ "empty": 0,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "qwen/qwen-2.5-7b-instruct": {
+   "usd": 0.058917000000000004,
+   "calls": 821,
+   "empty": 0
+  }
+ },
+ "by_arm": {
+  "J": {
+   "usd": 0.058917000000000004,
+   "calls": 821,
+   "prompt_tokens": 541150,
+   "completion_tokens": 24010
+  }
+ }
+}

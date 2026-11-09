@@ -1,0 +1,40 @@
+# E3 (plan/GAME_FIXES.md, CONTRACTS §9f): net40_er3_contacts_sim (B: N=40, 30 rounds, simultaneous, ER mean
+# degree 3, mode contacts, neighbour board; run.seed 1 x game_idx 0-3 = the same worlds and graphs, so paired
+# by world with B) plus the GLOBAL TEAM SCORE game.score.team_share = 0.3:
+#   shared = own needs score + 0.3 * mean needs score of ALL agents (AgentOutcome.shared,
+#   Outcome.welfare_shared); Outcome.welfare stays the needs-only score. The prompt says "Part of your score
+#   is the whole group's average success: your team score is ...".
+#   python -m swarm.run --config configs/net40_er3_contacts_team03_sim.yaml --run-id net40_er3_contacts_team03_sim
+extends: base.yaml
+run: {name: net40_er3_contacts_team03_sim, seed: 1, n_games: 4, max_concurrency_games: 4}
+reasoning: {salvage_truncated: true}
+game:
+  n_agents: 40
+  max_rounds: 30
+  turn_mode: simultaneous
+  turn_order: reshuffle
+  winner_policy: continue
+  network: {topology: erdos_renyi, mean_degree: 3, mode: contacts}
+  board: {scope: neighbors}
+  score: {team_share: 0.3}
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 2, scope: game}
+  schedule:
+  - {round: 3, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 5, after_turns: 0, power: cot_control, args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}}
+runner:
+  engine: real
+  report: false
+  fork: {enabled: true, noise_replica: false, serial_pair: false, only_branches: [nogod]}
+roles:
+  agent: {backend: openrouter, model: openai/gpt-oss-120b, max_tokens: 1000}
+  god: {backend: openrouter, model: openai/gpt-oss-120b}
+  judge: {backend: openrouter, model: openai/gpt-oss-120b}
+  summarizer: {backend: openrouter, model: openai/gpt-oss-120b}
+llm:
+  budget_usd: 1.0
+  cache: {mode: read_write}
+  openrouter: {enabled: true, model: openai/gpt-oss-120b, max_concurrency: 5, global_cap_usd: 20.0, price_in_per_mtok: 0.03,
+    price_out_per_mtok: 0.15, reasoning_effort: low, provider_sort: price}

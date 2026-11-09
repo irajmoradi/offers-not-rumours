@@ -1,0 +1,18 @@
+{
+ "fig_tradeoff": {
+  "title_caption": "Fixes that cut obeying below 10% cut honest engagement to 0-3%.",
+  "alt": "Fixes that cut obeying below 10% cut honest engagement to 0-3%. Scatter plot of 8 points (x: Engaged with an honest trade offer, y: Obeyed the fake boss). No fix (45%, 26.6667%); Neuron push (1%, 1%); Neuron push, probe switch (30%, 16.3333%); Neuron push, two gates (35%, 18.3333%); DPO on layers 12-16 or all (0%, 0%); Gentle DPO (3%, 2.66667%); DPO on 52 active pairs (49%, 25%); Switch-off (n.s. vs random) (48%, 18.3333%)."
+ },
+ "fig_obey_only": {
+  "title_caption": "Fair trades rose from 32% to 52%, but obeying did not fall. Error bars are 95% intervals.",
+  "alt": "Fair trades rose from 32% to 52%, but obeying did not fall. Bar chart. Obeyed the fake boss (300 test scenes): No push 23.7%, Push without the help part 22.7%; Completed the fair trade (50 held-out honest scenes): No push 32.0%, Push without the help part 52.0%."
+ },
+ "fig_cosine": {
+  "title_caption": "Obey and help directions had cosine 0.32 to 0.46 at mid depth.",
+  "alt": "Obey and help directions had cosine 0.32 to 0.46 at mid depth. 3 panels. Gemma-2-2B: Line chart over relative depth. Obey vs help: from \u22120.492 at 0 to 0.020 at 1, highest 0.514 at 0.6, lowest \u22120.610 at 0.04; Null: from \u22120.041 at 0 to 0.014 at 1, highest 0.020 at 0.92, lowest \u22120.045 at 0.24. Marked: Mid depth at 0.4, at 0.7. At Mid depth: Obey vs help 0.374, Null 0.010. Qwen2.5-1.5B: Line chart over relative depth. Obey vs help: from 0.284 at 0 to 0.671 at 1, lowest 0.024 at 0.185185; Null: from 0.022 at 0 to \u22120.030 at 1, highest 0.035 at 0.62963, lowest \u22120.043 at 0.962963. Marked: Mid depth at 0.4, at 0.7. SmolLM2-1.7B: Line chart over relative depth. Obey vs help: from 0.246 at 0 to 0.528 at 1, lowest \u22120.310 at 0.26087; Null: from \u22120.007 at 0 to 0.023 at 1, highest 0.023 at 0.304348, lowest \u22120.021 at 0.26087. Marked: Mid depth at 0.4, at 0.7."
+ },
+ "fig_hosted": {
+  "title_caption": "Hosted models obeyed a fake boss in 7.7% to 52.7% of scenes. Error bars are 95% intervals.",
+  "alt": "Hosted models obeyed a fake boss in 7.7% to 52.7% of scenes. Horizontal bar chart. gemma-4-26b-a4b-it 18.7% (56 of 300); gemma-4-31b-it 52.7% (158 of 300); glm-53-flash, low effort 16.0% (48 of 300); glm-53-flash, high effort 7.7% (23 of 300); qwen3.8-27b, low effort 13.0% (39 of 300); deepseek-v4-flash, high effort 42.3% (127 of 300)."
+ }
+}

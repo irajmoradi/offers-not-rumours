@@ -1,0 +1,39 @@
+{
+ "usd": 0.00042080000000000004,
+ "calls": 24,
+ "missing_cost": 0,
+ "prompt_tokens": 3700,
+ "completion_tokens": 254,
+ "empty": 0,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "adaption:gemma-4-31b-it": {
+   "usd": 0.012486379999999998,
+   "calls": 167,
+   "empty": 0
+  },
+  "qwen/qwen-2.5-7b-instruct": {
+   "usd": 0.00042080000000000004,
+   "calls": 24,
+   "empty": 0
+  }
+ },
+ "by_arm": {
+  "UA": {
+   "usd": 0.012486379999999998,
+   "calls": 167,
+   "prompt_tokens": 103476,
+   "completion_tokens": 12165
+  },
+  "UA_judge": {
+   "usd": 0.00042080000000000004,
+   "calls": 24,
+   "prompt_tokens": 3700,
+   "completion_tokens": 254
+  }
+ },
+ "adaption_calls": 167,
+ "adaption_usd": 0.012486379999999998
+}

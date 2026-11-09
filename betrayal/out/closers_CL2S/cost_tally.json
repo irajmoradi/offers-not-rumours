@@ -1,0 +1,59 @@
+{
+ "usd": 0.15119003999999972,
+ "calls": 3011,
+ "missing_cost": 0,
+ "prompt_tokens": 1744463,
+ "completion_tokens": 106367,
+ "empty": 0,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "mistralai/mistral-small-3.2-24b-instruct": {
+   "usd": 0.04733249999999993,
+   "calls": 921,
+   "empty": 0
+  },
+  "microsoft/phi-4": {
+   "usd": 0.04577734000000003,
+   "calls": 970,
+   "empty": 0
+  },
+  "google/gemma-3-27b-it": {
+   "usd": 0.053674700000000054,
+   "calls": 943,
+   "empty": 0
+  },
+  "qwen/qwen-2.5-7b-instruct": {
+   "usd": 0.0044055000000000006,
+   "calls": 177,
+   "empty": 0
+  }
+ },
+ "by_arm": {
+  "CL2S_mistral-small-3.2-24b-instruct": {
+   "usd": 0.04733249999999993,
+   "calls": 921,
+   "prompt_tokens": 550979,
+   "completion_tokens": 29284
+  },
+  "CL2S_phi-4": {
+   "usd": 0.04577734000000003,
+   "calls": 970,
+   "prompt_tokens": 570756,
+   "completion_tokens": 41603
+  },
+  "CL2S_gemma-3-27b-it": {
+   "usd": 0.053674700000000054,
+   "calls": 943,
+   "prompt_tokens": 582515,
+   "completion_tokens": 33559
+  },
+  "CL2S_judge": {
+   "usd": 0.0044055000000000006,
+   "calls": 177,
+   "prompt_tokens": 40213,
+   "completion_tokens": 1921
+  }
+ }
+}

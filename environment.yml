@@ -1,0 +1,9 @@
+# Conda env for Keys & God, the CoT judge and the single-agent tools (the paper's "swarm" env).
+# The betrayal study used a separate Python 3.13 venv: see requirements/betrayal.txt.
+name: swarm-p1
+channels: [conda-forge]
+dependencies:
+  - python=3.12.16
+  - pip
+  - pip:
+      - -r requirements/keys_and_god.txt

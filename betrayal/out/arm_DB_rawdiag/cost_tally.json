@@ -1,0 +1,37 @@
+{
+ "usd": 0.026144325,
+ "calls": 477,
+ "missing_cost": 19,
+ "prompt_tokens": 322068,
+ "completion_tokens": 15822,
+ "empty": 25,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "google/gemma-3-12b-it": {
+   "usd": 0.024579524999999998,
+   "calls": 445,
+   "empty": 25
+  },
+  "qwen/qwen-2.5-7b-instruct": {
+   "usd": 0.0015648,
+   "calls": 32,
+   "empty": 0
+  }
+ },
+ "by_arm": {
+  "DB_N8_gemma": {
+   "usd": 0.024579524999999998,
+   "calls": 445,
+   "prompt_tokens": 307124,
+   "completion_tokens": 15470
+  },
+  "DB_judge": {
+   "usd": 0.0015648,
+   "calls": 32,
+   "prompt_tokens": 14944,
+   "completion_tokens": 352
+  }
+ }
+}

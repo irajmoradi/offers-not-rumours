@@ -1,0 +1,67 @@
+# Realistic framing LIVE smoke S-C = S-B (framing_facility_glm_smoke.yaml) + the LLM God (GLM-5.3-flash with the agents'
+# reasoning effort and providers, god/v2_facility: framed briefing/tools + output guardrail), budget k=2 per round,
+# waking in rounds 2-4, powers message_fraud + reveal_needs (mix, max 2 receivers, as in the sweep).
+# Realistic framing LIVE smoke S1 (game.framing.mode facility): GLM-5.3-flash agents at reasoning MEDIUM, 20 agents,
+# 4 rounds, no God. The long80 game rules (hidden horizon, sbm contacts + connect require_known, trade, score_penalty,
+# lock_and_stay, community / held-key / delivery bonuses, defect broadcast, anonymized ledger), except 20 agents in
+# 2 departments of 10 (sbm needs >= 2 communities). Stance and handoff register mixed per agent (logged in meta).
+# Providers pinned to Relace -> Wafer -> Darkbloom with no other fallbacks. max_tokens 8000 so the natural medium
+# output length is measured (Iraj: max_tokens 8000 everywhere; the ledger stop is the money guard).
+# S2 (reasoning minimal, same game):
+#   ... llm.openrouter.reasoning_effort=minimal roles.agent.max_tokens=1000 run.name=framing_facility_glm_smoke_min
+# Spend caps (llm.budget_usd, llm.openrouter.global_cap_usd / ledger_path) are passed on the command line.
+extends: base.yaml
+run: {name: framing_facility_glm_smoke_god, seed: 1, n_games: 1}
+reasoning: {salvage_truncated: true}
+game:
+  n_agents: 20
+  max_rounds: 4
+  turn_mode: simultaneous
+  turn_order: reshuffle
+  winner_policy: lock_and_stay
+  wrong_defect_penalty: score_penalty
+  defect: {win_rule: all_needs}
+  trade: {enabled: true, max_offers_per_turn: 1, max_keys_per_side: 3}
+  network:
+    topology: sbm
+    communities: 2
+    mean_degree: 4
+    mixing: 0.1
+    min_bridges: 2
+    mode: contacts
+    key_placement: mixed
+    connect: {enabled: true, cost_rounds: 0, require_known: true}
+  board: {scope: neighbors}
+  view_log:
+    anonymize_noncontacts: true
+    horizon: round_only
+    defect_broadcast: {enabled: true, delay_rounds: 3, mode: round_summary}
+  score: {held_key_bonus: 0.05, held_key_scope: initial, community_bonus: 0.15, community_threshold_count: 4,
+          community_success_needs: 2, delivery_credit: 0.1}
+  framing: {mode: facility, stance: mixed, handoff_variant: mixed}
+god:
+  kind: llm
+  start_round: 2
+  budget: {k: 2, scope: round}
+  powers:
+    reveal_needs: {enabled: true, variant: mix, p_false: 0.5, max_receivers: 2}
+  llm: {model: z-ai/glm-5.3-flash, max_steps: 10, max_tokens: null, powers: [message_fraud, reveal_needs],
+        prompt_set: god/v2_facility}
+  schedule:
+  - {round: 2, after_turns: 0, power: message_fraud, args: {}}
+  - {round: 3, after_turns: 0, power: message_fraud, args: {}}
+  - {round: 4, after_turns: 0, power: message_fraud, args: {}}
+runner:
+  engine: real
+  report: false
+  fork: {enabled: false}
+roles:
+  agent: {backend: openrouter, model: z-ai/glm-5.3-flash, prompt_set: agent/v2_facility, max_tokens: null}
+  god: {backend: openrouter, model: z-ai/glm-5.3-flash}
+llm:
+  budget_usd: 0.4
+  cache: {mode: read_write, path: cache/framing_smoke.sqlite}
+  openrouter: {enabled: true, model: z-ai/glm-5.3-flash, max_concurrency: 64, global_cap_usd: 42.5,
+    ledger_path: runs/openrouter_ledger.jsonl,
+    price_in_per_mtok: 0.15, price_out_per_mtok: 0.5, reasoning_effort: medium,
+    provider_order: [Relace, Wafer, Darkbloom], allow_fallbacks: false}

@@ -1,0 +1,71 @@
+{
+ "usd": 1.8850365550000088,
+ "calls": 31484,
+ "missing_cost": 0,
+ "prompt_tokens": 22418842,
+ "completion_tokens": 1364267,
+ "empty": 19,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "qwen/qwen-2.5-7b-instruct": {
+   "usd": 1.32979100000001,
+   "calls": 18530,
+   "empty": 0
+  },
+  "openai/gpt-oss-20b": {
+   "usd": 0.17854049299999963,
+   "calls": 4158,
+   "empty": 6
+  },
+  "meta-llama/llama-3.1-8b-instruct": {
+   "usd": 0.08913708700000011,
+   "calls": 4484,
+   "empty": 0
+  },
+  "google/gemma-3-12b-it": {
+   "usd": 0.2875679750000002,
+   "calls": 4312,
+   "empty": 13
+  }
+ },
+ "by_arm": {
+  "A": {
+   "usd": 0.8483121000000025,
+   "calls": 10701,
+   "prompt_tokens": 7769865,
+   "completion_tokens": 356628
+  },
+  "A_d_evil": {
+   "usd": 0.012100900000000001,
+   "calls": 125,
+   "prompt_tokens": 94307,
+   "completion_tokens": 13351
+  },
+  "A_judge": {
+   "usd": 0.0228839,
+   "calls": 978,
+   "prompt_tokens": 207559,
+   "completion_tokens": 10640
+  },
+  "D": {
+   "usd": 0.9272537550000012,
+   "calls": 17452,
+   "prompt_tokens": 13687808,
+   "completion_tokens": 940870
+  },
+  "D_d_evil": {
+   "usd": 0.020133599999999998,
+   "calls": 198,
+   "prompt_tokens": 160440,
+   "completion_tokens": 20448
+  },
+  "D_judge": {
+   "usd": 0.054352300000000055,
+   "calls": 2030,
+   "prompt_tokens": 498863,
+   "completion_tokens": 22330
+  }
+ }
+}

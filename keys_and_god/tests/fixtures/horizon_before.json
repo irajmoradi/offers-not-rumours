@@ -1,0 +1,695 @@
+{
+ "_note": "per config at showcase 40c309a, before game.view_log.horizon: [config_hash, sha256(agent system prompt)], plus sha256 of each FakeLLM game's events.jsonl / request messages under tests/game/test_horizon.FAKE_OV",
+ "configs": {
+  "configs/base.yaml": {
+   "events": [
+    "8a333f75ec740603af7f74f308710ea32451d9e3ef496b5c6e9a6b7533c2b47d"
+   ],
+   "hash": "b442ad7af4a87da8bb2ff289c1e794cd7b98f44742c8a7066966921cfad35ee1",
+   "requests": [
+    "01b89797438a1d13dd5805cfde3e09da68bbf6930ff91d3e9e39414eb846137f"
+   ],
+   "system": "e42f9f8ff387fc965a55aa74ff02b2b9911b8d3f5d37e52e18fcd288812475a7"
+  },
+  "configs/demo.yaml": {
+   "events": [
+    "77e594e99c756fadf4a213c939b5024ac900d81625e98294da1a0b0ea0b112b0",
+    "9f679b18e713d7d169d21b78cd08585767176a4a4d5efeabed84e5a18f7c8f0c"
+   ],
+   "hash": "16cc6969159a1e07620cd888f028f77641fd929d396ce98f83ac3fbae1fd3059",
+   "requests": [
+    "53283ebecf4f571c42413752446645a262f9ea6af2dd4c60258a32370672f815",
+    "ada4e4b83408607409a9a7f8ff8fbfaef43ff8913cbc16c9ec8193e9d5534197"
+   ],
+   "system": "2342500060a5ebaca74c3e396e9487a5984b07799b7990f57b3ca1ec55fa1d60"
+  },
+  "configs/demo_openrouter.yaml": {
+   "events": [
+    "011c1c124ccbb2f10bcb51a40db55624092bbddeb7dbf5231540372b73ab6e81",
+    "63ab00bdee3c45de1e51d39de93069c5615ce89551b58b8781c49400be4610c4"
+   ],
+   "hash": "c9ae3ba08bf6f96e0f6ab48dd37ec84cf2cf2819e0c44cf861f2be882908523b",
+   "requests": [
+    "d3fd8f4631afd5a1328a1fff74098b49ab6273977bba7f4f7392f706b411ceda",
+    "3aba6dec8b5cbb6dd4d648e9e234fa58ee0f0e52653e501ea37eaac25d7720f4"
+   ],
+   "system": "2342500060a5ebaca74c3e396e9487a5984b07799b7990f57b3ca1ec55fa1d60"
+  },
+  "configs/demo_or_10x30_sim_anonboard.yaml": {
+   "events": [
+    "742389e7e49a29f879b6d116aa4e33398338766eecf92bbb2f5b45d3676207ba",
+    "29e668485916087680ff7a1701330be38fe7086bc12bf154a5ac300950f1fffc"
+   ],
+   "hash": "03d314a60ff815328fa793205a9653f79597421783d0ceb716b6e29aef3fc326",
+   "requests": [
+    "5e9c08ef860ca80a810d1acbb35b7ba49958e055df109e74b5b07808cfeb4c3b",
+    "7824d52725e6f4fbf34ba213e0a96144ec6dd3ad9656f9b304a238db7d0ca649"
+   ],
+   "system": "7cdaebf7c5c98791ccaf006f45e303cef610d2da5798cdc2ab1f449f4d3cde9f"
+  },
+  "configs/demo_or_10x30_sim_boardcost.yaml": {
+   "events": [
+    "3b4e11539e68df907f64070c0038e967a8e208329a32f8954f1cdcca5c80ede0",
+    "ab464c40f12f4a44de240b14b40144a8c3a9f6c0eedd8dcb343b3a06eb007cd5"
+   ],
+   "hash": "b9fb7d5d475d5e2016d4db2535399aa5d5c208fe9624725f2eaeff3de46e37f5",
+   "requests": [
+    "f7f0f09114594d9829251616622754eef2a6fb59250cf38f92161b9798dd5cf3",
+    "1937d728168411fe71380202abe72ef952701016465f3e231c6bcc77b9ec6009"
+   ],
+   "system": "70d904bcbbb38e6c56202030d44699e37210daad34f7107c28f3407016cba872"
+  },
+  "configs/demo_or_10x50_seq.yaml": {
+   "events": [
+    "d54fdd5f4057192d728a2ebf469c79306a75aaa095369cc1d2748683b618a054",
+    "9e994e997f5265d73d7d94889544416b6f06f9c3194568924ab3de3de5ebd173"
+   ],
+   "hash": "10eef76b7b0435cb63c5fc446e5cdf5fb114207fbcf58a403fa10c33713fbddd",
+   "requests": [
+    "cf5a2b4ee84f48ccc3b816406191d5c0cd67116f68070c9f2ac51ff291f7bc31",
+    "d16756924cb4d78ead1000eb585491af52f490638e0f91a5dc5bc321ad86dba3"
+   ],
+   "system": "99383cd8aa7cb4845bf37a11ecc0d98f08251ff2729fb856060fd5d7ceaf4359"
+  },
+  "configs/demo_or_10x50_sim.yaml": {
+   "events": [
+    "779b63b3ecb59c1673f710e6f18f44043e8091ce18389b136ec743458033ee5e",
+    "03f680172212c81845d854d4f910bb0a38b3a1cd7e39a059155c612e11922f1a"
+   ],
+   "hash": "621e4ac06d1fe03b155403068357528f20b3fca5d797b494508d04034a08f1ad",
+   "requests": [
+    "9b9a8b46e3d205582595ce4b30f9b8c7bd25bf44b8e4322fccc97a27ca5a2167",
+    "35376defc25fdc84775ba4accadb456916bca4bd5b9c44c2444262a285a4c424"
+   ],
+   "system": "99383cd8aa7cb4845bf37a11ecc0d98f08251ff2729fb856060fd5d7ceaf4359"
+  },
+  "configs/demo_or_60_sim.yaml": {
+   "events": [
+    "9d21c906b03d7c7e04851892fefd1aac24d802c9f692d8b4c59d423f71305289",
+    "288cd8916a7521846820123596d96e0388aaf799e5e1fc3e5b0d1cae1bc6235b"
+   ],
+   "hash": "2ee4e3a5150760b641601843bd4efa31c0d097560a0a18a16eb3f7caf8705f77",
+   "requests": [
+    "4ccef715020a4321a62346cbf7642fe24b473ec5e0aea930f459f73e6c9ff42d",
+    "c34184e49690025f036d48a1d33d41fb90e33e226f2eb2958c49eb891ea861f3"
+   ],
+   "system": "9c717337e44b429a193e392859d6d153cde1dd5f89a746e0fb57bdb1e38a5b38"
+  },
+  "configs/demo_or_60_sim_boardskip3.yaml": {
+   "events": [
+    "a9a1a3e00ff0d75cb80671dde6363f142fdc89e8733ef6d911d5e21f7dbf2beb",
+    "ab48b0443bf3392d049354af8f34c296a8becf38958448f534a8628494d4e602"
+   ],
+   "hash": "2b49f3bdc4cc7e4d310e59f7d35287b72038c1d26e752ad1dc531bdbe6edeec5",
+   "requests": [
+    "f09f5f783c23920b7a414e92c32700b2109feadde633ecd9627d639c46317f35",
+    "04f646a482ce1b0c1b3ba77da8f157963a77fe4a7d56471c26351d49794437b5"
+   ],
+   "system": "f330ab48ffc99bd60cc9d97a3790c5ae1f6409a2875a796e6aa9ecc914fbd458"
+  },
+  "configs/g1_defectfix_sim.yaml": {
+   "events": [
+    "3f4b34ccf87dfecdcb8fc38de20b9f2b42aeff2305d3c0a82cd56cd26e39bc0c",
+    "f3c6e97c9bcc946faef4981ff6e3b2f2aa4f65321a5b157c010b268462dc9749",
+    "b993105c1278642c99af659355fa56a4b48523cee43a590580b2d0e4b44efad3"
+   ],
+   "hash": "20949a53de6ae88d58402d97027236c7e25c6848c89e2b97ac9cb87a3e66535b",
+   "requests": [
+    "cad64c3dada41a3dd7ef3ff90576c4a49240b56a2d54792343c51ae80c750fd6",
+    "87b923057b52b5624d9a960ab68ac73e8968ce074d91b06bdf328c9e4a18fa20",
+    "51448610d1529ade7df51ed646a8c5437ba2d3c1f66d68ead1f20f1bf3367d37"
+   ],
+   "system": "810d58ccfe5240b49a80a043e3074245a9a9027d756bbf9d5b7c0e6f97a9327b"
+  },
+  "configs/g1_reveal_false_sim.yaml": {
+   "events": [
+    "1c81a69b4902077a45c9e0c4435f388a56521c03fa07ddc0c740c3016130817c",
+    "bc7772d427c1ec48f1100c3df3e7c83d5bac46e7452360ab4e71cad6e6be23ef",
+    "4f4ba6485f834e46de58bf4df2befb26505b961820d5c54065be70fb052442b0"
+   ],
+   "hash": "79d19b426db04922f898fc821ecdb91bccd513c7119d01fe6a73feec166c1114",
+   "requests": [
+    "1657f10bb82bb902dc6ea3f547af54239323ea470ed09a4a535bc07f45d44cc2",
+    "644aadfabf83d7adab3890a227316ad224d301edaea759f5382238b9358025a8",
+    "6641cc3122f08fa5931963b60890548eac11d50e1617311db203a81a911e0bda"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/g1_reveal_true_sim.yaml": {
+   "events": [
+    "ca0321fc3a9c687aa72e9a7ae89fa266b917f8364c992700658d82da4ac5e168",
+    "776ea610752b975dc8dc3a3585164f443f1dab3d5f40af28e6c1636debd1e9e7",
+    "7133f879d5e6e961cbf1aa2d2a958f4b640a193a90cddd9e18a6f678196d207c"
+   ],
+   "hash": "d18b924c32e10b45179f109c1d58131d6243ce06484e899a252cefea10a48091",
+   "requests": [
+    "083d75e41fec26e5db82ca1db7c7830fd7a7ccdfbed0953ddf34490f7f64ab33",
+    "65dfb52b54efa405578c14196c03ab7b5cc3abfd83cb2f1946b9e75abaa47614",
+    "86450c1ec81f4c981061f0eaa53a0ea3e614e7a3b04b1fb90fd4c5cac33d4728"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/g1_v2_costly_sim.yaml": {
+   "events": [
+    "9ba25967534eae17012be3849bface26de2d823fadf149040d966e4c863f5b56",
+    "3d3e1617dd8c1c32b2955934060b3e5427f2784a3d6285d1e03c3691946871de",
+    "7f38f321594047a05cafaad7d3ed0be7715d161fa18858b505ac8f80d358d14d"
+   ],
+   "hash": "7621efabf3e206e5ba64da902b9dc02ebc844f2ae769c56e5a3f7d92174b5b63",
+   "requests": [
+    "94105fa8bf979f492d1c2fb2282557a88075215683d2246c2fd19c2ad66417aa",
+    "db58bd09e7cf0b3e6c7b783bb01b1e5f682d515c4f28a1dfa48a542fdcacd7da",
+    "db58bd09e7cf0b3e6c7b783bb01b1e5f682d515c4f28a1dfa48a542fdcacd7da"
+   ],
+   "system": "3e126a2c82abfb2c8ef26e919a71502f709a916808f0d20055d9481d65c45618"
+  },
+  "configs/g1_v2_costly_trade_sim.yaml": {
+   "events": [
+    "4ead19aa2913d6ea3c769f8db97888a1ddf36f9d8685ddcd32803d253a564d81",
+    "69199e5374cd8a7eb6c585a2bffa8b256646472728521e4de6af99bc83e1f324",
+    "9d2618f9123865d85c3b7db2f97d2c273e91f94215a3987e04087945011fc597"
+   ],
+   "hash": "010cc19e2cd91b8007643e1939b49cda0626901d38531bcaf1599e6e0ec0bb6e",
+   "requests": [
+    "c6619f128c1edfa056a2a3ccdb161422d5e1be70a969a632901e9d2a5cb147ed",
+    "ae9ba2b22eb135a15b7b8af122d26c72fa26b16331023aaf18ab950526a3a38f",
+    "ae9ba2b22eb135a15b7b8af122d26c72fa26b16331023aaf18ab950526a3a38f"
+   ],
+   "system": "c97523143d27691997446ee1637f3eddd27b9ddabb2358e6ba9102c76327a9db"
+  },
+  "configs/grid_oss120b_base.yaml": {
+   "events": [
+    "a1e7093d206234e58e09f79e891307f294a517c4302e7099ba2ee17e3bcb8741",
+    "97c4104ae8a41920488dccd8c8223f5c7adb9860614fd7c9f7890daccd820752"
+   ],
+   "hash": "421fa3f774b95cb5a0ee43e91a0b381d483dbd0769de0c7325f5a87fee017d5f",
+   "requests": [
+    "e0eeb62f5e600b7200b33958e052e3002bfeb94a0a72dc5ac5f4d306b079ee91",
+    "d9c4d7cef640b6ffd3b0d2af89f4339065021844854ecbec013f6f9dfd457133"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/grid_oss_seq_k2.yaml": {
+   "events": [
+    "3ed80d996f3104d1b649c2c30d8517adcb31299713ab4061a7834f4f099809bd",
+    "38139fe4909beb9286d7798263ee36ef7b177d5ddb54e4e39df018694beaf7ea"
+   ],
+   "hash": "a298d030375ab284752eacba03312c848c29443f8c604a849e7f9a8da4a6474a",
+   "requests": [
+    "56feaa22c3c2f5579c6e49c8ad37a54e2193550d72ee902345a98aeaf3ed3a91",
+    "547c8da07f3bc4b3eb6f934593becb6cce3360225780a90f39eb06d8719dbe5f"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/grid_oss_sim_k2.yaml": {
+   "events": [
+    "b9401cb9d0d193b43d4e3a5a14c096d259d1a31b4d74230146e2e22b8468848c",
+    "b0245c188c42c3417adb0aa6291dc1e5e881ae8fcbf44163e169c480cb52e296",
+    "b0e7c73b701ad16b6ff7efe6339bba67d8dfc2d21252a97fb1abfd15e9aeb83b"
+   ],
+   "hash": "15f60423be9731158c2ea9e95947800474162f34990f778fd201af584334eb0f",
+   "requests": [
+    "6d051d957ab388cc81e4a89337539a7327682913c03471db5ab09c640d6736fd",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85",
+    "e7f4e0687b10f54e7d79343e4dedfb8bd1cc0848e4777c641c262aa8e8bf8997"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/grid_oss_sim_k6.yaml": {
+   "events": [
+    "1069cfb86568e0a4fb7d8ee9afa01ab625ae6a1b9b642ee0bdc948af433a635b",
+    "8614ed72eae65991cc40db53ebac98df90fad4b4d0fb12972427ff488666add4"
+   ],
+   "hash": "cf0fcb386bfcfc8593f5a34f776e069c3c665d3853408cda71a579766e2ae88b",
+   "requests": [
+    "60095bdb01a09ebd0236acfd695cb8e82ea931c4258892350402878d406ba444",
+    "5d5952efeeee88898f2dff03a9468de8097dee6c01ed2c00f4f048c24f68ffa0"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/net20_ba_known_sim.yaml": {
+   "events": [
+    "a20719f8acaf7ba29b91616652a217f22702a0a47f5a25e83d0d17a489cb93fa"
+   ],
+   "hash": "6c10d0656fb99cf081930cbc53353e263ed9cf1515bd187b11cab505a4815f9b",
+   "requests": [
+    "271809b7215f3f9816d785ecbf3421519ca1c43de19dd8443eb968e25532df38"
+   ],
+   "system": "0b52ab03937b92d08c5fdfbe4fecee33254086ad46cc5e1f1dd174672e82610b"
+  },
+  "configs/net20_complete_sim.yaml": {
+   "events": [
+    "da7941a809dc3bff8f7530cf4de2d55528648d44df9dcb8f2a0d155e288c9a3f"
+   ],
+   "hash": "beb36f9db954761d540e930e23741129d12411e6d7ff65a221a7f973de8696d9",
+   "requests": [
+    "fd9004194f90181033774fd6c1d5dc6e9d6030482b9e5f1d65ef33cee9ab9c84"
+   ],
+   "system": "e42f9f8ff387fc965a55aa74ff02b2b9911b8d3f5d37e52e18fcd288812475a7"
+  },
+  "configs/net20_er3_contacts_sim.yaml": {
+   "events": [
+    "9654a99c42cd5570f8fea24a2c8416584ddce6bc735cebf2bde64b3f139c9ae3"
+   ],
+   "hash": "f60473c4455ed9ed891aa2be6d13a5ab1fb0d274a3fa588c94713f7e940353a3",
+   "requests": [
+    "166cf58510aaa046fc77176b631a29077fe99e7e7dd4ce96789311dacce38ed8"
+   ],
+   "system": "d2d20fe060d8e1c742de29c17363168bc9269c59ccfad8ce7cf628ebd88d1562"
+  },
+  "configs/net20_er3_known_sim.yaml": {
+   "events": [
+    "f97a533bcf4cbae33d8e28cdde1d086d036d4f2eaa7f4d5e16c8b9544d595f88"
+   ],
+   "hash": "38c5e68470951b10c75cfa7e219b5055ea2eca2fe9ff3911cd0fa5f07518c996",
+   "requests": [
+    "de0113f43779833013a86c754150e526b2b88b7c6bf8ea96db559d122db2bcad"
+   ],
+   "system": "0b52ab03937b92d08c5fdfbe4fecee33254086ad46cc5e1f1dd174672e82610b"
+  },
+  "configs/net40_complete_sim.yaml": {
+   "events": [
+    "60041e01371cc8c32bea9677a16e7d0476b1d94c1029af99277d952520c3a936"
+   ],
+   "hash": "dcbe1c09fcbd52361faef3192675125daa623908e7b2b87a85e219e12960af21",
+   "requests": [
+    "b48e8592b5165b24eb6749dff5da812f02ca71a5c86443539d786a0245944149"
+   ],
+   "system": "2095d60a0c116e4b777913a3653f0298b2bd6decb8722c75086282d7bcce0dc8"
+  },
+  "configs/net40_er3_contacts_connect2_sim.yaml": {
+   "events": [
+    "de5e30af24e46ef2cafd272faa3b9f716255478c4bcd273191baf1948d32b51c"
+   ],
+   "hash": "ecefc20f17ce9c74f27c9dcb4b50817b7d3e5846a71090fccf54bde428e39695",
+   "requests": [
+    "17538abe9a88ac063e5d98f945c9294f81b12440393f7c70b7fc321bae07927d"
+   ],
+   "system": "83c508d0444177327fa7ec3d7cebe2f74a4cda3488bd97747df50586917e9d7a"
+  },
+  "configs/net40_er3_contacts_connect3_sim.yaml": {
+   "events": [
+    "b2d10e406f870bbd655bd633e3a019520d3ea3f145704ddfa3f1c29a32dac6fd"
+   ],
+   "hash": "4175fb92b790aa16368e837782f13df05e83ad9749ae1ebe8caa0f6822cab781",
+   "requests": [
+    "c17b2f969b1175afdd6adf92cc1a73af63019c1884f1fed4694697b425502dfe"
+   ],
+   "system": "a2cca05515531fb1dabbe871c03aad7a2b4e0755618f7772e6b39c1ca2b256a1"
+  },
+  "configs/net40_er3_contacts_high_sim.yaml": {
+   "events": [
+    "3a8eb77ae1d46b06770aabcddbd974a79213ac0f9b7a01ac3e1e3a55595dfc40"
+   ],
+   "hash": "0a33feb52d1bf89ce92f67d8b3dd04fd01a0dd3e82a6e4aed1756974f2c7ed0d",
+   "requests": [
+    "19ef7f1ba3f59225f732fc4bcb7013631a4af45f5fc2c1340a3fcbc01091cdea"
+   ],
+   "system": "92f7e7ad5deeff10a5745b627e2aa89b45c6cd96a1d75f5c2f3ca7bd42901513"
+  },
+  "configs/net40_er3_contacts_sim.yaml": {
+   "events": [
+    "0fde08890160853eb16e084f230093c4c45cbc6cd4fd86ee3a785c3b6ca39d2f"
+   ],
+   "hash": "407874f17fb83cdf21fb41c4ca7013f9cfaa1699b3d1998f6a56898cb0642d9a",
+   "requests": [
+    "868d28d5285d5620865d886080fd785d9e81f34fd5cb620c98c010e7d917c0c6"
+   ],
+   "system": "92f7e7ad5deeff10a5745b627e2aa89b45c6cd96a1d75f5c2f3ca7bd42901513"
+  },
+  "configs/net40_er3_contacts_team03_sim.yaml": {
+   "events": [
+    "b7141bc3e409e43116d1eaf6e0ef85e0391d97275f4b174bcd9a0678f629615f"
+   ],
+   "hash": "d9d8c70e54bbcab19acf5798e8714991b0141404feb4e32307a65e1ad885bce6",
+   "requests": [
+    "8bfe45736ef98a7c3710f3dd433e4d240d5393e5c7584db1e58f0eda8dcc81d1"
+   ],
+   "system": "5cd26bb48e91eb75034d7fc143cb4569bad48aafce2d6badc8cedeaeccaf4ada"
+  },
+  "configs/net40_er3_known_sim.yaml": {
+   "events": [
+    "51fade35cbf6e5017550458fd4338459bf2d77f4786f6fad27f5fcab324d24c5"
+   ],
+   "hash": "45354b9d8d1c30568f748c14d13571ecf91d7d851008013f1be1a5411cfc8d10",
+   "requests": [
+    "80743ba604495dcbd398208c7d5371b2d63a284cf419090bfafb8c508a892ee7"
+   ],
+   "system": "aa772fa7789f0de4c126f6d4492660f95308081b2bbed01bdbb61dd6484fb88e"
+  },
+  "configs/net40_hubclusters_known_sim.yaml": {
+   "events": [
+    "f671cd81dc60afa4144f98b25d4b28a1444e440980e06cef0780a1c82c96d990"
+   ],
+   "hash": "51fa548a4244f160e344344cde0738ef5c05a423ba11bb6859aa63b5eda35d0f",
+   "requests": [
+    "78b799c1b6593a46d204d7f0a9dc8f8652413efb2661e5c1b0a8c2248b1c8999"
+   ],
+   "system": "aa772fa7789f0de4c126f6d4492660f95308081b2bbed01bdbb61dd6484fb88e"
+  },
+  "configs/net40_powerlaw_known_sim.yaml": {
+   "events": [
+    "f07d076d04f66c8d4a4f72488b1d9d40b41ef8eb273e2711ffa9f055fd6a289f"
+   ],
+   "hash": "a5f2f9cf31614a4746239ae966313bd031564980e5c560dbf9b25d0d63d2a47d",
+   "requests": [
+    "09ceb82c84d1a096d5976ada54121a82fb3377c49560172cb2684c54ce676208"
+   ],
+   "system": "aa772fa7789f0de4c126f6d4492660f95308081b2bbed01bdbb61dd6484fb88e"
+  },
+  "configs/net40_sbm_contacts_sim.yaml": {
+   "events": [
+    "745c2831f8f2182821a37a0f320aaa3b9ffb503982788f782f0358b70cea87b5"
+   ],
+   "hash": "1a5a0d220c02075567ae3f5146570b6d9337b38328ffe03e3aeb63f89c5e9955",
+   "requests": [
+    "fc0d44ac6236897afabb42d690a4d112e6d65d8b238ae28d71cc17f5318c5458"
+   ],
+   "system": "92f7e7ad5deeff10a5745b627e2aa89b45c6cd96a1d75f5c2f3ca7bd42901513"
+  },
+  "configs/network_ba_known_sim.yaml": {
+   "events": [
+    "e0a401acfff935c77b6e022cd0aabc7db1b75080b81d69bf96b30e36ab4c406a",
+    "9d74fc9302bb7d5661e4bc26272f073de082448f804208a08b187f01c14ce911",
+    "f4230a726279e7759f89486363fd2a22085f4270015752aa5658a0bd26a370a8"
+   ],
+   "hash": "8698383ce48201615dff52ded36095492807a7a7342450104570da8a2e4e4e8e",
+   "requests": [
+    "1a95aeafe6bcbd816864f3105a056e8b753d43bd207ece7a9656cbc60515467d",
+    "0029c5965fbf0ec6828cfa13d5b0c6919149c6214b9b8c231856425c305ad251",
+    "34cb4aa25bd9dafabf7b8dc2d2b52c41b04f9e3950cf2cd64f6853165524694a"
+   ],
+   "system": "43f5047f06db88f2b696cc9731f053d6dad0bb7a37d326ee55e41e7c63c4a2f7"
+  },
+  "configs/network_er3_contacts_sim.yaml": {
+   "events": [
+    "43da65bf75302a89f375393a2ea42a5f89e62d6a96fbf94bb6faf62e51db608d",
+    "727bdc2a682a3697972d167663cdc7163cf14705ebf4d70cf3e6aa9b60cbb92b",
+    "cadd640e7bc3f30a8d20064cc29e7250dec035307d65204b8a2bff17c39d27fd"
+   ],
+   "hash": "355c8d0c58aa9d7e2693745da298b779013a2abcc9fd65cb30f5065ae6f728c5",
+   "requests": [
+    "2a4b8bb7cfe6a44c2e786bb9db7afdd897d7bd4dd0d7bd586ea099417bee482c",
+    "83f59a5d9efac4ec59fb590d2c8b8fccc0239bbc4ef46559592499b0f4b54eab",
+    "e2fd29b5a4826b98aa43ee4c6e9b6c60d2ab4671403d3a7e594ce4e3f36ae70f"
+   ],
+   "system": "e70b489a1b4ed8d31914a89241fb38c008125f0be23751dc4c382190cca70fc5"
+  },
+  "configs/network_er3_known_sim.yaml": {
+   "events": [
+    "64f2ab76269d344ecc1d250f2ebdde3d375d06566a4abfb4d6f2c03f021e5424",
+    "4c3ed5563e4d8631010a9568f5472881d47e8c18c8a8ad9d7f422879d769d5eb",
+    "289343c038f7b6c8c0d1a68bdeb46ffdd145fddfee2c31ab5f165b25b0d4f053"
+   ],
+   "hash": "65ac7e1847f3cfe52c9b49459f358f46a38f801a1e99e3f33b2c5161f0dd5755",
+   "requests": [
+    "64505582facd1d6c10c9e25e67e715b97a48944b9cf5243d2d62fd5819c8876d",
+    "a115e9a8081f2766ceae56d2e200bde20f43af343d7d8eaa13433ea21b8f8507",
+    "1e22e0b56c12eaba5c40a1a0f4abf98043fb2555fe9f05826437148d83ff463c"
+   ],
+   "system": "43f5047f06db88f2b696cc9731f053d6dad0bb7a37d326ee55e41e7c63c4a2f7"
+  },
+  "configs/network_ws_known_sim.yaml": {
+   "events": [
+    "b2b9121603cf6690983bee2cfb41fb28c1d1560f8d33898801a7b1f1e5f2ba0a",
+    "b51f50e62a79311bec832048371ff199ff48240e68fb05c05120b2c7f7c1c89c",
+    "8a9ec5fa10b258a5cce5d6fd452032ada67b2514493c61c8f807917c28260995"
+   ],
+   "hash": "3fa725528dec7852a23051ffc74ab7a4c7a659be73c02ac0e3495d1824481224",
+   "requests": [
+    "3ff8195f90c0ce66d0cc9680fed7f7f108b70abf29b43dae744cfe6ae6017688",
+    "18d3123f3e8a599c5ef062b598c67eb9beaa75a231104961c70c365119108337",
+    "59584c91c21fb8fb53edc1cd828ae2ae3ef5264b5d299803480490f991d12d0e"
+   ],
+   "system": "43f5047f06db88f2b696cc9731f053d6dad0bb7a37d326ee55e41e7c63c4a2f7"
+  },
+  "configs/showcase100_broadcast_sim.yaml": {
+   "events": [
+    "d62da9e9ee010a0abe71964ee5dde35c113308f7bbd10b1055e59133665f4ae9"
+   ],
+   "hash": "b4ea08f42472d54cf509e98dd00972b7c2feae06a2295b5de5fe27b7da310859",
+   "requests": [
+    "cac482638ea809ac15ca4879c43c4487c6925ab2ca8e3508e98ff92d0cd19e5d"
+   ],
+   "system": "e7d4445bd7cd9af224421f77648b77db7107b99655f9880b62ba335a09f420bc"
+  },
+  "configs/showcase100_control_sim.yaml": {
+   "events": [
+    "2e08fd6f2cc0a4cabfd79e6187912b7c42f9f14ed1ab886954455bbf4481816a"
+   ],
+   "hash": "33b8f28c759aa45d62665a70d06c78ff80f6da6941a1fc6931a0106f4cbf5851",
+   "requests": [
+    "0b8bc959afefde2dff3913b71eb87a19de3601fb8d80d2725c51728514be639a"
+   ],
+   "system": "e7d4445bd7cd9af224421f77648b77db7107b99655f9880b62ba335a09f420bc"
+  },
+  "configs/showcase100_sim.yaml": {
+   "events": [
+    "4e4f6e92b2fef1ba2943612022c6b52a09de989b145009f30a4d58863617843d"
+   ],
+   "hash": "33b8f28c759aa45d62665a70d06c78ff80f6da6941a1fc6931a0106f4cbf5851",
+   "requests": [
+    "b9cda6c52d57cb095afa2816353708c875543807dff92506a5aa62952815f664"
+   ],
+   "system": "e7d4445bd7cd9af224421f77648b77db7107b99655f9880b62ba335a09f420bc"
+  },
+  "configs/showcase100_v2_sim.yaml": {
+   "events": [
+    "b80828d86525e1e0e85ae76e4c5951b6c729539964992096f90f179b6b6c0a8c",
+    "7fbeb798be034aefef0660bae9ab05e25c27c2794df7447b62f9cd8d3f0a8d9d",
+    "d8301b80591489e22437509df6a3c4381d6af76dd52850d75c3d2887192ed085"
+   ],
+   "hash": "8bc5b4dad46e922c94f72e63a9ad4393d3a9f5750740c55c7eab4f49bcebd789",
+   "requests": [
+    "65d1f9d9c98ecd1b8f06b6c09e8e3cb77103e2b16931bba5e47fb382ccba741b",
+    "a6298beee7389ebf4c2960060a6c4deab13adda0d49e335f2fc5dede9b5ce59f",
+    "a6298beee7389ebf4c2960060a6c4deab13adda0d49e335f2fc5dede9b5ce59f"
+   ],
+   "system": "cc1ade2dd20c1ca0b78b2791d7453056d0ecb1362649ae95a99e94f6e1cace2d"
+  },
+  "configs/sweep/base.yaml": {
+   "events": [
+    "468886639d88c7dd878b97db787fb1ae687077b9d5f27977220a56aaed7f9802",
+    "851db1330301dd68863037216e0ff17f6adbcd6951ab2bec6ec3e08b9e77c02f",
+    "1ac25c04ba17440d9d8516272a6449ea8c956c8052838420d57345cac3645a9c"
+   ],
+   "hash": "15f60423be9731158c2ea9e95947800474162f34990f778fd201af584334eb0f",
+   "requests": [
+    "6d051d957ab388cc81e4a89337539a7327682913c03471db5ab09c640d6736fd",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/sweep/board_anon.yaml": {
+   "events": [
+    "f8be1a757b5a9953e30ba8ec133d058c571e30d12ccb1898aeee6ee38e62e478",
+    "4dc2065192a58645db00586e6c33504431b15cbf02c308b8244d723392307e5a",
+    "7d0aad401743523c7764a3724921a801146ebe1f6badddd3169c75de891e12fe"
+   ],
+   "hash": "8d057ff9401a9537b9042c1ace9621e4c25391dbbd3c80e46a481099fe796270",
+   "requests": [
+    "3948c4cd188ddafa84908707c00aab75152ced25ae328e78abbca84954fd83ee",
+    "378d6dc470e8b588cbb8d2abc50a39b41468f94d194bdd6a59508245fa414ce9",
+    "378d6dc470e8b588cbb8d2abc50a39b41468f94d194bdd6a59508245fa414ce9"
+   ],
+   "system": "909b5c040661491a000f0bf4f6d8c76ad9ea115fcacea411df08e67a108c3c9c"
+  },
+  "configs/sweep/board_delay2.yaml": {
+   "events": [
+    "44e82f2e8ed1f5dd7faf780e1401cfdc97b76b3abd68a143b639328084da8338",
+    "1dd759e93bd3391505db45ac56b14676479786c396e800a62d7d8c34010e1c22",
+    "49699c22e8dbc02ac7f54eb3712a2d90a25506636116882c36dc289f2a4da63f"
+   ],
+   "hash": "7fd4940c70bbd1f7477b3e4ad29f147dc38079259475e19e8ea6644a01f40f65",
+   "requests": [
+    "fa80bf6acbeb104e9878c450219de0825cf234acc1b47db2e0cf1d4ddf6b096d",
+    "4d3b2e066d0534cc05797842ba62b43e0f0f5e5f98371e9b6145ecad07a097ac",
+    "4d3b2e066d0534cc05797842ba62b43e0f0f5e5f98371e9b6145ecad07a097ac"
+   ],
+   "system": "212abeed4b723b10a99879f705ca692c433b265a8277297010c97d21b2c69888"
+  },
+  "configs/sweep/board_off.yaml": {
+   "events": [
+    "b57e4a7f5d64651c731ed46be292ab64814aa8626ff2d64ac70307226324d821",
+    "ecded33aef90dd05d1d20b2e14973a4961df3a32175e7650a69f359ea81edc08",
+    "02239ff67f47204622aad3dc87b6bcefa7c545ed65dc3d33e63b154903722d65"
+   ],
+   "hash": "b47c7f9915c1439549fc08d34b50db5aed47f5d8655eb56b0f719a5c4cd3d940",
+   "requests": [
+    "1bcaa0a267b7f0b3e0063f0bee97ac146223c5a0568d9bb340b62a39608094e6",
+    "edde5c90e5b870ec319cb0e05fbf37df2996b835998238704e81a2f8f5bd1426",
+    "edde5c90e5b870ec319cb0e05fbf37df2996b835998238704e81a2f8f5bd1426"
+   ],
+   "system": "c8bcad65ef1e13387c301d79a9f921acfe6a7739323a930b1ea35a4a0cda7326"
+  },
+  "configs/sweep/board_skip3.yaml": {
+   "events": [
+    "1499084f43e8a51b8eb001699fd9659ac72544e0a4e63932e417e47493913c6c",
+    "7f986c2d6e75443b46543892eb906750fed9ac41339b88ea847a0f81bddd8793",
+    "c24e880ae327009a843af37807c7b1d9e323e1f45a14291195229ad04a376d31"
+   ],
+   "hash": "297069a9eb0e42f8801dea556dc979d926469e3e555d8fa2288eb4332924c5ed",
+   "requests": [
+    "422c69d5076ca811c988e57f7bdf71bdfb7969738a10aa4238f03db412c5a457",
+    "e2e5b9430e1658843e2c9c61d9f3592898cc0f4490d9c19aec4b95b95df25cc6",
+    "e2e5b9430e1658843e2c9c61d9f3592898cc0f4490d9c19aec4b95b95df25cc6"
+   ],
+   "system": "7ca9f6031461b7a0cf0aef47120908c3ab48b805cf4d14f80fe560df36a52824"
+  },
+  "configs/sweep/k1.yaml": {
+   "events": [
+    "8ed89072ad4cb59821f104d2347eb9b302c1624917fe2cc424e093e6917d966f",
+    "1c468f0815428a51b7c53e54463ec27b914ccfc3bea01f2b3ff83995ce9e39ed",
+    "0cea69d9387963c4683a91a0fc70a653a7a8d6dc69caa0ebf855054b55070a9a"
+   ],
+   "hash": "e24f63084db6ccb8b861e829a26bf7386fec40445fbdb4df2185c8a71fb3d4b9",
+   "requests": [
+    "9d84a9759becea9731cd6d65260ebdb1f475791ca769de5cdadddc9bcb8697e5",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/sweep/k4.yaml": {
+   "events": [
+    "5b2f183494a8b3f7e5213add3f1462c7def7c8b686f5248f7f8b19571a990df4",
+    "de619e325ae18bb5d6e090fc5902f5b21a5951369eb943b71c07df1fdc1d7eb3",
+    "8a12ce478dabed6639fd68a3107d6533fe05a957c840c2981e05be71692e3b46"
+   ],
+   "hash": "b82d6856891b784a53e5780959fef627b68ad830042d47e9d53b2e7eabc0c8fa",
+   "requests": [
+    "c3a27cc453ee9b615110e14bf06381e9da68a39cfdfe25ffb47e87fe649bd577",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/sweep/keys3.yaml": {
+   "events": [
+    "66d3e278d403f8bfccbf458d83093eb7c1aace0b4262e0af2bd0c0ddeff05827",
+    "5910cd5373f6a13aad4a835a0c1f4b854ed7ff555d08a33a038142026bdbe5fa",
+    "029b15a8b99d3a7badbce8223f552d26fd4ac8893f41a8cc18a066a9ceb965fc"
+   ],
+   "hash": "d14b6b4d2b82905157ffcd5147cd7b0cc2c0188ae128ca2d3b1ac3dc15cab42d",
+   "requests": [
+    "87cefb0007184b5fbd26b0b0c090646ac5005680a3e17cc048b215cd385e5241",
+    "4adc5ff2d465d2858cf01eed62f7efb436eb9ddb3889dd6c97eee8a7cab029bc",
+    "4adc5ff2d465d2858cf01eed62f7efb436eb9ddb3889dd6c97eee8a7cab029bc"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/sweep/keys8.yaml": {
+   "events": [
+    "c59e803b055e7492ac3694fbba4328650e74530b35875223b071515533c2b443",
+    "08debffd8c1eef601525315b695dad18353070cb75306ed65320c027dea9ed5b",
+    "72a556c5937f14e8a4d9b5271e69ccfed8913a0f774e42d832b235cae314a4b0"
+   ],
+   "hash": "ade483691303ca617e8fa57702c94d855064bda09149757ef0e50c8278cae565",
+   "requests": [
+    "745d81ebbac966a0c356f450be8b8c114d791c026499374f61997a6256617416",
+    "5ece0c0693f07edaa884d534db7ba077439175d289ef79870a87a4ef6a9bccb3",
+    "5ece0c0693f07edaa884d534db7ba077439175d289ef79870a87a4ef6a9bccb3"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/sweep/n20.yaml": {
+   "events": [
+    "0de4cb0a71714a4c536efa99cb94f3da9140473bd0ddca05eb511f7464a8df7c",
+    "30d06d30e64c570b242385d12e453ec7bb0c33c9f96039fb3664aa942923b7b9",
+    "59db43ff07f6f8974200efda76b618a4e3eb871df0ad64b45a1a61ea0409bee8"
+   ],
+   "hash": "74ceb26466e706781482cbfdadd4811df00f21b672157d8bfa3c6aec5b9024d9",
+   "requests": [
+    "a2e855bf05880bd2b5ecc7a65f62959346eefd59eb55c6d1d310e9f5a6a91098",
+    "fd9004194f90181033774fd6c1d5dc6e9d6030482b9e5f1d65ef33cee9ab9c84",
+    "fd9004194f90181033774fd6c1d5dc6e9d6030482b9e5f1d65ef33cee9ab9c84"
+   ],
+   "system": "aaa0d043d6b0f68927d8f6e25b3e1d1f4109ba56587305f7b687d07011419dd5"
+  },
+  "configs/sweep/n5.yaml": {
+   "events": [
+    "676b2fad62fd56a4c762f5791e9ba6b0ea523264ebb7e4e886cfd8cba48c2922",
+    "4ebb23b8cf80bc36aa6501977bba169dc1309de3cfc72356e1b70589bfe83b09",
+    "83a5ba89684c2951b4f48f1ac36eb22fd5d8dac397dc1f2479015414e6825c65"
+   ],
+   "hash": "dea7e0c18a28a9fc5df25b3422802dff5e1cce6862fbd4cd19a54e2df2c0b3a2",
+   "requests": [
+    "af1089369a7f699911fd7fe7da3fdd249235786906f0ec19618623deaec09cbf",
+    "c901c62f83e95e1b4b36dab8d830d963eebc31772e0364bb76479b7e23580a29",
+    "c901c62f83e95e1b4b36dab8d830d963eebc31772e0364bb76479b7e23580a29"
+   ],
+   "system": "16c2c29ad28b49f9a051431ba0131589e9bdd245817c5ca6e0669884427097c0"
+  },
+  "configs/sweep/r40.yaml": {
+   "events": [
+    "f4a57c7a4c0efdf653466fbe5e0beed429fbaa84e05a5d630b0dfcbf691a1d89",
+    "ce50e42478e9f1a8a63e98c8de0736bf8496ab5f97c7182e5ae319c7907e6560",
+    "978f8ba7bfaaa22ed03ec561cc706c3e21464f672dacf186601e3e94a322da21"
+   ],
+   "hash": "6cf6ccbca38cb1696b6bab83c69dea8476c02ebf68af67c92c94db8dcbf450d4",
+   "requests": [
+    "6d051d957ab388cc81e4a89337539a7327682913c03471db5ab09c640d6736fd",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85"
+   ],
+   "system": "c3521d38d887b49f2d43277c3854c4687214249cc5c09bf650ef36f0e1ec5da9"
+  },
+  "configs/sweep/start1.yaml": {
+   "events": [
+    "86cfb1071203c79053f9081139e8154e3b06b677bfb61bd4170675fd6a86e2fe",
+    "e13ecfd6b04f835971fcb88b9e067dd506f4e41feabfd85526538284fb2ff73b",
+    "f419491783fc8dfa622e8d59a2f6fcb13c95beb128d1b169d5e7effefab3feb3"
+   ],
+   "hash": "7fa49ba2d063eee7fc9d3b6c3d149b818f7a00f9ebac1e3589e3f3eb6b3c681c",
+   "requests": [
+    "e546969d94f8ce1bc33b19a8ac7f0641271f8e5a0edaa366e25ea8af2f492eb6",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/sweep/start14.yaml": {
+   "events": [
+    "105300d1d54226efee9bd4d6fa902480830592835a025fadcc03a68cda302882",
+    "446d7df7455b7f79de84be8c11e1559687844c144bbb0cf323efa8846a2964f0",
+    "a501dd7acf69f4d0d8f7ca15c43272fe86123be1503f9adb622432cfbdfd65a0"
+   ],
+   "hash": "6b7015d03fa27f245c927987fed6614d908d9869b9cf2cce9e15a130c7fb69a6",
+   "requests": [
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/sweep/start8.yaml": {
+   "events": [
+    "4d69bc67b89e313d8e02317fbe8ee81bb45220134353535b31f9be7bbf12ec99",
+    "93c183f5addb520356bbe021e7283eda94fd323e656fe5728b2c43732ffb57fb",
+    "0aebd8492be1124db72008b4c30020798320a073bb5d23316484314ba1b76ec9"
+   ],
+   "hash": "0735244ba166dfb2baa54cb48fb1abaffceb5af24be24fbd102a708f271681c0",
+   "requests": [
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85",
+    "2e9773ab63e001f6fed6ac453694147e94652d71bfa97f02737df653b20b1a85"
+   ],
+   "system": "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  },
+  "configs/winners_leave_sim.yaml": {
+   "events": [
+    "dbe7e8ea4c6586fdf5f219cb776a9daf9bd413d5ef9a8cc936dcb320cca8f193",
+    "87546f4f9dbc5548d85778322e2ebe2aee9e255c318aea3a88c63f0a256f3d97",
+    "505768971acaf9d42efd24e72e8baaccd20f0cfa2d677ea343b1191d37016809"
+   ],
+   "hash": "73c0205611722a0ebcc4a33dbd41ff3f831086cd0a8230d86e57768d8b7b1e58",
+   "requests": [
+    "3061b53978ddde120937c9b30060e4d84f9ca1ce4e7895e797930f6956bb830a",
+    "12f85a5d6d86ade0b67f438deb9a6e6a1a4d8f3d661e47a493388cd6877a24a9",
+    "df63508c19c4227f08e4b0b5900341784339b869e9d444281033437843fe57b8"
+   ],
+   "system": "957aa958d1df5efa4457b581929742271deab059c762cccbd34ac29a0cd5415a"
+  }
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "usd": 0.014541774999999991,
+ "calls": 286,
+ "missing_cost": 0,
+ "prompt_tokens": 186749,
+ "completion_tokens": 10073,
+ "empty": 1,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "google/gemma-3-12b-it": {
+   "usd": 0.014541774999999991,
+   "calls": 286,
+   "empty": 1
+  }
+ },
+ "by_arm": {
+  "prefix": {
+   "usd": 0.00043215,
+   "calls": 7,
+   "prompt_tokens": 5271,
+   "completion_tokens": 264
+  },
+  "insider_bribe_only": {
+   "usd": 0.0024444249999999996,
+   "calls": 50,
+   "prompt_tokens": 31570,
+   "completion_tokens": 1677
+  },
+  "insider_lie_only": {
+   "usd": 0.0026940499999999986,
+   "calls": 51,
+   "prompt_tokens": 34235,
+   "completion_tokens": 1846
+  },
+  "BASE": {
+   "usd": 0.0030478249999999997,
+   "calls": 50,
+   "prompt_tokens": 38783,
+   "completion_tokens": 1861
+  },
+  "clean|none": {
+   "usd": 0.0029583750000000005,
+   "calls": 64,
+   "prompt_tokens": 38578,
+   "completion_tokens": 2202
+  },
+  "clean_AA|none": {
+   "usd": 0.0029649500000000014,
+   "calls": 64,
+   "prompt_tokens": 38312,
+   "completion_tokens": 2223
+  }
+ }
+}

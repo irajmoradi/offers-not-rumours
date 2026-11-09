@@ -1,0 +1,2 @@
+description: Neutral agent prompt set (WP3). Rules + action spec + output format in system.j2 (byte-identical for all agents and rounds); turn.j2 renders the PromptView. No mention of any adversary.
+output: json

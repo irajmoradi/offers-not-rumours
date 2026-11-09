@@ -1,0 +1,26 @@
+{
+ "usd": 0.011253340000000013,
+ "calls": 230,
+ "missing_cost": 0,
+ "prompt_tokens": 138202,
+ "completion_tokens": 11280,
+ "empty": 0,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "microsoft/phi-4": {
+   "usd": 0.011253340000000013,
+   "calls": 230,
+   "empty": 0
+  }
+ },
+ "by_arm": {
+  "JF4_phi4": {
+   "usd": 0.011253340000000013,
+   "calls": 230,
+   "prompt_tokens": 138202,
+   "completion_tokens": 11280
+  }
+ }
+}

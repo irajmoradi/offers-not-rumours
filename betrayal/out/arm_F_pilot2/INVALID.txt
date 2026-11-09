@@ -1,0 +1,1 @@
+INVALID: stopped at 13:57 after 6 minutes; one 429 every ~70 s and no completed game (limiter did not adapt to single 429s). Superseded by out/arm_F_pilot3.

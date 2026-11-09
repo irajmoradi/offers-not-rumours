@@ -1,0 +1,5 @@
+condition,recognition,seeds,defection_effect,de_lo,de_hi,damage_pp,turned,honest,bribes_seen,bribes_accepted
+growth 6->8,flagged,8,0.125,0.0,0.375,4.6899999999999995,1,64,32,1
+growth 6->8,disguised,8,0.125,0.0,0.375,0.0,1,64,32,1
+no growth (N=8),flagged,40,0.125,0.025,0.225,0.0,4,320,158,5
+no growth (N=8),disguised,40,0.075,0.0,0.175,-2.19,3,320,160,3

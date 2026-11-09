@@ -1,0 +1,21 @@
+You are {{ ask.target }}. Round {{ ask.round }}{% if not (horizon_hidden is defined and horizon_hidden) %} of {{ ask.max_rounds }}{% endif %}.
+
+TRADE OFFER from {{ ask.proposer }}
+- You would give: {% for i in ask.want %}info #{{ i }}{% if not loop.last %}, {% endif %}{% endfor %}
+
+- You would get: {% for i in ask.give %}info #{{ i }}{% if not loop.last %}, {% endif %}{% endfor %}
+
+If you accept and you both still hold every listed key, the keys swap now. If you reject, nothing moves. {{ ask.proposer }} is told your answer.
+
+[Your state]
+Needs still open (info ids): {{ ask.needs_open | join(", ") or "none" }}
+Your keys: {% for i, k in ask.holdings %}{info_id: {{ i }}, key: {{ k }}}{% if not loop.last %}, {% endif %}{% else %}none{% endfor %}
+
+Score: {{ "%.2f" | format(ask.score) }}{% if ask.locked %} (you have won; your score is locked){% elif ask.won %} (you have won){% endif %}{% if ask.key_bonus %}; this trade changes the number of keys you hold by {{ "%+d" | format(delta) }} (each key you hold at the end is worth {{ ask.key_bonus }}){% endif %}
+
+
+{% if cot_mode == "explicit" %}Reply with exactly one JSON object and nothing else:
+{"thought": "<your reasoning, <= 40 words>", "accept": true or false}
+{% else %}{% if cot_mode == "native" %}Think first, then reply{% else %}Reply{% endif %} with exactly one JSON object and nothing else:
+{"accept": true or false}
+{% endif %}

@@ -1,0 +1,144 @@
+# configs/base.yaml: EVERY default (mirrors swarm/config.py exactly; tests/test_config.py checks it).
+# Experiments: `extends: ../base.yaml` then override only what changes. CLI: a.b.c=value.
+# Lead decisions (2026-11-07): sequential turns, defect_gain mint, wrong_defect_penalty lose_need,
+# view_log actions_only/shown/no provenance/window=n_agents, victim_then_delayed delay 3, grep on,
+# cot_replay_window 0 (scratchpad is the persistent store; God targets it, mode replace),
+# context full_truncate 14000, agent max_tokens 700, OpenRouter OFF ($20 global ledger cap; raised $2 -> $6 -> $8 -> $20 on 2026-11-07, hashed fixed).
+run:
+  name: base
+  seed: 0
+  n_games: 1
+  out_dir: runs
+  max_concurrency_games: 1
+  branch: main
+  replica: '0'
+game:
+  n_agents: 20
+  keys_per_agent: 5
+  needs_per_agent: 3
+  copies_per_info: 2
+  actions_per_turn: 2
+  max_rounds: 40
+  turn_mode: sequential
+  turn_order: reshuffle
+  observe_mode: folded
+  immediate_reply: false
+  defect_gain: mint
+  wrong_defect_penalty: lose_need
+  delay_n: 3
+  winner_policy: continue
+  max_message_chars: 500
+  view_log:
+    content: actions_only
+    actor_identity: shown
+    reveal_provenance: false
+    window_turns: null
+    defect_visibility: victim_then_delayed
+    defect_delay_rounds: 3
+    defect_actor_identity: null
+    grep_enabled: true
+    grep_max_results: 20
+    grep_max_pattern_chars: 80
+  board:
+    post_costs_turn: false
+    anonymous: false
+    post_skip_rounds: 0
+reasoning:
+  cot_mode: explicit
+  cot_replay_window: 0
+  max_cot_chars: 1200
+  scratchpad:
+    enabled: true
+    window: null
+    max_chars: 400
+  salvage_truncated: false
+roles:
+  agent:
+    backend: vllm
+    model: null
+    prompt_set: agent/v1
+    framing: null
+    temperature: 0.6
+    top_p: null
+    max_tokens: 700
+  god:
+    backend: vllm
+    model: null
+    prompt_set: god/v1
+    framing: null
+    temperature: 0.7
+    top_p: null
+    max_tokens: 700
+  judge:
+    backend: vllm
+    model: null
+    prompt_set: judge/v1
+    framing: null
+    temperature: 0.0
+    top_p: null
+    max_tokens: 200
+  summarizer:
+    backend: vllm
+    model: null
+    prompt_set: summarizer/v1
+    framing: null
+    temperature: 0.0
+    top_p: null
+    max_tokens: 300
+llm:
+  budget_usd: 2.0
+  vllm:
+    base_url: http://localhost:8000/v1
+    model: Qwen/Qwen3-8B
+    max_concurrency: 64
+    max_model_len: 16384
+  openrouter:
+    enabled: false
+    base_url: https://openrouter.ai/api/v1
+    model: qwen/qwen3.6-35b-a3b
+    api_key_env: OPENROUTER_API_KEY
+    max_concurrency: 8
+    global_cap_usd: 20.0
+    ledger_path: runs/openrouter_ledger.jsonl
+    price_in_per_mtok: 1.0
+    price_out_per_mtok: 4.0
+    reasoning_effort: null
+    provider_sort: null
+  fake:
+    model: fake
+  cache:
+    mode: read_write
+    path: cache/llm.sqlite
+  retry:
+    max_retries: 5
+    base_delay_s: 1.0
+    max_delay_s: 30.0
+    timeout_s: 120.0
+    timeout_thinking_s: 300.0
+god:
+  kind: scripted
+  start_round: 3
+  wake_every_turns: null
+  tool_call_safety_ceiling: 50
+  budget:
+    k: 3
+    scope: game
+  powers:
+    message_fraud:
+      enabled: true
+      cost: 1
+    cot_control:
+      enabled: true
+      cost: 1
+      targets:
+      - scratchpad
+      mode: replace
+  schedule: []
+context:
+  policy: full_truncate
+  budget_tokens: 14000
+  safety_margin: 0.05
+  tokenizer: hf:Qwen/Qwen3-8B
+  window_rounds: 3
+  per_kind_caps: {}
+sweep: {}

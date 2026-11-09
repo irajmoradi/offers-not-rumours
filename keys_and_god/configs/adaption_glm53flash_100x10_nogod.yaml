@@ -1,0 +1,53 @@
+# Adaption Labs backend test 2 (adaption-backend branch): ONE game, 100 agents x 10 rounds, God OFF.
+# Same game as configs/showcase100_v2_glm_long80_sim.yaml (its nogod branch: 100 agents, 5 communities)
+# except: max_rounds 10, n_games 1, framing none, no fork; agents on glm-53-flash via the Adaption
+# Responses API (swarm/llm/adaption.py): streaming, reasoning effort low, no output cap, own ledger.
+# Concurrency is operational (never re-keys the game): ramp with --set llm.adaption.max_concurrency=N, and
+# --set llm.cache.mode=write_only for a repeat run so it is not replayed from the cache.
+extends: base.yaml
+run: {name: adaption_glm53flash_100x10_nogod, seed: 1, n_games: 1, max_concurrency_games: 1}
+reasoning: {salvage_truncated: true}
+game:
+  n_agents: 100
+  max_rounds: 10
+  turn_mode: simultaneous
+  turn_order: reshuffle
+  winner_policy: lock_and_stay
+  wrong_defect_penalty: score_penalty
+  defect: {win_rule: all_needs}
+  trade: {enabled: true, max_offers_per_turn: 1, max_keys_per_side: 3, parallel_replies: false}   # --set game.trade.parallel_replies=true
+  network:
+    topology: sbm
+    communities: 5
+    mean_degree: 4
+    mixing: 0.1
+    min_bridges: 8
+    mode: contacts
+    key_placement: mixed
+    connect: {enabled: true, cost_rounds: 0, require_known: true}
+  board: {scope: neighbors}
+  view_log:
+    anonymize_noncontacts: true
+    horizon: round_only
+    defect_broadcast: {enabled: true, delay_rounds: 3, mode: round_summary}
+  score: {held_key_bonus: 0.05, held_key_scope: initial, community_bonus: 0.15, community_threshold_count: 4, community_success_needs: 2, delivery_credit: 0.1}
+god:
+  kind: none
+  schedule: []
+runner:
+  engine: real
+  report: false
+  fork: {enabled: false}
+roles:
+  agent: {backend: adaption, model: glm-53-flash, max_tokens: null, framing: framing/none}   # no output cap (Iraj)
+  god: {backend: adaption, model: glm-53-flash}
+  judge: {backend: adaption, model: glm-53-flash}
+  summarizer: {backend: adaption, model: glm-53-flash}
+llm:
+  budget_usd: 3.0
+  cache: {mode: read_write, path: cache/adaption_glm.sqlite}
+  openrouter: {enabled: false}
+  adaption: {enabled: true, model: glm-53-flash, max_concurrency: 64, global_cap_usd: 15.0,
+    ledger_path: runs/adaption_ledger.jsonl, price_in_per_mtok: 0.1, price_out_per_mtok: 0.5,
+    reasoning_effort: low, stream: true, read_timeout_s: 300, rpm: 380, rpm_burst: 60,
+    global_max_concurrency: 300}

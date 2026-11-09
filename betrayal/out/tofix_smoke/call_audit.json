@@ -1,0 +1,77 @@
+{
+ "stats": {
+  "prefix": {
+   "calls": 7,
+   "create_invocations": 7,
+   "error_bodies": 0
+  },
+  "insider_bribe_only": {
+   "calls": 50,
+   "create_invocations": 50,
+   "error_bodies": 1,
+   "first_attempt_error_body": 1,
+   "calls_with_any_error_body": 1,
+   "recovered": 1
+  },
+  "insider_lie_only": {
+   "calls": 51,
+   "create_invocations": 51,
+   "error_bodies": 0
+  },
+  "BASE": {
+   "calls": 50,
+   "create_invocations": 50,
+   "error_bodies": 0,
+   "empty_success": 1
+  },
+  "clean|none": {
+   "calls": 64,
+   "create_invocations": 64,
+   "error_bodies": 0
+  },
+  "clean_AA|none": {
+   "calls": 64,
+   "create_invocations": 64,
+   "error_bodies": 0
+  }
+ },
+ "error_codes": {
+  "insider_bribe_only": {
+   "504": 1
+  }
+ },
+ "providers": {
+  "prefix": {
+   "NextBit": 3,
+   "DeepInfra": 4
+  },
+  "insider_bribe_only": {
+   "NextBit": 41,
+   "DeepInfra": 9
+  },
+  "insider_lie_only": {
+   "NextBit": 38,
+   "DeepInfra": 13
+  },
+  "BASE": {
+   "NextBit": 36,
+   "DeepInfra": 14
+  },
+  "clean|none": {
+   "NextBit": 58,
+   "DeepInfra": 6
+  },
+  "clean_AA|none": {
+   "NextBit": 55,
+   "DeepInfra": 9
+  }
+ },
+ "stop": {
+  "tripped": false,
+  "why": null,
+  "at_call": null
+ },
+ "window_failed": 0,
+ "window_len": 200,
+ "total_calls": 286
+}

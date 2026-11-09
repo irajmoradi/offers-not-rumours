@@ -1,0 +1,91 @@
+# configs/demo_or_60_sim.yaml with ONE change: game.board.post_skip_rounds=3. An agent whose board post
+# succeeds in round r takes no turns in rounds r+1..r+3 (it still receives keys and DMs); the system
+# prompt says "Posting to the public board costs you your next 3 turns." Compare against the
+# demo_or_60_sim run. Everything else is copied verbatim from that file.
+#   python -m swarm.run --config configs/demo_or_60_sim_boardskip3.yaml game.max_rounds=<R> llm.budget_usd=<B>
+#
+# 60 agents, turn_mode=simultaneous, paired God vs no-God fork on OpenRouter (plan A, SIM60).
+# Same model/settings as configs/demo_or_10x50_sim.yaml (seed 0, qwen/qwen3.6-35b-a3b, thinking off,
+# same God schedule and K=2); only the scale- and cost-related fields below differ.
+# N=60 world (swarm/game/world.py scales by itself; the per-agent setup is kept):
+#   keys_per_agent 5, needs_per_agent 3, copies_per_info 2 -> ceil(60*5/2) = 150 info ids,
+#   300 key copies, 180 needs; feasibility is checked by max matching at generation time.
+#   Names: 40x40 = 1600 two-word combos, so 60 unique names are fine.
+# view_log window keeps the default (= n_agents = 60 agent-turn slots = one simultaneous round),
+#   the same semantics as the 10-agent run.
+# Cost-driven changes vs the 10-agent sim (measured in smoke runs or_60x2_smoke / or_60x2_smoke_b):
+#   context.budget_tokens 14000 -> 3000. The counter is chars/3.5 but this content (names, ids)
+#     runs ~2.25 chars/token, so 14000 allows ~21k real tokens; 60 board posts/round put prompts
+#     at ~8.2k real tokens by round 2. 3000 keeps real prompts at ~4.4k tokens (10-agent mean was
+#     5.4-7.2k). full_truncate drops the oldest history first, then the oldest current log lines /
+#     board posts; DMs and notices are never dropped.
+#   roles.agent.max_tokens 700 -> 1200: at N=60 ~45% of turns hit 700 (thoughts reason over many
+#     players), truncating the JSON and forcing a full-prompt retry (1.5 calls per agent-turn).
+#   game.max_rounds 20: the largest of {50, 30, 20} that fits the $4 run budget (see plan/SIM60.md).
+# OpenRouter concurrency raised 8 -> 16 (60 calls per round per branch). Global ledger cap is $6
+#   (raised from $2, 2026-11-07). The per-run cap is set per invocation via llm.budget_usd.
+#   python -m swarm.run --config configs/demo_or_60_sim.yaml game.max_rounds=<R> llm.budget_usd=<B>
+extends: base.yaml
+run:
+  name: demo_or_60_sim_boardskip3
+  seed: 0
+  n_games: 1
+  max_concurrency_games: 2
+game:
+  n_agents: 60
+  keys_per_agent: 5
+  needs_per_agent: 3
+  copies_per_info: 2
+  max_rounds: 20
+  turn_mode: simultaneous
+  turn_order: reshuffle
+  board:
+    post_skip_rounds: 3
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 2, scope: game}
+  schedule:
+    - round: 3
+      after_turns: 0
+      power: message_fraud
+      args: {sender: recent_partner, receiver: closest_to_winning}
+    - round: 5
+      after_turns: 0
+      power: cot_control
+      args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}
+# Runner-only block (split off before RunConfig validation; see swarm/runner/run.py).
+runner:
+  engine: real
+  report: true
+  fork:
+    enabled: true
+    noise_replica: false
+    serial_pair: false
+roles:
+  agent:
+    backend: openrouter
+    model: qwen/qwen3.6-35b-a3b
+    max_tokens: 1200
+  god:
+    backend: openrouter
+    model: qwen/qwen3.6-35b-a3b
+  judge:
+    backend: openrouter
+    model: qwen/qwen3.6-35b-a3b
+  summarizer:
+    backend: openrouter
+    model: qwen/qwen3.6-35b-a3b
+context:
+  budget_tokens: 3000
+llm:
+  budget_usd: 3.65                # hard per-run cap ($4 total minus $0.30 of smoke runs)
+  cache:
+    mode: read_write
+  openrouter:
+    enabled: true
+    model: qwen/qwen3.6-35b-a3b
+    max_concurrency: 16
+    global_cap_usd: 6.0
+    price_in_per_mtok: 0.15       # pre-call reservation (real price is 0.10); actual cost from provider
+    price_out_per_mtok: 1.0       # real price is 0.90

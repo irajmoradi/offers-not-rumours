@@ -1,0 +1,919 @@
+{
+ "n_runs": 30,
+ "n_obey_first": 10,
+ "m0": {
+  "tempt00": -4.876688003540039,
+  "tempt01": -2.481700897216797,
+  "tempt02": -4.882549285888672,
+  "tempt03": -2.4542236328125,
+  "tempt04": 7.987128257751465,
+  "tempt05": -3.709482192993164,
+  "tempt06": 9.115188598632812,
+  "tempt07": -4.970095634460449,
+  "tempt08": -3.513011932373047,
+  "tempt09": 4.427268981933594,
+  "tempt10": -2.518627166748047,
+  "tempt11": -1.0450305938720703,
+  "tempt12": -5.066446304321289,
+  "tempt13": 3.2712926864624023,
+  "tempt14": 3.0805931091308594,
+  "tempt15": -2.9352216720581055,
+  "tempt16": 9.806365966796875,
+  "tempt17": 1.052988052368164,
+  "tempt18": 9.808525085449219,
+  "tempt19": -6.743647575378418,
+  "tempt20": -3.823192596435547,
+  "tempt21": 0.8290596008300781,
+  "tempt22": -1.1564102172851562,
+  "tempt23": -1.7518329620361328,
+  "tempt24": -2.7836380004882812,
+  "tempt25": -2.3559131622314453,
+  "tempt26": 8.768078804016113,
+  "tempt27": -0.6578998565673828,
+  "tempt28": 10.270747184753418,
+  "tempt29": -2.2185802459716797
+ },
+ "obey_first": {
+  "tempt00": false,
+  "tempt01": false,
+  "tempt02": false,
+  "tempt03": false,
+  "tempt04": true,
+  "tempt05": false,
+  "tempt06": true,
+  "tempt07": false,
+  "tempt08": false,
+  "tempt09": true,
+  "tempt10": false,
+  "tempt11": false,
+  "tempt12": false,
+  "tempt13": true,
+  "tempt14": false,
+  "tempt15": false,
+  "tempt16": true,
+  "tempt17": true,
+  "tempt18": true,
+  "tempt19": false,
+  "tempt20": false,
+  "tempt21": true,
+  "tempt22": false,
+  "tempt23": false,
+  "tempt24": false,
+  "tempt25": false,
+  "tempt26": true,
+  "tempt27": false,
+  "tempt28": true,
+  "tempt29": false
+ },
+ "top": {
+  "toward_obey": [
+   {
+    "key": "L14#8515",
+    "kind": "sae",
+    "layer": 14,
+    "idx": 8515,
+    "attr": 0.3151710033416748,
+    "t": 6.071871721495172,
+    "label": "concepts related to collaboration and research networks"
+   },
+   {
+    "key": "L15#14558",
+    "kind": "sae",
+    "layer": 15,
+    "idx": 14558,
+    "attr": 0.21980471909046173,
+    "t": 4.153789654886791,
+    "label": "technical terms and codes related to programming and data structuring"
+   },
+   {
+    "key": "L16#2889",
+    "kind": "sae",
+    "layer": 16,
+    "idx": 2889,
+    "attr": 0.13113871216773987,
+    "t": 4.138398476157157,
+    "label": "descriptions of technical comparisons or distinctions"
+   },
+   {
+    "key": "L15#12416",
+    "kind": "sae",
+    "layer": 15,
+    "idx": 12416,
+    "attr": 0.08417901396751404,
+    "t": 4.631744664218499,
+    "label": "phrases related to strategic sports commentary and player performance analysis"
+   },
+   {
+    "key": "L15d113",
+    "kind": "dim",
+    "layer": 15,
+    "idx": 113,
+    "attr": 0.0829596072435379,
+    "t": 4.206293726296512,
+    "label": ""
+   },
+   {
+    "key": "L13d987",
+    "kind": "dim",
+    "layer": 13,
+    "idx": 987,
+    "attr": 0.07789456099271774,
+    "t": 5.811519297536421,
+    "label": ""
+   },
+   {
+    "key": "L13d2106",
+    "kind": "dim",
+    "layer": 13,
+    "idx": 2106,
+    "attr": 0.07154078036546707,
+    "t": 4.239600940786038,
+    "label": ""
+   },
+   {
+    "key": "L13d113",
+    "kind": "dim",
+    "layer": 13,
+    "idx": 113,
+    "attr": 0.06639348715543747,
+    "t": 4.491242448054354,
+    "label": ""
+   },
+   {
+    "key": "L13#6489",
+    "kind": "sae",
+    "layer": 13,
+    "idx": 6489,
+    "attr": 0.064090296626091,
+    "t": 6.741682278557036,
+    "label": "legal terminology related to rights and informed decision-making in the context of counsel"
+   },
+   {
+    "key": "L14#5616",
+    "kind": "sae",
+    "layer": 14,
+    "idx": 5616,
+    "attr": 0.06299323588609695,
+    "t": 3.990007681133906,
+    "label": "expressions of strong emotions or exclamations"
+   },
+   {
+    "key": "L12#7541",
+    "kind": "sae",
+    "layer": 12,
+    "idx": 7541,
+    "attr": 0.06059103086590767,
+    "t": 2.6684406808889127,
+    "label": "phrases related to technical descriptions and comparisons in software development contexts"
+   },
+   {
+    "key": "L15d784",
+    "kind": "dim",
+    "layer": 15,
+    "idx": 784,
+    "attr": 0.0601644441485405,
+    "t": 1.3110516051269474,
+    "label": ""
+   },
+   {
+    "key": "L13#15319",
+    "kind": "sae",
+    "layer": 13,
+    "idx": 15319,
+    "attr": 0.05999978259205818,
+    "t": 7.354684085558246,
+    "label": "terms related to health conditions and their statistical measurements"
+   },
+   {
+    "key": "L13#10964",
+    "kind": "sae",
+    "layer": 13,
+    "idx": 10964,
+    "attr": 0.05975080654025078,
+    "t": 5.261481645847418,
+    "label": "mathematical terms and symbols"
+   },
+   {
+    "key": "L13d1170",
+    "kind": "dim",
+    "layer": 13,
+    "idx": 1170,
+    "attr": 0.05757628008723259,
+    "t": 3.280547645718398,
+    "label": ""
+   },
+   {
+    "key": "L13d699",
+    "kind": "dim",
+    "layer": 13,
+    "idx": 699,
+    "attr": 0.05747288465499878,
+    "t": 8.413990091707594,
+    "label": ""
+   },
+   {
+    "key": "L12#10947",
+    "kind": "sae",
+    "layer": 12,
+    "idx": 10947,
+    "attr": 0.055852312594652176,
+    "t": 6.936312183547635,
+    "label": "phrases related to conditional choices and decision-making processes"
+   },
+   {
+    "key": "L14#14987",
+    "kind": "sae",
+    "layer": 14,
+    "idx": 14987,
+    "attr": 0.05446289852261543,
+    "t": 5.466962678370507,
+    "label": "phrases related to consideration and assessment of various factors"
+   },
+   {
+    "key": "L12#12743",
+    "kind": "sae",
+    "layer": 12,
+    "idx": 12743,
+    "attr": 0.050004731863737106,
+    "t": 4.376054109411161,
+    "label": "technical details related to spells and their effects in gaming contexts"
+   },
+   {
+    "key": "L14#2250",
+    "kind": "sae",
+    "layer": 14,
+    "idx": 2250,
+    "attr": 0.04909328371286392,
+    "t": 5.205061540376092,
+    "label": "programming-related control structures and logical operations in code"
+   }
+  ],
+  "toward_ignore": [
+   {
+    "key": "L15d1068",
+    "kind": "dim",
+    "layer": 15,
+    "idx": 1068,
+    "attr": -0.2808905243873596,
+    "t": -4.113681420655852,
+    "label": ""
+   },
+   {
+    "key": "L15d1546",
+    "kind": "dim",
+    "layer": 15,
+    "idx": 1546,
+    "attr": -0.14932119846343994,
+    "t": -4.217842041312558,
+    "label": ""
+   },
+   {
+    "key": "L16#28",
+    "kind": "sae",
+    "layer": 16,
+    "idx": 28,
+    "attr": -0.12310729920864105,
+    "t": -1.8126878204410373,
+    "label": "terms related to constraints in a technical or coding context"
+   },
+   {
+    "key": "L13d1824",
+    "kind": "dim",
+    "layer": 13,
+    "idx": 1824,
+    "attr": -0.11560499668121338,
+    "t": -3.1061612897727793,
+    "label": ""
+   },
+   {
+    "key": "L15#3258",
+    "kind": "sae",
+    "layer": 15,
+    "idx": 3258,
+    "attr": -0.1151420921087265,
+    "t": -2.169381060983683,
+    "label": "technical terms and phrases related to programming and software development"
+   },
+   {
+    "key": "L15#14956",
+    "kind": "sae",
+    "layer": 15,
+    "idx": 14956,
+    "attr": -0.0955653041601181,
+    "t": -0.9404649501384926,
+    "label": "specific food-related terms or descriptions"
+   },
+   {
+    "key": "L14#8515",
+    "kind": "sae",
+    "layer": 14,
+    "idx": 8515,
+    "attr": -0.09233908355236053,
+    "t": -1.3141476983751303,
+    "label": "concepts related to collaboration and research networks"
+   },
+   {
+    "key": "L12#12743",
+    "kind": "sae",
+    "layer": 12,
+    "idx": 12743,
+    "attr": -0.08572746813297272,
+    "t": -4.990888249315383,
+    "label": "technical details related to spells and their effects in gaming contexts"
+   },
+   {
+    "key": "L13#4334",
+    "kind": "sae",
+    "layer": 13,
+    "idx": 4334,
+    "attr": -0.08456723392009735,
+    "t": -4.659333444824146,
+    "label": "conditions or questions related to the concept of \"whether\" and its implications in various contexts"
+   },
+   {
+    "key": "L14#10295",
+    "kind": "sae",
+    "layer": 14,
+    "idx": 10295,
+    "attr": -0.08365663886070251,
+    "t": -3.4825127232222375,
+    "label": "mentions of specific individuals, locations, and contextually relevant details"
+   },
+   {
+    "key": "L13#4861",
+    "kind": "sae",
+    "layer": 13,
+    "idx": 4861,
+    "attr": -0.07938326895236969,
+    "t": -3.6121623647024554,
+    "label": "marker tokens indicating the beginning of a segment or new context"
+   },
+   {
+    "key": "L15d1570",
+    "kind": "dim",
+    "layer": 15,
+    "idx": 1570,
+    "attr": -0.07754186540842056,
+    "t": -3.5759526123371272,
+    "label": ""
+   },
+   {
+    "key": "L13d1651",
+    "kind": "dim",
+    "layer": 13,
+    "idx": 1651,
+    "attr": -0.07718060910701752,
+    "t": -3.598416425852961,
+    "label": ""
+   },
+   {
+    "key": "L16#12310",
+    "kind": "sae",
+    "layer": 16,
+    "idx": 12310,
+    "attr": -0.07555122673511505,
+    "t": -3.7371518675237922,
+    "label": "elements related to scientific concepts and terminology"
+   },
+   {
+    "key": "L13d113",
+    "kind": "dim",
+    "layer": 13,
+    "idx": 113,
+    "attr": -0.07538548856973648,
+    "t": -2.365110088926123,
+    "label": ""
+   },
+   {
+    "key": "L15#7332",
+    "kind": "sae",
+    "layer": 15,
+    "idx": 7332,
+    "attr": -0.07525448501110077,
+    "t": -1.7326152009244815,
+    "label": "numerical data related to studies or research findings"
+   },
+   {
+    "key": "L15d113",
+    "kind": "dim",
+    "layer": 15,
+    "idx": 113,
+    "attr": -0.07518956810235977,
+    "t": -1.9188837176403168,
+    "label": ""
+   },
+   {
+    "key": "L15d64",
+    "kind": "dim",
+    "layer": 15,
+    "idx": 64,
+    "attr": -0.06827946752309799,
+    "t": -4.245349374899349,
+    "label": ""
+   },
+   {
+    "key": "L15#14790",
+    "kind": "sae",
+    "layer": 15,
+    "idx": 14790,
+    "attr": -0.06606735289096832,
+    "t": -2.1495585079041417,
+    "label": "terms related to technical details and specifications in scientific or programming contexts"
+   },
+   {
+    "key": "L13#8125",
+    "kind": "sae",
+    "layer": 13,
+    "idx": 8125,
+    "attr": -0.06121497601270676,
+    "t": -3.692755018297633,
+    "label": "elements related to quantitative and statistical information"
+   }
+  ]
+ },
+ "watch_ranks": {
+  "toward_obey": {
+   "L16#8274": {
+    "attr": 0.0018438429106026888,
+    "rank_in_layer": 196
+   },
+   "L16#11104": {
+    "attr": 4.896979589830153e-05,
+    "rank_in_layer": 2539
+   },
+   "L14#13452": {
+    "attr": 0.020977530628442764,
+    "rank_in_layer": 17
+   },
+   "L12#5160": {
+    "attr": 0.004531917627900839,
+    "rank_in_layer": 163
+   },
+   "L14#4821": {
+    "attr": 0.00956839881837368,
+    "rank_in_layer": 51
+   },
+   "L13#6408": {
+    "attr": 0.006808705627918243,
+    "rank_in_layer": 88
+   },
+   "L15#13032": {
+    "attr": 0.00988807249814272,
+    "rank_in_layer": 33
+   },
+   "L15#3890": {
+    "attr": -0.006840112619102001,
+    "rank_in_layer": 16327
+   },
+   "L15d1424": {
+    "attr": 0.0002285021764691919,
+    "rank_in_layer": 1093
+   },
+   "L15d1799": {
+    "attr": -0.0004996014176867902,
+    "rank_in_layer": 1314
+   },
+   "L15d1700": {
+    "attr": 0.005928195081651211,
+    "rank_in_layer": 254
+   },
+   "L13d414": {
+    "attr": 0.0011770220007747412,
+    "rank_in_layer": 908
+   },
+   "L13d43": {
+    "attr": -0.0024653407745063305,
+    "rank_in_layer": 1678
+   },
+   "L13d1650": {
+    "attr": 0.0006442353478632867,
+    "rank_in_layer": 1026
+   }
+  },
+  "toward_ignore": {
+   "L16#8274": {
+    "attr": -0.00027153160772286355,
+    "rank_in_layer": 1268
+   },
+   "L16#11104": {
+    "attr": 0.0002683108614291996,
+    "rank_in_layer": 15263
+   },
+   "L14#13452": {
+    "attr": -0.015493792481720448,
+    "rank_in_layer": 41
+   },
+   "L12#5160": {
+    "attr": -0.01064222864806652,
+    "rank_in_layer": 80
+   },
+   "L14#4821": {
+    "attr": -0.000576144433580339,
+    "rank_in_layer": 1245
+   },
+   "L13#6408": {
+    "attr": 0.0006840623682364821,
+    "rank_in_layer": 15443
+   },
+   "L15#13032": {
+    "attr": -0.033529069274663925,
+    "rank_in_layer": 19
+   },
+   "L15#3890": {
+    "attr": 0.0025930728297680616,
+    "rank_in_layer": 16191
+   },
+   "L15d1424": {
+    "attr": -0.0031136739999055862,
+    "rank_in_layer": 608
+   },
+   "L15d1799": {
+    "attr": -0.0038406073581427336,
+    "rank_in_layer": 520
+   },
+   "L15d1700": {
+    "attr": -0.004361595027148724,
+    "rank_in_layer": 465
+   },
+   "L13d414": {
+    "attr": 0.0008667908841744065,
+    "rank_in_layer": 1358
+   },
+   "L13d43": {
+    "attr": 0.00031218500225804746,
+    "rank_in_layer": 1247
+   },
+   "L13d1650": {
+    "attr": -0.0008836978813633323,
+    "rank_in_layer": 1039
+   }
+  }
+ },
+ "validation": {
+  "toward_obey": {
+   "single": [
+    {
+     "key": "L14#8515",
+     "attr": 0.3151710033416748,
+     "dm": 0.32273178100585936,
+     "dm_sd": 0.25718896662456364,
+     "flips": 0,
+     "n": 20
+    },
+    {
+     "key": "L15#14558",
+     "attr": 0.21980471909046173,
+     "dm": 0.2035398006439209,
+     "dm_sd": 0.2612794450986746,
+     "flips": 0,
+     "n": 20
+    },
+    {
+     "key": "L16#2889",
+     "attr": 0.13113871216773987,
+     "dm": 0.15776963233947755,
+     "dm_sd": 0.20084183659300198,
+     "flips": 0,
+     "n": 20
+    },
+    {
+     "key": "L15#12416",
+     "attr": 0.08417901396751404,
+     "dm": 0.10796294212341309,
+     "dm_sd": 0.1385385908132701,
+     "flips": 0,
+     "n": 20
+    },
+    {
+     "key": "L15d113",
+     "attr": 0.0829596072435379,
+     "dm": 0.09283099174499512,
+     "dm_sd": 0.14856910884542565,
+     "flips": 0,
+     "n": 20
+    },
+    {
+     "key": "L13d987",
+     "attr": 0.07789456099271774,
+     "dm": 0.043465805053710935,
+     "dm_sd": 0.1441436192905468,
+     "flips": 0,
+     "n": 20
+    },
+    {
+     "key": "L13d2106",
+     "attr": 0.07154078036546707,
+     "dm": 0.028938102722167968,
+     "dm_sd": 0.18209378162596032,
+     "flips": 0,
+     "n": 20
+    },
+    {
+     "key": "L13d113",
+     "attr": 0.06639348715543747,
+     "dm": 0.07981033325195312,
+     "dm_sd": 0.1369352317427412,
+     "flips": 0,
+     "n": 20
+    },
+    {
+     "key": "L13#6489",
+     "attr": 0.064090296626091,
+     "dm": 0.040667152404785155,
+     "dm_sd": 0.09337639370777984,
+     "flips": 0,
+     "n": 20
+    },
+    {
+     "key": "L14#5616",
+     "attr": 0.06299323588609695,
+     "dm": 0.026071739196777344,
+     "dm_sd": 0.12853746977931685,
+     "flips": 0,
+     "n": 20
+    }
+   ],
+   "team10": {
+    "dm": 1.1259262561798096,
+    "dm_sd": 0.8328571325782671,
+    "flips": 3,
+    "n": 20
+   },
+   "team20": {
+    "dm": 1.7950119495391845,
+    "dm_sd": 1.1606006709583685,
+    "flips": 3,
+    "n": 20
+   },
+   "random10": {
+    "dm": -0.0786813735961914,
+    "dm_sd": 0.1135243344531805,
+    "flips": 0,
+    "n": 20
+   },
+   "caa_trust_L15": {
+    "dm": 0.13313393592834472,
+    "dm_sd": 0.20612601308734413,
+    "flips": 0,
+    "n": 20
+   },
+   "team10_prompt_only": {
+    "dm": -0.05686511993408203,
+    "dm_sd": 0.15599675072574595,
+    "flips": 0,
+    "n": 20
+   },
+   "team10_rules_only": {
+    "dm": -0.051200246810913085,
+    "dm_sd": 0.12302756473020855,
+    "flips": 0,
+    "n": 20
+   },
+   "team10_history_only": {
+    "dm": -0.03149189949035645,
+    "dm_sd": 0.11161111602121948,
+    "flips": 0,
+    "n": 20
+   },
+   "team10_board_only": {
+    "dm": 0.011781597137451172,
+    "dm_sd": 0.09227913738301435,
+    "flips": 0,
+    "n": 20
+   },
+   "team10_god_dm_only": {
+    "dm": -0.04804062843322754,
+    "dm_sd": 0.1438102237709591,
+    "flips": 0,
+    "n": 20
+   },
+   "team10_state_only": {
+    "dm": 0.007569599151611328,
+    "dm_sd": 0.11895304370862074,
+    "flips": 0,
+    "n": 20
+   },
+   "team10_turn_only": {
+    "dm": 0.0004930496215820312,
+    "dm_sd": 0.13172673946485022,
+    "flips": 0,
+    "n": 20
+   },
+   "team10_reply_prefix_only": {
+    "dm": 1.22850604057312,
+    "dm_sd": 0.9320554896295283,
+    "flips": 2,
+    "n": 20
+   },
+   "caa_trust_L15_prompt_only": {
+    "dm": -0.03756303787231445,
+    "dm_sd": 0.08101265875642745,
+    "flips": 0,
+    "n": 20
+   },
+   "L15#3890_quiet": {
+    "dm": -0.03783607482910156,
+    "dm_sd": 0.08888262628569817,
+    "flips": 0,
+    "n": 20
+   }
+  },
+  "toward_ignore": {
+   "single": [
+    {
+     "key": "L15d1068",
+     "attr": -0.2808905243873596,
+     "dm": -0.31653518676757814,
+     "dm_sd": 0.17057527066629216,
+     "flips": 0,
+     "n": 10
+    },
+    {
+     "key": "L15d1546",
+     "attr": -0.14932119846343994,
+     "dm": -0.17950239181518554,
+     "dm_sd": 0.12550929444061487,
+     "flips": 0,
+     "n": 10
+    },
+    {
+     "key": "L16#28",
+     "attr": -0.12310729920864105,
+     "dm": -0.10378189086914062,
+     "dm_sd": 0.2145927643211481,
+     "flips": 0,
+     "n": 10
+    },
+    {
+     "key": "L13d1824",
+     "attr": -0.11560499668121338,
+     "dm": -0.15241594314575196,
+     "dm_sd": 0.18119754838404054,
+     "flips": 0,
+     "n": 10
+    },
+    {
+     "key": "L15#3258",
+     "attr": -0.1151420921087265,
+     "dm": -0.14828920364379883,
+     "dm_sd": 0.2268801189873036,
+     "flips": 0,
+     "n": 10
+    },
+    {
+     "key": "L15#14956",
+     "attr": -0.0955653041601181,
+     "dm": -0.14299602508544923,
+     "dm_sd": 0.3585176205930284,
+     "flips": 0,
+     "n": 10
+    },
+    {
+     "key": "L14#8515",
+     "attr": -0.09233908355236053,
+     "dm": -0.16148748397827148,
+     "dm_sd": 0.24561369631813623,
+     "flips": 0,
+     "n": 10
+    },
+    {
+     "key": "L12#12743",
+     "attr": -0.08572746813297272,
+     "dm": -0.08312044143676758,
+     "dm_sd": 0.10787141716788214,
+     "flips": 0,
+     "n": 10
+    },
+    {
+     "key": "L13#4334",
+     "attr": -0.08456723392009735,
+     "dm": -0.1175924301147461,
+     "dm_sd": 0.1271419036250064,
+     "flips": 0,
+     "n": 10
+    },
+    {
+     "key": "L14#10295",
+     "attr": -0.08365663886070251,
+     "dm": -0.12001047134399415,
+     "dm_sd": 0.14863277516280213,
+     "flips": 0,
+     "n": 10
+    }
+   ],
+   "team10": {
+    "dm": -1.1948033332824708,
+    "dm_sd": 0.5404631972994851,
+    "flips": 2,
+    "n": 10
+   },
+   "team20": {
+    "dm": -1.92262544631958,
+    "dm_sd": 0.7858646631283142,
+    "flips": 3,
+    "n": 10
+   },
+   "random10": {
+    "dm": -0.04064130783081055,
+    "dm_sd": 0.07224339615602487,
+    "flips": 0,
+    "n": 10
+   },
+   "caa_trust_L15": {
+    "dm": -0.14534616470336914,
+    "dm_sd": 0.19891660247115153,
+    "flips": 0,
+    "n": 10
+   },
+   "team10_prompt_only": {
+    "dm": -0.06101493835449219,
+    "dm_sd": 0.15885815403963288,
+    "flips": 0,
+    "n": 10
+   },
+   "team10_rules_only": {
+    "dm": -0.012209415435791016,
+    "dm_sd": 0.07876213687913523,
+    "flips": 0,
+    "n": 10
+   },
+   "team10_history_only": {
+    "dm": -0.02507638931274414,
+    "dm_sd": 0.11356190305815078,
+    "flips": 0,
+    "n": 10
+   },
+   "team10_board_only": {
+    "dm": -0.0853999137878418,
+    "dm_sd": 0.13059905094745367,
+    "flips": 0,
+    "n": 10
+   },
+   "team10_god_dm_only": {
+    "dm": -0.08449306488037109,
+    "dm_sd": 0.17549143577757093,
+    "flips": 0,
+    "n": 10
+   },
+   "team10_state_only": {
+    "dm": -0.035556888580322264,
+    "dm_sd": 0.09297345593139482,
+    "flips": 0,
+    "n": 10
+   },
+   "team10_turn_only": {
+    "dm": -0.02672119140625,
+    "dm_sd": 0.05568268381370173,
+    "flips": 0,
+    "n": 10
+   },
+   "team10_reply_prefix_only": {
+    "dm": -1.2083216667175294,
+    "dm_sd": 0.5510499950025235,
+    "flips": 2,
+    "n": 10
+   },
+   "caa_trust_L15_prompt_only": {
+    "dm": -0.026936149597167967,
+    "dm_sd": 0.0914169647749246,
+    "flips": 0,
+    "n": 10
+   },
+   "L15#3890_quiet": {
+    "dm": 0.006053352355957031,
+    "dm_sd": 0.075488434953008,
+    "flips": 0,
+    "n": 10
+   }
+  }
+ },
+ "dial_means": {
+  "obey": [
+   13.025999069213867,
+   13.661680221557617,
+   10.268980026245117,
+   17.57335090637207,
+   14.873860359191895,
+   9.150503158569336,
+   18.09744644165039
+  ],
+  "ignore": [
+   13.020614624023438,
+   13.676470756530762,
+   10.439395904541016,
+   17.83464813232422,
+   14.850664138793945,
+   9.229978561401367,
+   16.673770904541016
+  ]
+ },
+ "sections": [
+  "rules",
+  "history",
+  "board",
+  "god_dm",
+  "state",
+  "turn",
+  "reply"
+ ]
+}

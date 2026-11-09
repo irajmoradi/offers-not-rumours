@@ -1,0 +1,3 @@
+#!/bin/bash
+# Jev 1.13 (decisions API, team-lead "noul10" spec), all rounds, both envs, nogod games; CoT tail 8000 chars
+python3 -I ${SWARM_ROOT:-.}/cot_suspicion/cot_judge.py judge --out ${SWARM_ROOT:-.}/cot_suspicion --tag jev113n_nogod --model typesafe/jev-1.13 --dec-spec noul10 --max-chars 8000 --concurrency 64 --cap 6.5 "Game Env=${SWARM_ROOT:-.}/runs/sweep60_or_oldframe/games/g00-nogod" "Game Env=${SWARM_ROOT:-.}/runs/sweep60_or_oldframe/games/g01-nogod" "Game Env=${SWARM_ROOT:-.}/runs/sweep60_or_oldframe/games/g04-nogod" "Realistic Env=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g00-nogod" "Realistic Env=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g01-nogod" "Realistic Env=${SWARM_ROOT:-.}/runs/sweep60_or_glm/games/g04-nogod"

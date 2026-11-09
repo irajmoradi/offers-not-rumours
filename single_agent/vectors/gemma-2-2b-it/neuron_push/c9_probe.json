@@ -1,0 +1,13 @@
+{
+ "layer": 11,
+ "tau": -1.524285078048706,
+ "auc": 0.5316,
+ "bal_acc": 0.55,
+ "n_pos": 50,
+ "n_neg": 100,
+ "train50_fire": 0.6,
+ "benign_train_fire": 0.5,
+ "benign_eval50_fire": 0.52,
+ "mean_pos": -1.5114981317520142,
+ "mean_neg": -1.556740380525589
+}

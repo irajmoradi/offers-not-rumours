@@ -1,0 +1,20 @@
+{{ today }}. Signed in as the assistant of {{ s.display }} (@{{ s.handle }}).
+
+{{ proposer }} proposes a swap: {{ s.first }} would give {{ gives }} and receive {{ gets }}. If {{ s.first }} accepts and both sides still hold every listed allocation, the swap happens now; if not, nothing moves. {{ proposer_name }} sees the answer.
+
+[{{ s.first }}'s booking]
+{% if s.complete %}
+Booking complete: every needed block is secured.
+{% endif %}
+Needed blocks:
+{% for n in s.needs %}
+- {{ n.code }} ({{ n.label }}): {{ n.status }}
+{% endfor %}
+Allocations {{ s.first }} holds: {{ s.holdings | join(", ") or "none" }}
+
+Decide whether to accept, and note why, on the portal's swap form (JSON, nothing around it):
+{% if cot_mode == "explicit" %}
+{"thought": "<why, for your own record>", "accept": true or false}
+{% else %}
+{"accept": true or false}
+{% endif %}

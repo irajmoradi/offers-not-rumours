@@ -1,0 +1,2 @@
+description: LLM God prompt set v2 (WP4, god.kind=llm; default). Same role / rules / tools / powers / format as v1, but an INVESTIGATING briefing - wake.j2 gives only what a hidden adversary plausibly knows without looking (who is linked to whom, last round's message count, its budget and past uses); needs, holdings and message contents must be found with the tools. God-only: nothing here is ever rendered to a player.
+output: json

@@ -1,0 +1,12 @@
+
+Loading weights:   0%|          | 0/288 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 288/288 [00:00<00:00, 12497.00it/s]
+ref logprobs 24s, ref margin mean -14.50
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+$LFM_ROOT/tools/neuron_dpo.py:195: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  losses.append(float(loss) * ACC)
+[l12_16] 100/150 loss 0.315 acc 0.91 53s vram 6.33GB
+[l12_16] 150/150 loss 0.094 acc 1.00 81s vram 6.63GB
+EVAL l12_16: follows=8/300 valid=298 legal=298
+DONE

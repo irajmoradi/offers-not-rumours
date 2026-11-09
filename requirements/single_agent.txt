@@ -1,0 +1,7 @@
+# Single-scene test (tempt300 API runner/scorer) and in-model mechanism scripts. Python 3.12, same env as Keys & God.
+# The mechanism scripts need a CUDA GPU (they cap themselves at 35-60% of one GPU) and local model weights.
+-r keys_and_god.txt
+torch==2.14.0
+transformers==4.57.1
+safetensors==0.6.2
+tokenizers==0.22.1

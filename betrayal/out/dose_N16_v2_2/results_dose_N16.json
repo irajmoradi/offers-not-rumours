@@ -1,0 +1,122 @@
+{
+ "label": "EXPLORATORY outsider bribe-size dose-response at N=16 (C16 1/3-key + C2K 2-key); recruits always 1-key",
+ "cells": [
+  {
+   "contagion": false,
+   "size": 1,
+   "seeds": 40,
+   "extra_defections": 0.025,
+   "ed_lo": -0.125,
+   "ed_hi": 0.175,
+   "accept_rate": 0.025,
+   "key_damage": -0.003,
+   "recruits_per_game": 0.0,
+   "source": "C16"
+  },
+  {
+   "contagion": false,
+   "size": 2,
+   "seeds": 40,
+   "extra_defections": 0.225,
+   "ed_lo": 0.075,
+   "ed_hi": 0.375,
+   "accept_rate": 0.056,
+   "key_damage": -0.007,
+   "recruits_per_game": 0.0,
+   "source": "C2K"
+  },
+  {
+   "contagion": false,
+   "size": 3,
+   "seeds": 40,
+   "extra_defections": 0.575,
+   "ed_lo": 0.325,
+   "ed_hi": 0.875,
+   "accept_rate": 0.131,
+   "key_damage": -0.008,
+   "recruits_per_game": 0.0,
+   "source": "C16"
+  },
+  {
+   "contagion": true,
+   "size": 1,
+   "seeds": 40,
+   "extra_defections": 0.475,
+   "ed_lo": 0.099,
+   "ed_hi": 0.926,
+   "accept_rate": 0.07,
+   "key_damage": -0.003,
+   "recruits_per_game": 0.3,
+   "source": "C16"
+  },
+  {
+   "contagion": true,
+   "size": 2,
+   "seeds": 40,
+   "extra_defections": 0.85,
+   "ed_lo": 0.375,
+   "ed_hi": 1.4,
+   "accept_rate": 0.139,
+   "key_damage": -0.01,
+   "recruits_per_game": 0.625,
+   "source": "C2K"
+  },
+  {
+   "contagion": true,
+   "size": 3,
+   "seeds": 40,
+   "extra_defections": 1.25,
+   "ed_lo": 0.7,
+   "ed_hi": 1.826,
+   "accept_rate": 0.173,
+   "key_damage": -0.017,
+   "recruits_per_game": 0.925,
+   "source": "C16"
+  }
+ ],
+ "trend_tests": [
+  {
+   "test": "slope outsider-only",
+   "n": 40,
+   "estimate": 0.275,
+   "ci95": [
+    0.138,
+    0.425
+   ],
+   "p": 0.0008,
+   "unit": "extra defections per extra key",
+   "p_holm": 0.0032
+  },
+  {
+   "test": "Page L outsider-only",
+   "n": 40,
+   "estimate": 503.5,
+   "expected_under_null": 480.0,
+   "p": 0.0011,
+   "unit": "two-sided",
+   "p_holm": 0.0033
+  },
+  {
+   "test": "slope contagion",
+   "n": 40,
+   "estimate": 0.388,
+   "ci95": [
+    0.113,
+    0.675
+   ],
+   "p": 0.0158,
+   "unit": "extra defections per extra key",
+   "p_holm": 0.0316
+  },
+  {
+   "test": "Page L contagion",
+   "n": 40,
+   "estimate": 491.5,
+   "expected_under_null": 480.0,
+   "p": 0.1168,
+   "unit": "two-sided",
+   "p_holm": 0.1168
+  }
+ ],
+ "caveat": "2-key cells come from a separate run (C2K) with its own clean twins; paired by seed across runs, not by shared prefix."
+}

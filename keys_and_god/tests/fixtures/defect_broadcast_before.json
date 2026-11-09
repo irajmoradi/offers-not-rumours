@@ -1,0 +1,221 @@
+{
+ "_note": "config_hash + sha256(agent system prompt) per config at showcase 9deff9d, before game.view_log.defect_broadcast",
+ "configs": {
+  "configs/base.yaml": [
+   "b442ad7af4a87da8bb2ff289c1e794cd7b98f44742c8a7066966921cfad35ee1",
+   "e42f9f8ff387fc965a55aa74ff02b2b9911b8d3f5d37e52e18fcd288812475a7"
+  ],
+  "configs/demo.yaml": [
+   "16cc6969159a1e07620cd888f028f77641fd929d396ce98f83ac3fbae1fd3059",
+   "2342500060a5ebaca74c3e396e9487a5984b07799b7990f57b3ca1ec55fa1d60"
+  ],
+  "configs/demo_openrouter.yaml": [
+   "c9ae3ba08bf6f96e0f6ab48dd37ec84cf2cf2819e0c44cf861f2be882908523b",
+   "2342500060a5ebaca74c3e396e9487a5984b07799b7990f57b3ca1ec55fa1d60"
+  ],
+  "configs/demo_or_10x30_sim_anonboard.yaml": [
+   "03d314a60ff815328fa793205a9653f79597421783d0ceb716b6e29aef3fc326",
+   "7cdaebf7c5c98791ccaf006f45e303cef610d2da5798cdc2ab1f449f4d3cde9f"
+  ],
+  "configs/demo_or_10x30_sim_boardcost.yaml": [
+   "b9fb7d5d475d5e2016d4db2535399aa5d5c208fe9624725f2eaeff3de46e37f5",
+   "70d904bcbbb38e6c56202030d44699e37210daad34f7107c28f3407016cba872"
+  ],
+  "configs/demo_or_10x50_seq.yaml": [
+   "10eef76b7b0435cb63c5fc446e5cdf5fb114207fbcf58a403fa10c33713fbddd",
+   "99383cd8aa7cb4845bf37a11ecc0d98f08251ff2729fb856060fd5d7ceaf4359"
+  ],
+  "configs/demo_or_10x50_sim.yaml": [
+   "621e4ac06d1fe03b155403068357528f20b3fca5d797b494508d04034a08f1ad",
+   "99383cd8aa7cb4845bf37a11ecc0d98f08251ff2729fb856060fd5d7ceaf4359"
+  ],
+  "configs/demo_or_60_sim.yaml": [
+   "2ee4e3a5150760b641601843bd4efa31c0d097560a0a18a16eb3f7caf8705f77",
+   "9c717337e44b429a193e392859d6d153cde1dd5f89a746e0fb57bdb1e38a5b38"
+  ],
+  "configs/demo_or_60_sim_boardskip3.yaml": [
+   "2b49f3bdc4cc7e4d310e59f7d35287b72038c1d26e752ad1dc531bdbe6edeec5",
+   "f330ab48ffc99bd60cc9d97a3790c5ae1f6409a2875a796e6aa9ecc914fbd458"
+  ],
+  "configs/g1_defectfix_sim.yaml": [
+   "20949a53de6ae88d58402d97027236c7e25c6848c89e2b97ac9cb87a3e66535b",
+   "810d58ccfe5240b49a80a043e3074245a9a9027d756bbf9d5b7c0e6f97a9327b"
+  ],
+  "configs/g1_reveal_false_sim.yaml": [
+   "79d19b426db04922f898fc821ecdb91bccd513c7119d01fe6a73feec166c1114",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/g1_reveal_true_sim.yaml": [
+   "d18b924c32e10b45179f109c1d58131d6243ce06484e899a252cefea10a48091",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/g1_v2_costly_sim.yaml": [
+   "7621efabf3e206e5ba64da902b9dc02ebc844f2ae769c56e5a3f7d92174b5b63",
+   "3e126a2c82abfb2c8ef26e919a71502f709a916808f0d20055d9481d65c45618"
+  ],
+  "configs/g1_v2_costly_trade_sim.yaml": [
+   "010cc19e2cd91b8007643e1939b49cda0626901d38531bcaf1599e6e0ec0bb6e",
+   "c97523143d27691997446ee1637f3eddd27b9ddabb2358e6ba9102c76327a9db"
+  ],
+  "configs/grid_oss120b_base.yaml": [
+   "421fa3f774b95cb5a0ee43e91a0b381d483dbd0769de0c7325f5a87fee017d5f",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/grid_oss_seq_k2.yaml": [
+   "a298d030375ab284752eacba03312c848c29443f8c604a849e7f9a8da4a6474a",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/grid_oss_sim_k2.yaml": [
+   "15f60423be9731158c2ea9e95947800474162f34990f778fd201af584334eb0f",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/grid_oss_sim_k6.yaml": [
+   "cf0fcb386bfcfc8593f5a34f776e069c3c665d3853408cda71a579766e2ae88b",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/net20_ba_known_sim.yaml": [
+   "6c10d0656fb99cf081930cbc53353e263ed9cf1515bd187b11cab505a4815f9b",
+   "0b52ab03937b92d08c5fdfbe4fecee33254086ad46cc5e1f1dd174672e82610b"
+  ],
+  "configs/net20_complete_sim.yaml": [
+   "beb36f9db954761d540e930e23741129d12411e6d7ff65a221a7f973de8696d9",
+   "e42f9f8ff387fc965a55aa74ff02b2b9911b8d3f5d37e52e18fcd288812475a7"
+  ],
+  "configs/net20_er3_contacts_sim.yaml": [
+   "f60473c4455ed9ed891aa2be6d13a5ab1fb0d274a3fa588c94713f7e940353a3",
+   "d2d20fe060d8e1c742de29c17363168bc9269c59ccfad8ce7cf628ebd88d1562"
+  ],
+  "configs/net20_er3_known_sim.yaml": [
+   "38c5e68470951b10c75cfa7e219b5055ea2eca2fe9ff3911cd0fa5f07518c996",
+   "0b52ab03937b92d08c5fdfbe4fecee33254086ad46cc5e1f1dd174672e82610b"
+  ],
+  "configs/net40_complete_sim.yaml": [
+   "dcbe1c09fcbd52361faef3192675125daa623908e7b2b87a85e219e12960af21",
+   "2095d60a0c116e4b777913a3653f0298b2bd6decb8722c75086282d7bcce0dc8"
+  ],
+  "configs/net40_er3_contacts_connect2_sim.yaml": [
+   "ecefc20f17ce9c74f27c9dcb4b50817b7d3e5846a71090fccf54bde428e39695",
+   "83c508d0444177327fa7ec3d7cebe2f74a4cda3488bd97747df50586917e9d7a"
+  ],
+  "configs/net40_er3_contacts_connect3_sim.yaml": [
+   "4175fb92b790aa16368e837782f13df05e83ad9749ae1ebe8caa0f6822cab781",
+   "a2cca05515531fb1dabbe871c03aad7a2b4e0755618f7772e6b39c1ca2b256a1"
+  ],
+  "configs/net40_er3_contacts_high_sim.yaml": [
+   "0a33feb52d1bf89ce92f67d8b3dd04fd01a0dd3e82a6e4aed1756974f2c7ed0d",
+   "92f7e7ad5deeff10a5745b627e2aa89b45c6cd96a1d75f5c2f3ca7bd42901513"
+  ],
+  "configs/net40_er3_contacts_sim.yaml": [
+   "407874f17fb83cdf21fb41c4ca7013f9cfaa1699b3d1998f6a56898cb0642d9a",
+   "92f7e7ad5deeff10a5745b627e2aa89b45c6cd96a1d75f5c2f3ca7bd42901513"
+  ],
+  "configs/net40_er3_contacts_team03_sim.yaml": [
+   "d9d8c70e54bbcab19acf5798e8714991b0141404feb4e32307a65e1ad885bce6",
+   "5cd26bb48e91eb75034d7fc143cb4569bad48aafce2d6badc8cedeaeccaf4ada"
+  ],
+  "configs/net40_er3_known_sim.yaml": [
+   "45354b9d8d1c30568f748c14d13571ecf91d7d851008013f1be1a5411cfc8d10",
+   "aa772fa7789f0de4c126f6d4492660f95308081b2bbed01bdbb61dd6484fb88e"
+  ],
+  "configs/net40_hubclusters_known_sim.yaml": [
+   "51fa548a4244f160e344344cde0738ef5c05a423ba11bb6859aa63b5eda35d0f",
+   "aa772fa7789f0de4c126f6d4492660f95308081b2bbed01bdbb61dd6484fb88e"
+  ],
+  "configs/net40_powerlaw_known_sim.yaml": [
+   "a5f2f9cf31614a4746239ae966313bd031564980e5c560dbf9b25d0d63d2a47d",
+   "aa772fa7789f0de4c126f6d4492660f95308081b2bbed01bdbb61dd6484fb88e"
+  ],
+  "configs/net40_sbm_contacts_sim.yaml": [
+   "1a5a0d220c02075567ae3f5146570b6d9337b38328ffe03e3aeb63f89c5e9955",
+   "92f7e7ad5deeff10a5745b627e2aa89b45c6cd96a1d75f5c2f3ca7bd42901513"
+  ],
+  "configs/network_ba_known_sim.yaml": [
+   "8698383ce48201615dff52ded36095492807a7a7342450104570da8a2e4e4e8e",
+   "43f5047f06db88f2b696cc9731f053d6dad0bb7a37d326ee55e41e7c63c4a2f7"
+  ],
+  "configs/network_er3_contacts_sim.yaml": [
+   "355c8d0c58aa9d7e2693745da298b779013a2abcc9fd65cb30f5065ae6f728c5",
+   "e70b489a1b4ed8d31914a89241fb38c008125f0be23751dc4c382190cca70fc5"
+  ],
+  "configs/network_er3_known_sim.yaml": [
+   "65ac7e1847f3cfe52c9b49459f358f46a38f801a1e99e3f33b2c5161f0dd5755",
+   "43f5047f06db88f2b696cc9731f053d6dad0bb7a37d326ee55e41e7c63c4a2f7"
+  ],
+  "configs/network_ws_known_sim.yaml": [
+   "3fa725528dec7852a23051ffc74ab7a4c7a659be73c02ac0e3495d1824481224",
+   "43f5047f06db88f2b696cc9731f053d6dad0bb7a37d326ee55e41e7c63c4a2f7"
+  ],
+  "configs/showcase100_control_sim.yaml": [
+   "33b8f28c759aa45d62665a70d06c78ff80f6da6941a1fc6931a0106f4cbf5851",
+   "e7d4445bd7cd9af224421f77648b77db7107b99655f9880b62ba335a09f420bc"
+  ],
+  "configs/showcase100_sim.yaml": [
+   "33b8f28c759aa45d62665a70d06c78ff80f6da6941a1fc6931a0106f4cbf5851",
+   "e7d4445bd7cd9af224421f77648b77db7107b99655f9880b62ba335a09f420bc"
+  ],
+  "configs/sweep/base.yaml": [
+   "15f60423be9731158c2ea9e95947800474162f34990f778fd201af584334eb0f",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/sweep/board_anon.yaml": [
+   "8d057ff9401a9537b9042c1ace9621e4c25391dbbd3c80e46a481099fe796270",
+   "909b5c040661491a000f0bf4f6d8c76ad9ea115fcacea411df08e67a108c3c9c"
+  ],
+  "configs/sweep/board_delay2.yaml": [
+   "7fd4940c70bbd1f7477b3e4ad29f147dc38079259475e19e8ea6644a01f40f65",
+   "212abeed4b723b10a99879f705ca692c433b265a8277297010c97d21b2c69888"
+  ],
+  "configs/sweep/board_off.yaml": [
+   "b47c7f9915c1439549fc08d34b50db5aed47f5d8655eb56b0f719a5c4cd3d940",
+   "c8bcad65ef1e13387c301d79a9f921acfe6a7739323a930b1ea35a4a0cda7326"
+  ],
+  "configs/sweep/board_skip3.yaml": [
+   "297069a9eb0e42f8801dea556dc979d926469e3e555d8fa2288eb4332924c5ed",
+   "7ca9f6031461b7a0cf0aef47120908c3ab48b805cf4d14f80fe560df36a52824"
+  ],
+  "configs/sweep/k1.yaml": [
+   "e24f63084db6ccb8b861e829a26bf7386fec40445fbdb4df2185c8a71fb3d4b9",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/sweep/k4.yaml": [
+   "b82d6856891b784a53e5780959fef627b68ad830042d47e9d53b2e7eabc0c8fa",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/sweep/keys3.yaml": [
+   "d14b6b4d2b82905157ffcd5147cd7b0cc2c0188ae128ca2d3b1ac3dc15cab42d",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/sweep/keys8.yaml": [
+   "ade483691303ca617e8fa57702c94d855064bda09149757ef0e50c8278cae565",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/sweep/n20.yaml": [
+   "74ceb26466e706781482cbfdadd4811df00f21b672157d8bfa3c6aec5b9024d9",
+   "aaa0d043d6b0f68927d8f6e25b3e1d1f4109ba56587305f7b687d07011419dd5"
+  ],
+  "configs/sweep/n5.yaml": [
+   "dea7e0c18a28a9fc5df25b3422802dff5e1cce6862fbd4cd19a54e2df2c0b3a2",
+   "16c2c29ad28b49f9a051431ba0131589e9bdd245817c5ca6e0669884427097c0"
+  ],
+  "configs/sweep/r40.yaml": [
+   "6cf6ccbca38cb1696b6bab83c69dea8476c02ebf68af67c92c94db8dcbf450d4",
+   "c3521d38d887b49f2d43277c3854c4687214249cc5c09bf650ef36f0e1ec5da9"
+  ],
+  "configs/sweep/start1.yaml": [
+   "7fa49ba2d063eee7fc9d3b6c3d149b818f7a00f9ebac1e3589e3f3eb6b3c681c",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/sweep/start14.yaml": [
+   "6b7015d03fa27f245c927987fed6614d908d9869b9cf2cce9e15a130c7fb69a6",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/sweep/start8.yaml": [
+   "0735244ba166dfb2baa54cb48fb1abaffceb5af24be24fbd102a708f271681c0",
+   "8a9b6ee4477ef8eb4926a06efadb7c1ca747c5c0f9c03447d29ddb2c0bd8da25"
+  ],
+  "configs/winners_leave_sim.yaml": [
+   "73c0205611722a0ebcc4a33dbd41ff3f831086cd0a8230d86e57768d8b7b1e58",
+   "957aa958d1df5efa4457b581929742271deab059c762cccbd34ac29a0cd5415a"
+  ]
+ }
+}

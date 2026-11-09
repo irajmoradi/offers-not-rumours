@@ -1,0 +1,15 @@
+metric: defections | seeds: 36 0 - 35
+outsider bribe vs forged: n=36 pos=outsider=0.194 (7 events) posXmethod=outsider_forged=0.000 (0 events) diff=0.194 CI=[0.056, 0.361] p2=0.031
+insider bribe-only vs lie-only: n=36 method=insider_bribe_only=1.028 (37 events) method=insider_lie_only=0.139 (5 events) diff=0.889 CI=[0.556, 1.222] p2=7.2e-06
+both: bribe vs forged: n=36 pos=both=3.111 (112 events) posXmethod=both_forged=0.306 (11 events) diff=2.806 CI=[2.417, 3.25] p2=0
+BASE: n=36 mean=2.222 CI=[1.861, 2.611] p_vs0=0 sum_events=80
+resilience: n=36 mean=0.000 CI=[0.0, 0.0] p_vs0=1 sum_events=0
+BASE vs resilience: n=36 BASE=2.222 (80 events) defense=resilience=0.000 (0 events) diff=2.222 CI=[1.861, 2.611] p2=0
+BASE vs ALL: n=36 BASE=2.222 (80 events) defense=ALL=0.028 (1 events) diff=2.194 CI=[1.833, 2.583] p2=0
+turned pos=outsider 6
+turned posXmethod=outsider_forged 0
+turned method=insider_bribe_only 30
+turned method=insider_lie_only 0
+turned pos=both 80
+turned posXmethod=both_forged 2
+clean|none defections per game: 0.0

@@ -1,0 +1,30 @@
+# Plan C v2.2: index
+
+- **Pre-registered core (v2.1, unchanged):** `READOUT_v2_1.md` and `final_v2_1/results.json`. H1 leak-free is primary, Holm is final, p-values are exact for H4.
+  - H2b is supported: +0.13 defections per game, Holm p 0.0004.
+  - H4 is supported but fragile: Holm p 0.0469.
+  - H1 is underpowered on the main grid and not supported on the mixed swarm.
+  - H2a and H3 are not supported.
+- **Exploratory add-ons:** `READOUT_ADDENDUM_GHGR.md`.
+  - **F (Adaption mix):** 8 seeds.
+  - **G (outsider bribe):** +0.08 defections, ≈0 damage.
+  - **Growth:** no visible effect.
+  - **H (heterogeneous scaling).**
+  - **I (homogeneous fleets):** key damage falls with N in every fleet.
+  - **By-model:** the insider's effect in the mixed swarm comes from Gemma-3.
+  - **P1 review:** damage is mostly hoarding; the ledger rule is an all-Qwen artifact and fails against a paying insider.
+  - **J (fulfillment).**
+  - **K (stage × N).**
+  - **Adaption queue.**
+  - **U (one consistent design, n=36/cell):** the outsider's bribe beats a forged order (+0.19 vs 0.00 defections, p 0.033). For the insider, bribe-only beats lie-only (+1.03 vs +0.14, p<0.0001). Payment and open records have no effect, and 11 cells survive Holm.
+  - **UF (2^(7−3) Res IV, 10 seeds):** only "bribe vs forge" is clear (+0.33 [0.10, 0.53], p 0.024).
+  - **C (contagion × outsider bribe size, N=8, 40 seeds):** contagion and bigger bribes both add betrayal (+0.30 → +0.80), but no paired difference is significant. Chains reach depth 3-4, and **recruits always use the 1-key template**.
+  - **C16 (same design at N=16):** 40/40 seeds. A bigger outsider bribe adds betrayal (+0.55, Holm p 0.004). Contagion adds +0.45 / +0.68 (raw p 0.046 / 0.027, Holm 0.054). Chains are no deeper than at N=8 (max 3 hops, about 1.2-1.5 recruits per recruiter), and per-agent betrayal is lower.
+  - **T (pay timing, 40 seeds):** betrayal is the same whenever the insider pays (+2.2). A late payer is caught mid-game as often as one that never pays; its record clears only when the payments land (final ledger top-1 0.80 → 0.48, Holm p 0.020).
+  - **C2K + dose-response (N=16, 1/2/3-key outsider bribe):** betrayal rises steadily with bribe size (slope +0.28 per key, Holm p 0.003; +0.39 with contagion, Holm p 0.032). Contagion adds about +0.5 at every size. Recruits stay 1-key.
+  - **DB (disclosure bounty, teammate request, 20 seeds):** Gemma agents almost never reported (0/98 bribes reported, 1 filler report), so no deterrence: defections +2.05 vs +2.15, p 0.86.
+  - **SE (social-engineering levers, teammate request, 20 seeds):** only bribe (+0.25) and urgency (+0.35) moved anyone. Social proof, liking and rumour had no effect, and nothing survives Holm. There is no authority lever, by project rule.
+  - **DC (dual control for burns, PRE-REGISTERED, 40 seeds):** cuts bought betrayal by 0.48-0.55 per game (bribe-only Holm p 0.006, supported; BASE Holm 0.066, not supported) with no welfare cost. It does not reach 0: random co-signers approve about 4 in 10 requests and the insider is sometimes the co-signer.
+  - **UA (gemma-4-31b):** STOPPED, no result (Adaption quota saturated).
+- **Paper skeleton:** `PAPER_SKELETON_v2_1.md`.
+- **Changes and deviations:** `CHANGES.md`.

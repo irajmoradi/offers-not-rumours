@@ -1,0 +1,10 @@
+metric,arm_F_adaption,v2_1_D_mixed_openrouter,v2_1_A_main_qwen25
+turned agent-games / honest agent-games,9/360,100/1800,23/2700
+"insider raises defection (per seed mean, CI)","{""n"": 8, ""mean"": 0.0833, ""ci95"": [-0.2917, 0.4583]}",,"{""n"": 30, ""mean"": 0.1333, ""ci95"": [0.0778, 0.1889]}"
+attack damage insider|none,"{""n"": 8, ""mean"": 0.0, ""ci95"": [-0.0714, 0.0714]}",,"{""n"": 60, ""mean"": 0.0786, ""ci95"": [0.0286, 0.1214]}"
+attack damage insider|provenance,"{""n"": 8, ""mean"": 0.0536, ""ci95"": [0.0179, 0.1071]}",,"{""n"": 60, ""mean"": 0.0976, ""ci95"": [0.0643, 0.1286]}"
+attack damage insider|reputation+corroboration+quarantine,"{""n"": 8, ""mean"": 0.0536, ""ci95"": [-0.0179, 0.1429]}",,"{""n"": 60, ""mean"": 0.1024, ""ci95"": [0.0548, 0.1452]}"
+attack damage d_evil|none,"{""n"": 8, ""mean"": -0.0312, ""ci95"": [-0.1094, 0.0312]}",,"{""n"": 60, ""mean"": -0.0333, ""ci95"": [-0.0729, -0.0042]}"
+H1-style: combined AUROC (F own split / D own split / A held-out),"{""auc"": 1.0, ""ci95"": [1.0, 1.0]}","{""auc"": 0.831, ""ci95"": [0.755094579490496, 0.8950434505163011]}","{""auc"": 0.953, ""ci95"": [0.8783253485226798, 0.991502818072002]}"
+insider identity top-1 (ledger),"{""top1"": 0.917, ""games"": 24, ""chance"": 0.125}",,"{""top1"": 0.82, ""games"": 300, ""chance"": 0.125}"
+Adaption cost (usage.cost units) / calls / failed,0.275742382788 / 4455 / 0,,

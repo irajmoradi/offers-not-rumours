@@ -1,0 +1,84 @@
+{
+ "usd": 0.057897040999999955,
+ "calls": 1242,
+ "missing_cost": 0,
+ "prompt_tokens": 1006950,
+ "completion_tokens": 96388,
+ "empty": 4,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "openai/gpt-oss-20b": {
+   "usd": 0.021237227999999976,
+   "calls": 347,
+   "empty": 0
+  },
+  "meta-llama/llama-3.1-8b-instruct": {
+   "usd": 0.00919876299999999,
+   "calls": 455,
+   "empty": 0
+  },
+  "google/gemma-3-12b-it": {
+   "usd": 0.02746105000000001,
+   "calls": 440,
+   "empty": 4
+  }
+ },
+ "by_arm": {
+  "I_gpt-oss-20b_N16": {
+   "usd": 0.011264683000000004,
+   "calls": 180,
+   "prompt_tokens": 153181,
+   "completion_tokens": 33816
+  },
+  "I_gpt-oss-20b_N8": {
+   "usd": 0.006305325000000002,
+   "calls": 106,
+   "prompt_tokens": 81997,
+   "completion_tokens": 21436
+  },
+  "I_llama-3.1-8b-instruct_N16": {
+   "usd": 0.005641079000000004,
+   "calls": 263,
+   "prompt_tokens": 237054,
+   "completion_tokens": 8146
+  },
+  "I_gemma-3-12b-it_N8": {
+   "usd": 0.007386374999999999,
+   "calls": 129,
+   "prompt_tokens": 92900,
+   "completion_tokens": 4518
+  },
+  "I_llama-3.1-8b-instruct_N4": {
+   "usd": 0.001133351,
+   "calls": 60,
+   "prompt_tokens": 39635,
+   "completion_tokens": 1711
+  },
+  "I_gemma-3-12b-it_N16": {
+   "usd": 0.017671375000000007,
+   "calls": 263,
+   "prompt_tokens": 227587,
+   "completion_tokens": 8646
+  },
+  "I_llama-3.1-8b-instruct_N8": {
+   "usd": 0.002424333,
+   "calls": 132,
+   "prompt_tokens": 101960,
+   "completion_tokens": 4128
+  },
+  "I_gemma-3-12b-it_N4": {
+   "usd": 0.0024033,
+   "calls": 48,
+   "prompt_tokens": 29971,
+   "completion_tokens": 1701
+  },
+  "I_gpt-oss-20b_N4": {
+   "usd": 0.00366722,
+   "calls": 61,
+   "prompt_tokens": 42665,
+   "completion_tokens": 12286
+  }
+ }
+}

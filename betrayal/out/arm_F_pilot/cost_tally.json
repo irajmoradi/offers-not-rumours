@@ -1,0 +1,62 @@
+{
+ "usd": 0.0018120000000000007,
+ "calls": 60,
+ "missing_cost": 0,
+ "prompt_tokens": 15552,
+ "completion_tokens": 1284,
+ "empty": 0,
+ "failed": 0,
+ "rate_limited_429": 0,
+ "retried_errors": 0,
+ "by_model": {
+  "adaption:gemma-4-26b-a4b-it": {
+   "usd": 0.006178599000000002,
+   "calls": 95,
+   "empty": 0
+  },
+  "adaption:qwen3.8-27b": {
+   "usd": 0.007340274999999998,
+   "calls": 88,
+   "empty": 0
+  },
+  "adaption:gemma-4-31b-it": {
+   "usd": 0.006331489999999999,
+   "calls": 77,
+   "empty": 0
+  },
+  "adaption:deepseek-v4-flash": {
+   "usd": 0.0030120462399999986,
+   "calls": 90,
+   "empty": 0
+  },
+  "qwen/qwen-2.5-7b-instruct": {
+   "usd": 0.0018120000000000007,
+   "calls": 60,
+   "empty": 0
+  }
+ },
+ "by_arm": {
+  "F": {
+   "usd": 0.02286241023999999,
+   "calls": 350,
+   "prompt_tokens": 260042,
+   "completion_tokens": 16731
+  },
+  "F_d_evil": {
+   "usd": 0.0007354,
+   "calls": 7,
+   "prompt_tokens": 5920,
+   "completion_tokens": 717
+  },
+  "F_judge": {
+   "usd": 0.0010765999999999998,
+   "calls": 53,
+   "prompt_tokens": 9632,
+   "completion_tokens": 567
+  }
+ },
+ "adaption_calls": 350,
+ "adaption_usd": 0.02286241023999999,
+ "adaption_retries": 2066,
+ "adaption_failed": 313
+}

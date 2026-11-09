@@ -1,0 +1,37 @@
+# Grid cell (plan/GRID_PLAN.md). Generated from configs/grid_oss120b_base.yaml; `extends` allows one
+# level only, so each cell is standalone. N=10, 20 rounds, run.seed 1 x 16 seeds (game_idx 0-15; world
+# seed depends only on run.seed+game_idx, so all cells play the same 16 worlds), paired God/no-God fork.
+# reasoning.salvage_truncated on. openai/gpt-oss-120b, reasoning_effort low, provider_sort price. llm.budget_usd = this cell's hard cap.
+# G1: simultaneous, God K=2 (fraud r3, cot_control r5) = the demo design; + noise replica B'.
+#   python -m swarm.run --config configs/grid_oss_sim_k2.yaml --run-id grid_oss_sim_k2
+extends: base.yaml
+run: {name: grid_oss_sim_k2, seed: 1, n_games: 16, max_concurrency_games: 12}
+reasoning: {salvage_truncated: true}
+game: {n_agents: 10, max_rounds: 20, turn_mode: simultaneous, turn_order: reshuffle}
+god:
+  kind: scripted
+  start_round: 3
+  budget: {k: 2, scope: game}
+  schedule:
+  - round: 3
+    after_turns: 0
+    power: message_fraud
+    args: {sender: recent_partner, receiver: closest_to_winning}
+  - round: 5
+    after_turns: 0
+    power: cot_control
+    args: {agent: closest_to_winning, round: prev, target: scratchpad, mode: replace}
+runner:
+  engine: real
+  report: true
+  fork: {enabled: true, noise_replica: true, serial_pair: false}
+roles:
+  agent: {backend: openrouter, model: openai/gpt-oss-120b, max_tokens: 1000}
+  god: {backend: openrouter, model: openai/gpt-oss-120b}
+  judge: {backend: openrouter, model: openai/gpt-oss-120b}
+  summarizer: {backend: openrouter, model: openai/gpt-oss-120b}
+llm:
+  budget_usd: 1.35
+  cache: {mode: read_write}
+  openrouter: {enabled: true, model: openai/gpt-oss-120b, max_concurrency: 16, global_cap_usd: 6.0, price_in_per_mtok: 0.1,
+    price_out_per_mtok: 0.5, reasoning_effort: low, provider_sort: price}

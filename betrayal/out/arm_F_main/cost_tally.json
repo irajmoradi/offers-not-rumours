@@ -1,0 +1,24 @@
+{
+ "usd": 0.0114,
+ "calls": 0,
+ "failed": 0,
+ "empty": 0,
+ "rate_limited_429": 0,
+ "prompt_tokens": 0,
+ "completion_tokens": 0,
+ "by_arm": {
+  "F": {
+   "usd": 0.2461,
+   "calls": 3976,
+   "prompt_tokens": 0,
+   "completion_tokens": 0
+  }
+ },
+ "by_model": {},
+ "adaption_usd": 0.2461,
+ "adaption_calls": 3976,
+ "adaption_429": 3,
+ "adaption_failed": 0,
+ "note": "RECONSTRUCTED: arm F main was stopped with SIGTERM, so its tally was never written. Adaption calls and tokens come from the limiter's per-minute log (successful calls only); $ = calls x the pilot-3 cost per call; OpenRouter (judge + D-Evil) = pilot-3 per-seed cost x 9 seeds attempted. Estimates.",
+ "adaption_tokens": 3183825
+}

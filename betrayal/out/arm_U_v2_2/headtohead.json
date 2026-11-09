@@ -1,0 +1,41 @@
+{
+ "outsider_bribe_vs_forged": {
+  "n": 36,
+  "diff": 0.194,
+  "ci": [
+   0.056,
+   0.361
+  ],
+  "p_two_sided": 0.03335,
+  "a_mean": 0.194,
+  "b_mean": 0.0,
+  "turned_a": 6,
+  "turned_b": 0
+ },
+ "insider_bribe_only_vs_lie_only": {
+  "n": 36,
+  "diff": 0.889,
+  "ci": [
+   0.556,
+   1.25
+  ],
+  "p_two_sided": 5e-05,
+  "a_mean": 1.028,
+  "b_mean": 0.139,
+  "turned_a": 30,
+  "turned_b": 0
+ },
+ "both_bribe_vs_forged": {
+  "n": 36,
+  "diff": 2.806,
+  "ci": [
+   2.389,
+   3.25
+  ],
+  "p_two_sided": 5e-05,
+  "a_mean": 3.111,
+  "b_mean": 0.306,
+  "turned_a": 80,
+  "turned_b": 2
+ }
+}

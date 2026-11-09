@@ -1,0 +1,209 @@
+# LONG80 (hidden-horizon) variant of configs/showcase100_v2_glm_llmgod_sim.yaml (GLM agents + GLM investigating
+# LLM God). Identical except:
+#   game.max_rounds: 80; game.view_log.horizon: round_only (agents see "Round r", not the total)
+#   god.schedule: r3-r78 (k=2 per round, same two powers; for god.kind=llm the schedule sets the wake rounds)
+#   runner.fork: god + nogod only (noise_fork off)
+#   llm.cache.path: a fresh cache/long80.sqlite (no reuse possible: the hidden-horizon prompts differ from round 1)
+# Launch caps (concurrency, llm.budget_usd, global_cap_usd) are passed as overrides by infra/grid_driver.py.
+extends: base.yaml
+run: {name: showcase100_v2_glm_long80_sim, seed: 1, n_games: 2, max_concurrency_games: 2}
+reasoning: {salvage_truncated: true}
+game:
+  n_agents: 100
+  max_rounds: 80                 # LONG80: 80 rounds, total hidden from agents (view_log.horizon)
+  turn_mode: simultaneous
+  turn_order: reshuffle
+  winner_policy: lock_and_stay
+  wrong_defect_penalty: score_penalty
+  defect: {win_rule: all_needs}
+  trade: {enabled: true, max_offers_per_turn: 1, max_keys_per_side: 3}
+  network:
+    topology: sbm
+    communities: 5
+    mean_degree: 4
+    mixing: 0.1
+    min_bridges: 8
+    mode: contacts
+    key_placement: mixed
+    connect: {enabled: true, cost_rounds: 0, require_known: true}
+  board: {scope: neighbors}
+  view_log:
+    anonymize_noncontacts: true
+    horizon: round_only          # LONG80: agents see "Round r", never the total / end-of-game wording
+    defect_broadcast: {enabled: true, delay_rounds: 3, mode: round_summary}
+  score: {held_key_bonus: 0.05, held_key_scope: initial, community_bonus: 0.15, community_threshold_count: 4, community_success_needs: 2, delivery_credit: 0.1}
+god:
+  kind: llm
+  llm: {model: z-ai/glm-5.3-flash, reasoning_effort: minimal, provider_sort: price, price_in_per_mtok: 0.15,
+    price_out_per_mtok: 0.5, max_steps: 8, powers: [message_fraud, reveal_needs]}
+  start_round: 3
+  budget: {k: 2, scope: round}
+  powers:
+    reveal_needs: {enabled: true, variant: mix, p_false: 0.5, max_receivers: 3}
+  schedule:
+  - {round: 3, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 3, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 4, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 4, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 5, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 5, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 6, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 6, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 7, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 7, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 8, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 8, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 9, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 9, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 10, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 10, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 11, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 11, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 12, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 12, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 13, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 13, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 14, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 14, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 15, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 15, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 16, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 16, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 17, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 17, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 18, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 18, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 19, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 19, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 20, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 20, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 21, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 21, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 22, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 22, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 23, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 23, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 24, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 24, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 25, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 25, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 26, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 26, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 27, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 27, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 28, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 28, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 29, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 29, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 30, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 30, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 31, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 31, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 32, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 32, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 33, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 33, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 34, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 34, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 35, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 35, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 36, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 36, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 37, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 37, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 38, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 38, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 39, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 39, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 40, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 40, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 41, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 41, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 42, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 42, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 43, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 43, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 44, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 44, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 45, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 45, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 46, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 46, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 47, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 47, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 48, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 48, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 49, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 49, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 50, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 50, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 51, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 51, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 52, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 52, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 53, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 53, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 54, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 54, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 55, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 55, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 56, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 56, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 57, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 57, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 58, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 58, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 59, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 59, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 60, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 60, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 61, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 61, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 62, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 62, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 63, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 63, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 64, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 64, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 65, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 65, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 66, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 66, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 67, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 67, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 68, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 68, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 69, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 69, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 70, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 70, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 71, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 71, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 72, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 72, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 73, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 73, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 74, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 74, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 75, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 75, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 76, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 76, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 77, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 77, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+  - {round: 78, after_turns: 0, power: message_fraud, args: {sender: recent_partner, receiver: closest_to_winning}}
+  - {round: 78, after_turns: 0, power: reveal_needs, args: {target: most_exposed, receivers: all, sender: recent_partner}}
+runner:
+  engine: real
+  report: false
+  fork: {enabled: true, noise_replica: false, noise_fork: false, serial_pair: false, only_branches: [god, nogod]}
+roles:
+  agent: {backend: openrouter, model: z-ai/glm-5.3-flash, max_tokens: 1000}
+  god: {backend: openrouter, model: z-ai/glm-5.3-flash}
+  judge: {backend: openrouter, model: z-ai/glm-5.3-flash}
+  summarizer: {backend: openrouter, model: z-ai/glm-5.3-flash}
+llm:
+  budget_usd: 1.5
+  cache: {mode: read_write, path: cache/long80.sqlite}
+  openrouter: {enabled: true, model: z-ai/glm-5.3-flash, max_concurrency: 8, global_cap_usd: 20.0, price_in_per_mtok: 0.15,
+    price_out_per_mtok: 0.5, reasoning_effort: minimal, provider_sort: price}
