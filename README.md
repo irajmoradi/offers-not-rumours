@@ -1,7 +1,7 @@
 # Offers, Not Rumours: What Turns Agents in an LLM Swarm
 
 Code, configs, pre-registrations and aggregate results for the paper *Offers, Not Rumours: What Turns Agents in an LLM
-Swarm* (Iraj, Jenifer, Noor; Swarm Alignment Hackathon, Apart Research, November 2026). The paper itself is not
+Swarm* (Iraj Moradi, Jenifer Nguyen, Lance Santiago, Mario Sepriano, Noor; Swarm Alignment Hackathon, Apart Research, November 2026). The paper itself is not
 part of this repository. Section and appendix numbers below refer to it.
 
 **Summary.** Does a message that fools one agent also corrupt a swarm of agents? We ran two cooperative
@@ -17,8 +17,8 @@ The study has three parts:
 
 | Part | Folder | What it is | Main author |
 |---|---|---|---|
-| 1. Keys & God | [`keys_and_god/`](keys_and_god/) | A swarm trading game with a hidden "God" that forges DMs and overwrites notes. Every world is forked into God / no-God / re-sampled noise twin (B″). Includes the 10-agent dose runs, the 60-agent Game-vs-Realistic Env runs, the 100-agent sweep configs, and the chain-of-thought (CoT) suspicion judge. | Iraj |
-| 2. Betrayal study | [`betrayal/`](betrayal/) | An 8-agent key-trading swarm with insider and outsider attackers. Every attacked branch has a clean twin. Includes the pre-registered Qwen study, the Gemma head-to-head, the follow-ups, dual control and the multi-model replication. | Jenifer |
+| 1. Keys & God | [`keys_and_god/`](keys_and_god/) | A swarm trading game with a hidden "God" that forges DMs and overwrites notes. Every world is forked into God / no-God / re-sampled noise twin (B″). Includes the 10-agent dose runs, the 60-agent Game-vs-Realistic Env runs, the 100-agent sweep configs, and the chain-of-thought (CoT) suspicion judge. | Iraj Moradi |
+| 2. Betrayal study | [`betrayal/`](betrayal/) | An 8-agent key-trading swarm with insider and outsider attackers. Every attacked branch has a clean twin. Includes the pre-registered Qwen study, the Gemma head-to-head, the follow-ups, dual control and the multi-model replication. | Jenifer Nguyen |
 | 3. Single agents and the model's inside | [`single_agent/`](single_agent/) | The 300-scene single-agent test (tempt300) on hosted models, and activation geometry on local Gemma-2-2B, Qwen2.5-1.5B and SmolLM2-1.7B. | Noor |
 
 ## Layout
@@ -29,7 +29,7 @@ keys_and_god/          Keys & God engine (swarm/), configs/, infra/ (launchers),
   cot_suspicion/       CoT judge (cot_judge.py), run scripts, aggregates (summary.json, per_round.csv; god_dose/)
   figs/                Keys & God figure scripts (*_viz.py)
 betrayal/              pre-registrations (prespec_*.md, PREREG_*_SHA256.txt, HYPOTHESES.md), CHANGES.md, PLAN.md
-  pkg/swarm_llm/       Jenifer's game package (hash-pinned in pkg_module_sha256.txt)
+  pkg/swarm_llm/       Jenifer Nguyen's game package (hash-pinned in pkg_module_sha256.txt)
   harness/             drivers (run_v2.py, run_jenfu.py, run_noor.py, run_closers.py, run_tofix.py), attack modules, analyses
   analysis/            cross-arm analyses (family-wide correction, size/key damage, ledger, timeouts, empty replies)
   runs/                launch scripts used for each arm
@@ -307,8 +307,8 @@ before you run it.
 
 | Component | Author |
 |---|---|
-| Keys & God engine, framing sweeps, 60/100-agent runs, CoT suspicion judge (`keys_and_god/`) | Iraj |
-| Betrayal study: game package `betrayal/pkg/swarm_llm/` (Jenifer's key-trading game, used unmodified, hash-pinned) and all of its arms, pre-registered experiments and readouts | Jenifer |
+| Keys & God engine, framing sweeps, 60/100-agent runs, CoT suspicion judge (`keys_and_god/`) | Iraj Moradi |
+| Betrayal study: game package `betrayal/pkg/swarm_llm/` (Jenifer's key-trading game, used unmodified, hash-pinned) and all of its arms, pre-registered experiments and readouts | Jenifer Nguyen |
 | Single-agent tests (tempt300), in-model mechanism and steering work, multi-model replication design (`single_agent/`, `prespec_noor.md`) | Noor |
 
 Harness and analysis code for the betrayal study was written during the sprint (with LLM coding assistants, as stated
@@ -321,6 +321,6 @@ snapshot lived in a separate project folder). The harness wraps it through monke
 ## Citation
 
 ```
-Iraj, Jenifer, Noor (full author list TBD). Offers, Not Rumours: What Turns Agents in an LLM Swarm.
+Iraj Moradi, Jenifer Nguyen, Lance Santiago, Mario Sepriano, Noor. Offers, Not Rumours: What Turns Agents in an LLM Swarm.
 Swarm Alignment Hackathon (Apart Research), Track 2: The Science of Agent Networks, November 2026.
 ```
